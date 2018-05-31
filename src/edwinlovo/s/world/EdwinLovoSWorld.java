@@ -7,7 +7,7 @@ package edwinlovo.s.world;
 
 /**
  *
- * @author Miguel
+ * @author EdwinLovo
  */
 public class EdwinLovoSWorld {
 
