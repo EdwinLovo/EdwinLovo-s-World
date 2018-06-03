@@ -5,6 +5,8 @@
  */
 package AbstractFactory;
 
+import Militar.FactoryMilitar;
+
 /**
  *
  * @author EdwinLovo

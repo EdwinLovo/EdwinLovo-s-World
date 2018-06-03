@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AbstractFactory;
-
-import Militar.Militar;
+package Militar;
 
 /**
  *
  * @author EdwinLovo
  */
-public interface AbstractFactory {
-    Militar getMilitar(String type);
-    Revolucionario getRevolucionario(String type);
-    Terrorista getTerrorista(String type);
+public interface Militar {
+    public void atacar();
+    public void defender();
+    public void recolectar();
+    public void crear();
 }
