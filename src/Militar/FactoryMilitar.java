@@ -9,6 +9,8 @@ import AbstractFactory.AbstractFactory;
 import RecursoMilitar.Diamante;
 import RecursoMilitar.Efectivo;
 import RecursoMilitar.Oro;
+import TransporteMilitar.Convoy;
+import TransporteMilitar.Vehiculo;
 
 /**
  *
