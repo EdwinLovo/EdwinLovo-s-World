@@ -6,6 +6,8 @@
 package Militar;
 
 import AbstractFactory.AbstractFactory;
+import MiliciaMilitar.Escuadron;
+import MiliciaMilitar.Rambo;
 import RecursoMilitar.Diamante;
 import RecursoMilitar.Efectivo;
 import RecursoMilitar.Oro;
