@@ -11,6 +11,7 @@ import MiliciaMilitar.Rambo;
 import RecursoMilitar.Diamante;
 import RecursoMilitar.Efectivo;
 import RecursoMilitar.Oro;
+import Terrorista.Terrorista;
 import TransporteMilitar.Convoy;
 import TransporteMilitar.Vehiculo;
 

@@ -6,6 +6,7 @@
 package AbstractFactory;
 
 import Militar.FactoryMilitar;
+import Terrorista.FactoryTerrorista;
 
 /**
  *
@@ -19,7 +20,7 @@ public class FactoryProducer {
             case "revolucionario":
                 return new FactoryRevolucionario();
             case "terrorista":
-                return new FactoryRevolucionario();
+                return new FactoryTerrorista();
         }
         return null;
     }
