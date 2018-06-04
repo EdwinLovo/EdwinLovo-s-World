@@ -12,7 +12,7 @@ import Militar.Militar;
  * @author EdwinLovo
  */
 public class Diamante implements Militar{
-
+    
     @Override
     public void atacar() {
     }
@@ -22,8 +22,9 @@ public class Diamante implements Militar{
     }
 
     @Override
-    public void recolectar() {
+    public int recolectar(int cant,int fase) {
         System.out.println("Recolectado militar");
+        return 0;
     }
 
     @Override

@@ -22,8 +22,9 @@ public class Oro implements Militar{
     }
 
     @Override
-    public void recolectar() {
+    public int recolectar(int cant,int fase) {
         System.out.println("Recolectado militar");
+        return cant;
     }
 
     @Override

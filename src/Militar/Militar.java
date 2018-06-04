@@ -12,6 +12,6 @@ package Militar;
 public interface Militar {
     public void atacar();
     public void defender();
-    public void recolectar();
+    public int recolectar(int cant,int fase);
     public void crear();
 }

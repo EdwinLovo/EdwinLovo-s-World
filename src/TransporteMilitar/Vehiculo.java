@@ -24,7 +24,8 @@ public class Vehiculo implements Militar{
     }
 
     @Override
-    public void recolectar() {
+    public int recolectar(int cant,int fase) {
+        return 0;
     }
 
     @Override
