@@ -6,10 +6,14 @@
 package Terrorista;
 
 import AbstractFactory.AbstractFactory;
+import MiliciaTerrorista.BinLaden;
+import MiliciaTerrorista.Secta;
 import Militar.Militar;
 import RecursoTerrorista.Monedas;
 import RecursoTerrorista.Petroleo;
 import RecursoTerrorista.Quimicos;
+import TransporteTerrorista.Bus;
+import TransporteTerrorista.Tanque;
 
 /**
  *
