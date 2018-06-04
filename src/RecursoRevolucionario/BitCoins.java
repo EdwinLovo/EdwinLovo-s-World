@@ -5,10 +5,29 @@
  */
 package RecursoRevolucionario;
 
+import Revolucionario.Revolucionario;
+
 /**
  *
  * @author EdwinLovo
  */
-public class BitCoins {
+public class BitCoins implements Revolucionario{
+
+    @Override
+    public void atacar() {
+    }
+
+    @Override
+    public void defender() {
+    }
+
+    @Override
+    public void recolectar() {
+        System.out.println("Recoger");
+    }
+
+    @Override
+    public void crear() {
+    }
     
 }

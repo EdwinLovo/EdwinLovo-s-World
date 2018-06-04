@@ -12,6 +12,7 @@ import Militar.Militar;
 import RecursoTerrorista.Monedas;
 import RecursoTerrorista.Petroleo;
 import RecursoTerrorista.Quimicos;
+import Revolucionario.Revolucionario;
 import TransporteTerrorista.Bus;
 import TransporteTerrorista.Tanque;
 

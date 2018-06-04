@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RecursoRevolucionario;
+package TransporteRevolucionario;
 
 import Revolucionario.Revolucionario;
 
@@ -11,19 +11,20 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class Plata implements Revolucionario{
+public class Helicoptero implements Revolucionario{
 
     @Override
     public void atacar() {
+        System.out.println("Atacar");
     }
 
     @Override
     public void defender() {
+        System.out.println("Defender");
     }
 
     @Override
     public void recolectar() {
-        System.out.println("Recoger");
     }
 
     @Override

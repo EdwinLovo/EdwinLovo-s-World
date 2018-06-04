@@ -6,6 +6,7 @@
 package AbstractFactory;
 
 import Militar.FactoryMilitar;
+import Revolucionario.FactoryRevolucionario;
 import Terrorista.FactoryTerrorista;
 
 /**

@@ -6,8 +6,15 @@
 package Revolucionario;
 
 import AbstractFactory.AbstractFactory;
+import MiliciaRevolucionario.Batallon;
+import MiliciaRevolucionario.Castro;
 import Militar.Militar;
+import RecursoRevolucionario.BitCoins;
+import RecursoRevolucionario.Metal;
+import RecursoRevolucionario.Plata;
 import Terrorista.Terrorista;
+import TransporteRevolucionario.Helicoptero;
+import TransporteRevolucionario.Moto;
 
 /**
  *
