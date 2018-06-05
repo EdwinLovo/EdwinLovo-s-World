@@ -6,6 +6,7 @@
 package RecursoMilitar;
 
 import Militar.Militar;
+import Singletons.Fase;
 
 /**
  *
@@ -18,7 +19,8 @@ public class GeneradorDiamante implements Militar{
     }
 
     @Override
-    public int recolectar(int cant, int fase) {
+    public int recolectar(Fase fase) {
+        
         return 0;
     }
 
@@ -26,11 +28,4 @@ public class GeneradorDiamante implements Militar{
     public void crear() {
     }
 
-    @Override
-    public void generar() {
-        System.out.println("Generar");
-    }
-    
-   
-    
 }

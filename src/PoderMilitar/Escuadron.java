@@ -6,6 +6,7 @@
 package PoderMilitar;
 
 import Militar.Militar;
+import Singletons.Fase;
 
 /**
  *
@@ -18,15 +19,11 @@ public class Escuadron implements Militar{
     }
 
     @Override
-    public int recolectar(int cant, int fase) {
+    public int recolectar(Fase fase) {
         return 0;
     }
 
     @Override
     public void crear() {
-    }
-
-    @Override
-    public void generar() {
     }
 }

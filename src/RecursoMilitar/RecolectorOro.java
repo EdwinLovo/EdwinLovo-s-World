@@ -6,6 +6,7 @@
 package RecursoMilitar;
 
 import Militar.Militar;
+import Singletons.Fase;
 
 /**
  *
@@ -18,16 +19,12 @@ public class RecolectorOro implements Militar{
     }
 
     @Override
-    public int recolectar(int cant, int fase) {
+    public int recolectar(Fase fase) {
+        
         return 0;
     }
 
     @Override
     public void crear() {
-    }
-
-    @Override
-    public void generar() {
-        System.out.println("Generar");
     }
 }

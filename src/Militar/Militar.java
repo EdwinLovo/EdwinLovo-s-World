@@ -5,13 +5,14 @@
  */
 package Militar;
 
+import Singletons.Fase;
+
 /**
  *
  * @author EdwinLovo
  */
 public interface Militar {
     public void atacar();
-    public int recolectar(int cant,int fase);
+    public int recolectar(Fase fase);
     public void crear();
-    public void generar();
 }

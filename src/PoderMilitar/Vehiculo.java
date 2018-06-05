@@ -6,27 +6,25 @@
 package PoderMilitar;
 
 import Militar.Militar;
+import Singletons.Fase;
 
 /**
  *
  * @author EdwinLovo
  */
 public class Vehiculo implements Militar{
-   @Override
+    
+    @Override
     public void atacar() {
         System.out.println("Atacar");
     }
 
     @Override
-    public int recolectar(int cant, int fase) {
+    public int recolectar(Fase fase) {
         return 0;
     }
 
     @Override
     public void crear() {
     }
-
-    @Override
-    public void generar() {
-    } 
 }

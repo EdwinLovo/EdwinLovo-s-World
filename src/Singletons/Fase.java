@@ -34,5 +34,4 @@ public class Fase {
         Fase.fase = fase;
     }
     
-    
 }

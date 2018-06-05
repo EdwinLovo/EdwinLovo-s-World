@@ -6,6 +6,7 @@
 package EdificacionesMilitar;
 
 import Militar.Militar;
+import Singletons.Fase;
 
 /**
  *
@@ -18,17 +19,13 @@ public class FabricaVehiculo implements Militar{
     }
 
     @Override
-    public int recolectar(int cant, int fase) {
+    public int recolectar(Fase fase) {
         return 0;
     }
 
     @Override
     public void crear() {
         System.out.println("Crear");
-    }
-
-    @Override
-    public void generar() {
     }
     
 }

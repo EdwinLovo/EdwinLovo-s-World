@@ -52,7 +52,7 @@ public class CentroMando {
 
     public void setRecurso1(int recurso1) {
         if(recurso1<=limite1){
-            this.recurso1 = recurso1;
+            this.recurso1 = recurso1+this.recurso1;
         }
         else{
             System.out.println("Almacen 1 lleno");
@@ -65,7 +65,7 @@ public class CentroMando {
 
     public void setRecurso2(int recurso2) {
         if(recurso2<=limite2){
-            this.recurso2 = recurso2;
+            this.recurso2 = recurso2+this.recurso2;
         }
         else{
             System.out.println("Almacen 2 lleno");
@@ -78,7 +78,7 @@ public class CentroMando {
 
     public void setRecurso3(int recurso3) {
         if(recurso3<=limite3){
-            this.recurso3 = recurso3;
+            this.recurso3 = recurso3+this.recurso3;
         }
         else{
             System.out.println("Almacen 3 lleno");

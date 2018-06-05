@@ -6,6 +6,7 @@
 package PoderMilitar;
 
 import Militar.Militar;
+import Singletons.Fase;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Convoy implements Militar{
     }
 
     @Override
-    public int recolectar(int cant, int fase) {
+    public int recolectar(Fase fase) {
         return 0;
     }
 
@@ -27,8 +28,4 @@ public class Convoy implements Militar{
     public void crear() {
     }
 
-    @Override
-    public void generar() {
-    }
-    
 }
