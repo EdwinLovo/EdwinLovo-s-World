@@ -19,7 +19,7 @@ public class FabricaRambo implements Militar{
     }
 
     @Override
-    public int recolectar(Fase fase) {
+    public int recolectar() {
         return 0;
     }
 

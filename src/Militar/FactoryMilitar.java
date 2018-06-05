@@ -14,6 +14,7 @@ import RecursoMilitar.GeneradorDiamante;
 import RecursoMilitar.RecolectorEfectivo;
 import RecursoMilitar.RecolectorOro;
 import Revolucionario.Revolucionario;
+import Singletons.Fase;
 import Terrorista.Terrorista;
 
 /**
@@ -21,16 +22,16 @@ import Terrorista.Terrorista;
  * @author EdwinLovo
  */
 public class FactoryMilitar implements AbstractFactory{
-
+    Fase fase = Fase.getInstance();
     @Override
     public Militar getMilitar(String type) {
         switch (type){
             case "efectivo":
-                return new RecolectorEfectivo();
+                return new RecolectorEfectivo(fase.getFase());
             case "oro":
-                return new RecolectorOro();
+                return new RecolectorOro(fase.getFase());
             case "diamante":
-                return new GeneradorDiamante();
+                return new GeneradorDiamante(fase.getFase());
             case "convoy":
                 return new FabricaConvoy();
             case "vehiculo":

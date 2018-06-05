@@ -26,11 +26,11 @@ public class Fase {
         return instance;
     }
 
-    public static int getFase() {
+    public int getFase() {
         return fase;
     }
 
-    public static void setFase(int fase) {
+    public void setFase(int fase) {
         Fase.fase = fase;
     }
     

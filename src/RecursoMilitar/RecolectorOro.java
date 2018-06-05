@@ -13,15 +13,32 @@ import Singletons.Fase;
  * @author EdwinLovo
  */
 public class RecolectorOro implements Militar{
+    int faseAlmacenada;
+    Fase fase = Fase.getInstance();
 
+    public RecolectorOro(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+
+    public int getFaseAlmacenada() {
+        return faseAlmacenada;
+    }
+
+    public void setFaseAlmacenada(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+    
     @Override
     public void atacar() {
     }
 
     @Override
-    public int recolectar(Fase fase) {
-        
-        return 0;
+    public int recolectar() {
+        int cant;
+
+        cant = 250 * (fase.getFase() - faseAlmacenada);
+        faseAlmacenada = fase.getFase();
+        return cant;
     }
 
     @Override

@@ -13,6 +13,6 @@ import Singletons.Fase;
  */
 public interface Militar {
     public void atacar();
-    public int recolectar(Fase fase);
+    public int recolectar();
     public void crear();
 }

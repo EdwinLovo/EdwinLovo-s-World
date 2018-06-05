@@ -13,15 +13,32 @@ import Singletons.Fase;
  * @author EdwinLovo
  */
 public class GeneradorDiamante implements Militar{
+    int faseAlmacenada;
+    Fase fase2 = Fase.getInstance();
+    
+    public GeneradorDiamante(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
 
+    public int getFaseAlmacenada() {
+        return faseAlmacenada;
+    }
+
+    public void setFaseAlmacenada(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+    
     @Override
     public void atacar() {
     }
 
     @Override
-    public int recolectar(Fase fase) {
+    public int recolectar() {
+        int cant;
         
-        return 0;
+        cant = 250*(fase2.getFase()-faseAlmacenada);
+        faseAlmacenada= fase2.getFase();
+        return cant;
     }
 
     @Override
