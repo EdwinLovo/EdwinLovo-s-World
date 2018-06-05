@@ -10,5 +10,5 @@ package COT;
  * @author EdwinLovo
  */
 public class Jugador {
-    
+    String raza;
 }
