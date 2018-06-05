@@ -3,29 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TransporteMilitar;
+package TransporteRevolucionario;
 
-import Militar.Militar;
+import Revolucionario.Revolucionario;
 
 /**
  *
  * @author EdwinLovo
  */
-public class Vehiculo implements Militar{
+public class MotoGarage implements Revolucionario{
 
     @Override
     public void atacar() {
-        System.out.println("Ataque militar");
+        System.out.println("atacar");
     }
 
     @Override
     public void defender() {
-        System.out.println("Defiende militar");
+        System.out.println("Defender");
     }
 
     @Override
-    public int recolectar(int cant,int fase) {
-        return 0;
+    public void recolectar() {
     }
 
     @Override

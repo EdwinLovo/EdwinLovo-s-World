@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TransporteRevolucionario;
+package TransporteTerrorista;
 
-import Revolucionario.Revolucionario;
+import Terrorista.Terrorista;
 
 /**
  *
  * @author EdwinLovo
  */
-public class Moto implements Revolucionario{
+public class EstacionBus implements Terrorista{
 
     @Override
     public void atacar() {
-        System.out.println("atacar");
+        System.out.println("Atacar");
     }
 
     @Override

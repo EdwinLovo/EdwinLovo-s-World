@@ -11,7 +11,7 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class Helicoptero implements Revolucionario{
+public class Aeropuerto implements Revolucionario{
 
     @Override
     public void atacar() {

@@ -14,7 +14,7 @@ import RecursoMilitar.Oro;
 import Revolucionario.Revolucionario;
 import Terrorista.Terrorista;
 import TransporteMilitar.Convoy;
-import TransporteMilitar.Vehiculo;
+import TransporteMilitar.VehiculoGarage;
 
 /**
  *
@@ -34,7 +34,7 @@ public class FactoryMilitar implements AbstractFactory{
             case "convoy":
                 return new Convoy();
             case "vehiculo":
-                return new Vehiculo();
+                return new VehiculoGarage();
             case "escuadron":
                 return new Escuadron();
             case "rambo":

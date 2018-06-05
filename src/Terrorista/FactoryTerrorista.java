@@ -13,7 +13,7 @@ import RecursoTerrorista.Monedas;
 import RecursoTerrorista.Petroleo;
 import RecursoTerrorista.Quimicos;
 import Revolucionario.Revolucionario;
-import TransporteTerrorista.Bus;
+import TransporteTerrorista.EstacionBus;
 import TransporteTerrorista.Tanque;
 
 /**
@@ -44,7 +44,7 @@ public class FactoryTerrorista implements AbstractFactory{
             case "tanque":
                 return new Tanque();
             case "bus":
-                return new Bus();
+                return new EstacionBus();
             case "secta":
                 return new Secta();
             case "binladen":

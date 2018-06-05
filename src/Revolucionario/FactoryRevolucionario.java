@@ -13,8 +13,8 @@ import RecursoRevolucionario.BitCoins;
 import RecursoRevolucionario.Metal;
 import RecursoRevolucionario.Plata;
 import Terrorista.Terrorista;
-import TransporteRevolucionario.Helicoptero;
-import TransporteRevolucionario.Moto;
+import TransporteRevolucionario.Aeropuerto;
+import TransporteRevolucionario.MotoGarage;
 
 /**
  *
@@ -36,10 +36,10 @@ public class FactoryRevolucionario implements AbstractFactory{
                 return new Metal();
             case "plata":
                 return new Plata();
-            case "helicoptero":
-                return new Helicoptero();
+            case "aeropuerto":
+                return new Aeropuerto();
             case "moto":
-                return new Moto();
+                return new MotoGarage();
             case "batallon":
                 return new Batallon();
             case "castro":
