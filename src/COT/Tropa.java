@@ -10,12 +10,12 @@ package COT;
  * @author EdwinLovo
  */
 public class Tropa {
-    int vida,puntosAtaque;
+    int vida,Ataque;
     String name;
 
     public Tropa(int vida, int puntosAtaque, String name) {
         this.vida = vida;
-        this.puntosAtaque = puntosAtaque;
+        this.Ataque = puntosAtaque;
         this.name = name;
     }
 
@@ -27,12 +27,12 @@ public class Tropa {
         this.vida = vida;
     }
 
-    public int getPuntosAtaque() {
-        return puntosAtaque;
+    public int getAtaque() {
+        return Ataque;
     }
 
-    public void setPuntosAtaque(int puntosAtaque) {
-        this.puntosAtaque = puntosAtaque;
+    public void setAtaque(int Ataque) {
+        this.Ataque = Ataque;
     }
 
     public String getName() {

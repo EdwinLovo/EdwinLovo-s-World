@@ -6,15 +6,15 @@
 package Revolucionario;
 
 import AbstractFactory.AbstractFactory;
-import MiliciaRevolucionario.Batallon;
-import MiliciaRevolucionario.Castro;
+import EdificacionesRevolucionario.FabricaBatallon;
+import EdificacionesRevolucionario.FabricaCastro;
+import EdificacionesRevolucionario.FabricaHelicoptero;
+import EdificacionesRevolucionario.FabricaMoto;
 import Militar.Militar;
-import RecursoRevolucionario.BitCoins;
-import RecursoRevolucionario.Metal;
-import RecursoRevolucionario.Plata;
+import RecursoRevolucionario.GeneradorBitCoins;
+import RecursoRevolucionario.RecolectorMetal;
+import RecursoRevolucionario.RecolectorPlata;
 import Terrorista.Terrorista;
-import TransporteRevolucionario.Aeropuerto;
-import TransporteRevolucionario.MotoGarage;
 
 /**
  *
@@ -31,19 +31,19 @@ public class FactoryRevolucionario implements AbstractFactory{
     public Revolucionario getRevolucionario(String type) {
         switch (type){
             case "bitcoins":
-                return new BitCoins();
+                return new GeneradorBitCoins();
             case "metal":
-                return new Metal();
+                return new RecolectorMetal();
             case "plata":
-                return new Plata();
+                return new RecolectorPlata();
             case "aeropuerto":
-                return new Aeropuerto();
+                return new FabricaHelicoptero();
             case "moto":
-                return new MotoGarage();
+                return new FabricaMoto();
             case "batallon":
-                return new Batallon();
+                return new FabricaBatallon();
             case "castro":
-                return new Castro();
+                return new FabricaCastro();
         }
         return null;
     }

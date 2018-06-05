@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Revolucionario;
+package PoderTerrorista;
 
 /**
  *
- * @author EdwinLovo
+ * @author Miguel
  */
-public interface Revolucionario {
-    public void atacar();
-    public void generar();
-    public void recolectar();
-    public void crear();
+public class Bus {
+    
 }

@@ -6,15 +6,15 @@
 package Militar;
 
 import AbstractFactory.AbstractFactory;
-import MiliciaMilitar.Escuadron;
-import MiliciaMilitar.Rambo;
-import RecursoMilitar.Diamante;
-import RecursoMilitar.Efectivo;
-import RecursoMilitar.Oro;
+import EdificacionesMilitar.FabricaConvoy;
+import EdificacionesMilitar.FabricaEscuadron;
+import EdificacionesMilitar.FabricaRambo;
+import EdificacionesMilitar.FabricaVehiculo;
+import RecursoMilitar.GeneradorDiamante;
+import RecursoMilitar.RecolectorEfectivo;
+import RecursoMilitar.RecolectorOro;
 import Revolucionario.Revolucionario;
 import Terrorista.Terrorista;
-import TransporteMilitar.Convoy;
-import TransporteMilitar.VehiculoGarage;
 
 /**
  *
@@ -26,19 +26,19 @@ public class FactoryMilitar implements AbstractFactory{
     public Militar getMilitar(String type) {
         switch (type){
             case "efectivo":
-                return new Efectivo();
+                return new RecolectorEfectivo();
             case "oro":
-                return new Oro();
+                return new RecolectorOro();
             case "diamante":
-                return new Diamante();
+                return new GeneradorDiamante();
             case "convoy":
-                return new Convoy();
+                return new FabricaConvoy();
             case "vehiculo":
-                return new VehiculoGarage();
+                return new FabricaVehiculo();
             case "escuadron":
-                return new Escuadron();
+                return new FabricaEscuadron();
             case "rambo":
-                return new Rambo();
+                return new FabricaRambo();
         }
         return null;
     }

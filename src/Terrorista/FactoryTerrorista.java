@@ -6,15 +6,15 @@
 package Terrorista;
 
 import AbstractFactory.AbstractFactory;
-import MiliciaTerrorista.BinLaden;
-import MiliciaTerrorista.Secta;
+import EdificacionesTerrorista.FabricaBinLaden;
+import EdificacionesTerrorista.FabricaBus;
+import EdificacionesTerrorista.FabricaSecta;
+import EdificacionesTerrorista.FabricaTanque;
 import Militar.Militar;
-import RecursoTerrorista.Monedas;
-import RecursoTerrorista.Petroleo;
-import RecursoTerrorista.Quimicos;
+import RecursoTerrorista.GeneradorMonedas;
+import RecursoTerrorista.RecolectorPetroleo;
+import RecursoTerrorista.RecolectorQuimicos;
 import Revolucionario.Revolucionario;
-import TransporteTerrorista.EstacionBus;
-import TransporteTerrorista.Tanque;
 
 /**
  *
@@ -36,19 +36,19 @@ public class FactoryTerrorista implements AbstractFactory{
     public Terrorista getTerrorista(String type) {
         switch (type){
             case "petroleo":
-                return new Petroleo();
+                return new RecolectorPetroleo();
             case "quimicos":
-                return new Quimicos();
+                return new RecolectorQuimicos();
             case "monedas":
-                return new Monedas();
+                return new GeneradorMonedas();
             case "tanque":
-                return new Tanque();
+                return new FabricaTanque();
             case "bus":
-                return new EstacionBus();
+                return new FabricaBus();
             case "secta":
-                return new Secta();
+                return new FabricaSecta();
             case "binladen":
-                return new BinLaden();
+                return new FabricaBinLaden();
         }
         return null;
     }

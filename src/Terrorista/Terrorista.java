@@ -11,7 +11,7 @@ package Terrorista;
  */
 public interface Terrorista {
     public void atacar();
-    public void defender();
+    public void generar();
     public void recolectar();
     public void crear();
 }
