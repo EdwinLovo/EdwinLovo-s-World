@@ -7,6 +7,7 @@ package RecursoMilitar;
 
 import Militar.Militar;
 import Singletons.Fase;
+import Singletons.SingletonMilitar;
 
 /**
  *
@@ -14,7 +15,8 @@ import Singletons.Fase;
  */
 public class GeneradorDiamante implements Militar{
     int faseAlmacenada;
-    Fase fase2 = Fase.getInstance();
+    SingletonMilitar militares= SingletonMilitar.getInstance();
+    Fase fase = Fase.getInstance();
     
     public GeneradorDiamante(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
@@ -36,13 +38,15 @@ public class GeneradorDiamante implements Militar{
     public int recolectar() {
         int cant;
         
-        cant = 250*(fase2.getFase()-faseAlmacenada);
-        faseAlmacenada= fase2.getFase();
+        cant = 250*(fase.getFase()-faseAlmacenada);
+        faseAlmacenada= fase.getFase();
         return cant;
     }
 
     @Override
     public void crear() {
+        GeneradorDiamante fabDiamante = new GeneradorDiamante(fase.getFase());
+        militares.setDiamantes(fabDiamante);
     }
 
 }

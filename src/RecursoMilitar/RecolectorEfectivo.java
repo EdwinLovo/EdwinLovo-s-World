@@ -7,6 +7,7 @@ package RecursoMilitar;
 
 import Militar.Militar;
 import Singletons.Fase;
+import Singletons.SingletonMilitar;
 
 /**
  *
@@ -14,6 +15,7 @@ import Singletons.Fase;
  */
 public class RecolectorEfectivo implements Militar{
     int faseAlmacenada;
+    SingletonMilitar militares= SingletonMilitar.getInstance();
     Fase fase = Fase.getInstance();
 
     public RecolectorEfectivo(int faseAlmacenada) {
@@ -43,6 +45,8 @@ public class RecolectorEfectivo implements Militar{
 
     @Override
     public void crear() {
+        RecolectorEfectivo fabEfectivo = new RecolectorEfectivo(fase.getFase());
+        militares.setEfectivos(fabEfectivo);
     }
     
 }

@@ -57,7 +57,7 @@ public class SingletonMilitar {
     }
 
     public void setVehiculos(FabricaVehiculo val) {
-        this.vehiculos.put(c, val);
+        this.vehiculos.put(v, val);
         v=v+1;
     }
 
@@ -66,7 +66,7 @@ public class SingletonMilitar {
     }
 
     public void setEscuadrones(FabricaEscuadron val) {
-        this.escuadrones.put(c, val);
+        this.escuadrones.put(es, val);
         es=es+1;
     }
 
@@ -75,7 +75,7 @@ public class SingletonMilitar {
     }
 
     public void setDiamantes(GeneradorDiamante val) {
-        this.diamantes.put(c, val);
+        this.diamantes.put(d, val);
         d=d+1;
     }
 
@@ -84,7 +84,7 @@ public class SingletonMilitar {
     }
 
     public void setOros(RecolectorOro val) {
-        this.oros.put(c, val);
+        this.oros.put(o, val);
         o=o+1;
     }
 
@@ -93,7 +93,7 @@ public class SingletonMilitar {
     }
 
     public void setEfectivos(RecolectorEfectivo val) {
-        this.efectivos.put(c, val);
+        this.efectivos.put(ef, val);
         ef=ef+1;
     }
 
