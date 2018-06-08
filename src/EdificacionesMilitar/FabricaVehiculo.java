@@ -14,12 +14,20 @@ import Singletons.SingletonMilitar;
  * @author EdwinLovo
  */
 public class FabricaVehiculo implements Militar{
-    int faseAlmacenada;
+    int faseAlmacenada, vida=500;
     Fase fase = Fase.getInstance();
     SingletonMilitar vehiculos = SingletonMilitar.getInstance();
 
     public FabricaVehiculo(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
+    }
+    
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
     }
 
     public int getFaseAlmacenada() {
