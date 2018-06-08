@@ -44,9 +44,14 @@ public class GeneradorDiamante implements Militar{
     }
 
     @Override
-    public void crear() {
-        GeneradorDiamante fabDiamante = new GeneradorDiamante(fase.getFase());
-        militares.setDiamantes(fabDiamante);
+    public void crear(int r1, int r2, int r3) {
+        if (r1>=200 && r2>=200){
+            GeneradorDiamante fabDiamante = new GeneradorDiamante(fase.getFase());
+            militares.setDiamantes(fabDiamante);
+        }
+        else{
+            System.out.println("Recursos insuficientes");
+        }
     }
 
 }

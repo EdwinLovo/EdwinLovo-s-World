@@ -14,5 +14,5 @@ import Singletons.Fase;
 public interface Militar {
     public void atacar();
     public int recolectar();
-    public void crear();
+    public void crear(int r1, int r2, int r3);
 }

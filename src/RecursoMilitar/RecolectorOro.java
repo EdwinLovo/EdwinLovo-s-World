@@ -44,8 +44,14 @@ public class RecolectorOro implements Militar{
     }
 
     @Override
-    public void crear() {
-        RecolectorOro fabOro = new RecolectorOro(fase.getFase());
-        militares.setOros(fabOro);
+    public void crear(int r1, int r2, int r3) {
+        if (r1>=200 && r2>=200){
+            RecolectorOro fabOro = new RecolectorOro(fase.getFase());
+            militares.setOros(fabOro);
+        }
+        else{
+            System.out.println("Recursos insuficientes");
+        }
+        
     }
 }

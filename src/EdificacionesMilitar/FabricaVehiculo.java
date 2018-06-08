@@ -24,7 +24,7 @@ public class FabricaVehiculo implements Militar{
     }
 
     @Override
-    public void crear() {
+    public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
     }
     

@@ -5,10 +5,13 @@
  */
 package COT;
 
+import Singletons.SingletonMilitar;
+
 /**
  *
  * @author EdwinLovo
  */
 public class Jugador {
-    String raza;
+    SingletonMilitar m = SingletonMilitar.getInstance();
+    
 }

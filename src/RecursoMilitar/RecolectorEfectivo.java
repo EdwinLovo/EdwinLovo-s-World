@@ -41,12 +41,18 @@ public class RecolectorEfectivo implements Militar{
         cant = 250 * (fase.getFase() - faseAlmacenada);
         faseAlmacenada = fase.getFase();
         return cant;
+        
     }
 
     @Override
-    public void crear() {
-        RecolectorEfectivo fabEfectivo = new RecolectorEfectivo(fase.getFase());
-        militares.setEfectivos(fabEfectivo);
+    public void crear(int r1, int r2, int r3) {
+        if (r1>=200 && r2>=200){
+            RecolectorEfectivo fabEfectivo = new RecolectorEfectivo(fase.getFase());
+            militares.setEfectivos(fabEfectivo);
+        }
+        else{
+            System.out.println("Recursos insuficientes");
+        }
     }
     
 }

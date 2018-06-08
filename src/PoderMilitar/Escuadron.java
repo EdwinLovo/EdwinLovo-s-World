@@ -24,6 +24,6 @@ public class Escuadron implements Militar{
     }
 
     @Override
-    public void crear() {
+    public void crear(int r1, int r2, int r3) {
     }
 }
