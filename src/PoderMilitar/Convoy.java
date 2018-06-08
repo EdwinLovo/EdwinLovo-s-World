@@ -13,7 +13,16 @@ import Singletons.Fase;
  * @author EdwinLovo
  */
 public class Convoy implements Militar{
+    int vida=500;
 
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+    
     @Override
     public void atacar() {
         System.out.println("Atacar");
