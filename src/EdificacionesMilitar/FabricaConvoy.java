@@ -7,13 +7,29 @@ package EdificacionesMilitar;
 
 import Militar.Militar;
 import Singletons.Fase;
+import Singletons.SingletonMilitar;
 
 /**
  *
  * @author EdwinLovo
  */
 public class FabricaConvoy implements Militar{
+    int faseAlmacenada;
+    Fase fase = Fase.getInstance();
+    SingletonMilitar convoys = SingletonMilitar.getInstance();
 
+    public FabricaConvoy(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+
+    public int getFaseAlmacenada() {
+        return faseAlmacenada;
+    }
+
+    public void setFaseAlmacenada(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+    
     @Override
     public void atacar() {
     }
@@ -26,6 +42,13 @@ public class FabricaConvoy implements Militar{
     @Override
     public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
+        if(r1>=200 && r2>=200){
+            FabricaConvoy conv = new FabricaConvoy(fase.getFase());
+            convoys.setConvoys(conv);
+        }
+        else{
+            System.out.println("Recursos insuficientes");
+        }
     }
     
 }

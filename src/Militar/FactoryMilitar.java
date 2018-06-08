@@ -33,13 +33,13 @@ public class FactoryMilitar implements AbstractFactory{
             case "diamante":
                 return new GeneradorDiamante(fase.getFase());
             case "convoy":
-                return new FabricaConvoy();
+                return new FabricaConvoy(fase.getFase());
             case "vehiculo":
-                return new FabricaVehiculo();
+                return new FabricaVehiculo(fase.getFase());
             case "escuadron":
-                return new FabricaEscuadron();
+                return new FabricaEscuadron(fase.getFase());
             case "rambo":
-                return new FabricaRambo();
+                return new FabricaRambo(fase.getFase());
         }
         return null;
     }
