@@ -15,9 +15,6 @@ import Singletons.Fase;
 public class Convoy implements Militar{
     int vida=500,pAta=100;
 
-    public Convoy() {
-    }
-
     public int getpAta() {
         return pAta;
     }

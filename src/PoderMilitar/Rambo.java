@@ -13,8 +13,16 @@ import Singletons.Fase;
  * @author EdwinLovo
  */
 public class Rambo implements Militar{
-    int vida=500;
+    int vida=500,pAta=100;
 
+    public int getpAta() {
+        return pAta;
+    }
+
+    public void setpAta(int pAta) {
+        this.pAta = pAta;
+    }
+    
     public int getVida() {
         return vida;
     }

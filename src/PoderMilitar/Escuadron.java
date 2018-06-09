@@ -15,9 +15,6 @@ import Singletons.Fase;
 public class Escuadron implements Militar{
     int vida=500,pAta=100;
 
-    public Escuadron() {
-    }
-
     public int getpAta() {
         return pAta;
     }
