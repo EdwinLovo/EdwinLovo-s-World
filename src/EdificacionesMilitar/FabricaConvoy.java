@@ -6,17 +6,21 @@
 package EdificacionesMilitar;
 
 import Militar.Militar;
+import PoderMilitar.Convoy;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author EdwinLovo
  */
 public class FabricaConvoy implements Militar{
-    int faseAlmacenada, vida=500;
+    int faseAlmacenada, vida=500,ind=1;
     Fase fase = Fase.getInstance();
-    SingletonMilitar convoys = SingletonMilitar.getInstance();
+    SingletonMilitar militares = SingletonMilitar.getInstance();
+    private Map<Integer,Convoy> convoys = new HashMap<Integer,Convoy>();
 
     public FabricaConvoy(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
@@ -51,8 +55,9 @@ public class FabricaConvoy implements Militar{
     public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
         if(r1>=200 && r2>=200){
-            FabricaConvoy conv = new FabricaConvoy(fase.getFase());
-            convoys.setConvoys(conv);
+            Convoy conv = new Convoy();
+            convoys.put(ind, conv);
+            ind+=1;
         }
         else{
             System.out.println("Recursos insuficientes");
