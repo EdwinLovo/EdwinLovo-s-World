@@ -13,8 +13,19 @@ import Singletons.Fase;
  * @author EdwinLovo
  */
 public class Escuadron implements Militar{
-    int vida=500;
+    int vida=500,pAta=100;
 
+    public Escuadron() {
+    }
+
+    public int getpAta() {
+        return pAta;
+    }
+
+    public void setpAta(int pAta) {
+        this.pAta = pAta;
+    }
+    
     public int getVida() {
         return vida;
     }

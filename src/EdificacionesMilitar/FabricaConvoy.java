@@ -26,6 +26,14 @@ public class FabricaConvoy implements Militar{
         this.faseAlmacenada = faseAlmacenada;
     }
 
+    public Map<Integer, Convoy> getConvoys() {
+        return convoys;
+    }
+
+    public void setConvoys(Map<Integer, Convoy> convoys) {
+        this.convoys = convoys;
+    }
+    
     public int getVida() {
         return vida;
     }

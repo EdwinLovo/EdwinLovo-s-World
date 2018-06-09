@@ -6,20 +6,32 @@
 package EdificacionesMilitar;
 
 import Militar.Militar;
+import PoderMilitar.Escuadron;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author EdwinLovo
  */
 public class FabricaEscuadron implements Militar{
-    int faseAlmacenada, vida =500;
+    int faseAlmacenada, vida =500,ind=1;
     Fase fase = Fase.getInstance();
-    SingletonMilitar escuadrones = SingletonMilitar.getInstance();
+    SingletonMilitar militares = SingletonMilitar.getInstance();
+    private Map<Integer,Escuadron> escuadrones = new HashMap<Integer,Escuadron>();
 
     public FabricaEscuadron(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
+    }
+
+    public Map<Integer, Escuadron> getEscuadrones() {
+        return escuadrones;
+    }
+
+    public void setEscuadrones(Map<Integer, Escuadron> escuadrones) {
+        this.escuadrones = escuadrones;
     }
     
     public int getVida() {
@@ -51,8 +63,9 @@ public class FabricaEscuadron implements Militar{
     public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
         if(r1>=200 && r2>=200){
-            FabricaEscuadron esc = new FabricaEscuadron(fase.getFase());
-            escuadrones.setEscuadrones(esc);
+            Escuadron esc = new Escuadron();
+            escuadrones.put(ind, esc);
+            ind+=1;
         }
         else{
             System.out.println("Recursos insuficientes");
