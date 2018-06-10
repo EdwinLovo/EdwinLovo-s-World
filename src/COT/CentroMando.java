@@ -5,12 +5,16 @@
  */
 package COT;
 
+import Singletons.SingletonMilitar;
+import Singletons.Fase;
 /**
  *
  * @author EdwinLovo
  */
 public class CentroMando {
     int recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
+    SingletonMilitar militares= SingletonMilitar.getInstance();
+    Fase fase = Fase.getInstance();
 
     public CentroMando(int recurso1, int recurso2, int recurso3, int vida, int limite1, int limite2, int limite3) {
         this.recurso1 = recurso1;
@@ -22,6 +26,14 @@ public class CentroMando {
         this.limite3 = limite3;
     }
 
+    public SingletonMilitar getMilitares() {
+        return militares;
+    }
+
+    public Fase getFase() {
+        return fase;
+    }
+    
     public int getLimite1() {
         return limite1;
     }

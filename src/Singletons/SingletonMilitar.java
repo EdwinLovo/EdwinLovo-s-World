@@ -109,7 +109,5 @@ public class SingletonMilitar {
             System.out.println("Soldado ya existente");
         }
     }
-    
-    
 }
 

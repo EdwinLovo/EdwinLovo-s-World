@@ -5,6 +5,7 @@
  */
 package Menu;
 
+import COT.CentroMando;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Scanner;
  */
 public class Menu {
     
-    public static Menu menu;
+    public static Menu menu = Menu.getInstance();
 
     public Menu() {
     }
@@ -25,9 +26,10 @@ public class Menu {
         return menu;
     }
     
-    public String menuRaza(){
-        int opc=0;
-        System.out.println("----------RAZAS----------");
+    public int menuRaza(){
+        System.out.println("fin1");
+        int opc;
+        System.out.println("\n\n----------RAZAS----------");
         System.out.println("1. Militar");
         System.out.println("2. Revolucionario");
         System.out.println("3. Terrorista");
@@ -35,33 +37,35 @@ public class Menu {
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
         opc = leer.nextInt();
-        
+        System.out.println(opc);
         switch(opc){
             case 1:
                 System.out.println("Crear militar");
-                return "militar";
+                System.out.println("fin2");
+                System.out.println(opc);
+                return opc;
             case 2:
                 System.out.println("Crear revolucionario");
-                return "revolucionario";
+                return opc;
             case 3:
                 System.out.println("Crear terrorista");
-                return "terrorista";
+                return opc;
             default:
                 System.out.println("Se elegio militar por defecto");
+                return 1;
         }
-        return "militar";
     }
     
-    public void menuMilitar(){
+    public void menuMilitar(CentroMando cm){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
-        System.out.println("------TURNO JUGADOR 1------");
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
         System.out.println("6. Crear vehiculos");
+        System.out.println("7. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -78,6 +82,7 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
+                cm.setRecurso2(cm.getMilitares().getEfectivos().get(1).recolectar());
                 System.out.println("recoger");
                 break;
             case 5:
@@ -94,13 +99,13 @@ public class Menu {
     public void menuRevolucionario(){
         int ed1 = 1, ed2 = 1, opc = 0;
         int oro, diamante, efectivo;
-        System.out.println("------TURNO JUGADOR 2------");
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
         System.out.println("6. Crear vehiculos");
+        System.out.println("7. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -133,7 +138,6 @@ public class Menu {
     public void menuTerrorista(){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
-        System.out.println("------TURNO JUGADOR 2------");
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
@@ -172,32 +176,42 @@ public class Menu {
     public void menuJugar(){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
-        String j1,j2;
+        CentroMando cm1,cm2;
+        int j1, j2=0;
+        j1=menu.menuRaza();
+        cm1 = new CentroMando(2,3,4,5,6,7,8);
+        //System.out.println("Jugador 1: "+j1);
+        j2= menu.menuRaza();
+        cm2 = new CentroMando(1,2,3,4,5,6,7);
+        //System.out.println("Jugador 2: "+j2);
+        //System.out.println("FIN");
         do{
-            j1=menu.menuRaza();
-            j2=menu.menuRaza();
-            
-            if (null!=j1)switch (j1) {
-                case "militar":
-                    menu.menuMilitar();
+            System.out.println("\n\n------TURNO JUGADOR 1------");
+            switch (j1) {
+                case 1:
+                    menu.menuMilitar(cm1);
                     break;
-                case "revolucionario":
+                case 2:
                     menu.menuRevolucionario();
                     break;
-                default:
+                case 3:
                     menu.menuTerrorista();
+                    break;
+                default:
                     break;
             }
-            
-            if (null!=j2)switch (j2) {
-                case "militar":
-                    menu.menuMilitar();
+            System.out.println("\n\n------TURNO JUGADOR 2------");
+            switch (j2) {
+                case 1:
+                    menu.menuMilitar(cm2);
                     break;
-                case "revolucionario":
+                case 2:
                     menu.menuRevolucionario();
                     break;
-                default:
+                case 3:
                     menu.menuTerrorista();
+                    break;
+                default:
                     break;
             }
             
