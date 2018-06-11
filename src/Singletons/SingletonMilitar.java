@@ -20,7 +20,7 @@ import java.util.Map;
  * @author EdwinLovo
  */
 public class SingletonMilitar {
-    int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;;
+    int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
     private static SingletonMilitar instance;
     Fase fase = Fase.getInstance();
     private Map<Integer,FabricaConvoy> convoys = new HashMap<Integer,FabricaConvoy>();
@@ -33,7 +33,7 @@ public class SingletonMilitar {
     
     public static SingletonMilitar getInstance(){
         if(instance==null){
-            instance= new SingletonMilitar(1,2,3,4,5,6,7);
+            instance= new SingletonMilitar(500,400,300,800,10000,6000,7000);
         }
         else{
             System.out.println("Objeto ya existente");
@@ -64,7 +64,7 @@ public class SingletonMilitar {
     }
 
     public void setRecurso1(int recurso1) {
-        if(recurso1<=limite1){
+        if((recurso1+this.recurso1)<=limite1){
             this.recurso1 = recurso1+this.recurso1;
         }
         else{
@@ -77,7 +77,7 @@ public class SingletonMilitar {
     }
 
     public void setRecurso2(int recurso2) {
-        if(recurso2<=limite2){
+        if((recurso2+this.recurso2)<=limite2){
             this.recurso2 = recurso2+this.recurso2;
         }
         else{
@@ -90,7 +90,7 @@ public class SingletonMilitar {
     }
 
     public void setRecurso3(int recurso3) {
-        if(recurso3<=limite3){
+        if((recurso3+this.recurso3)<=limite3){
             this.recurso3 = recurso3+this.recurso3;
         }
         else{

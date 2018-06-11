@@ -76,7 +76,7 @@ public class Menu {
     public void menuMilitar(){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
-        System.out.println("Recurso 1: "+militar.getRecurso1()+" Recurso 2: "+militar.getRecurso2()+" Recurso 3: "+militar.getRecurso3());
+        
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
@@ -197,6 +197,10 @@ public class Menu {
     }
     
     public void menuJugar(){
+        militar.setVida(500);
+        militar.setRecurso1(500);
+        militar.setRecurso2(500);
+        militar.setRecurso3(500);
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
         //CentroMando cm1,cm2;
@@ -204,10 +208,7 @@ public class Menu {
         j1=menu.menuRaza();
         if(j1==1){
             SingletonMilitar militar= SingletonMilitar.getInstance();
-            militar.setVida(500);
-            militar.setRecurso1(500);
-            militar.setRecurso2(500);
-            militar.setRecurso3(500);
+            
         }
         //cm1 = new CentroMando(2,3,4,5,6,7,8);
         //System.out.println("Jugador 1: "+j1);
@@ -225,7 +226,7 @@ public class Menu {
         
         do{
             System.out.println("\n\n------TURNO JUGADOR 1------");
-            
+            System.out.println("Recurso 1: "+militar.getRecurso1()+" Recurso 2: "+militar.getRecurso2()+" Recurso 3: "+militar.getRecurso3());
             switch (j1) {
                 case 1:
                     menu.menuMilitar();
