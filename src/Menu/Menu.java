@@ -76,6 +76,7 @@ public class Menu {
     public void menuMilitar(){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
+        System.out.println("Recurso 1: "+militar.getRecurso1()+" Recurso 2: "+militar.getRecurso2()+" Recurso 3: "+militar.getRecurso3());
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
@@ -203,18 +204,28 @@ public class Menu {
         j1=menu.menuRaza();
         if(j1==1){
             SingletonMilitar militar= SingletonMilitar.getInstance();
+            militar.setVida(500);
+            militar.setRecurso1(500);
+            militar.setRecurso2(500);
+            militar.setRecurso3(500);
         }
         //cm1 = new CentroMando(2,3,4,5,6,7,8);
         //System.out.println("Jugador 1: "+j1);
         j2= menu.menuRaza();
         if(j1==2){
             SingletonMilitar militar= SingletonMilitar.getInstance();
+            militar.setVida(500);
+            militar.setRecurso1(500);
+            militar.setRecurso2(500);
+            militar.setRecurso3(500);
         }
         //cm2 = new CentroMando(1,2,3,4,5,6,7);
         //System.out.println("Jugador 2: "+j2);
         //System.out.println("FIN");
+        
         do{
             System.out.println("\n\n------TURNO JUGADOR 1------");
+            
             switch (j1) {
                 case 1:
                     menu.menuMilitar();
@@ -323,15 +334,15 @@ public class Menu {
                 break;
             case 2:
                 Militar escuadron = factory1.getMilitar("escuadron");
-                militar.getEscuadrones().get(1).crear(opc, opc, opc);
+                militar.getEscuadrones().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                 break;
             case 3:
                 Militar convoy = factory1.getMilitar("convoy");
-                militar.getConvoys().get(1).crear(opc, opc, opc);
+                militar.getConvoys().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                 break;
             case 4:
                 Militar vehiculo = factory1.getMilitar("vehiculo");
-                militar.getVehiculos().get(1).crear(opc, opc, opc);
+                militar.getVehiculos().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                 break;
             default:
                 break;
