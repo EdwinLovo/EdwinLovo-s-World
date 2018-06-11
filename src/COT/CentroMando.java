@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
 package COT;
 
 import Singletons.SingletonMilitar;
-import Singletons.Fase;
+import Singletons.Fase;*/
 /**
  *
  * @author EdwinLovo
  */
+/*
 public class CentroMando {
     int recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
     SingletonMilitar militares= SingletonMilitar.getInstance();
@@ -26,6 +28,14 @@ public class CentroMando {
         this.limite3 = limite3;
     }
 
+    public void setMilitares(SingletonMilitar militar) {
+        
+    }
+
+    public void setFase(Fase fase) {
+        this.fase = fase;
+    }
+    
     public SingletonMilitar getMilitares() {
         return militares;
     }
@@ -150,3 +160,4 @@ public class CentroMando {
         }
     }
 }
+*/
