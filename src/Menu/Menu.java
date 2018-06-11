@@ -230,6 +230,7 @@ public class Menu {
     
     public void contruirFabMili(){
         int opc;
+        SingletonMilitar militares= SingletonMilitar.getInstance();
         System.out.println("\n---MENU CONTRUIR FABRICAS DE MILITAR---\n");
         System.out.println("1. Fabrica Vehiculos");
         System.out.println("2. Fabrica Convoy");
@@ -247,6 +248,7 @@ public class Menu {
             case 1:
                 Militar vehiculo = factory1.getMilitar("vehiculo");
                 
+                //militares.setVehiculos(vehiculo);
                 break;
             case 2:
                 break;
