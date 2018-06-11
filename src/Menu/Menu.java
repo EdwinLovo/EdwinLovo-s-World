@@ -7,8 +7,13 @@ package Menu;
 
 import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
+import EdificacionesMilitar.FabricaConvoy;
+import EdificacionesMilitar.FabricaEscuadron;
+import EdificacionesMilitar.FabricaRambo;
 import EdificacionesMilitar.FabricaVehiculo;
 import Militar.Militar;
+import PoderMilitar.Convoy;
+import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import java.util.Scanner;
 
@@ -19,7 +24,9 @@ import java.util.Scanner;
 public class Menu {
     AbstractFactory factory1 = FactoryProducer.getFactory("militar");
     public static Menu menu = Menu.getInstance();
-
+    SingletonMilitar militar = SingletonMilitar.getInstance();
+    Fase fase = Fase.getInstance();
+    
     public Menu() {
     }
     
@@ -246,15 +253,20 @@ public class Menu {
         
         switch (opc) {
             case 1:
-                Militar vehiculo = factory1.getMilitar("vehiculo");
-                
-                //militares.setVehiculos(vehiculo);
+                FabricaVehiculo fabVehi = new FabricaVehiculo(fase.getFase());
+                militar.setVehiculos(fabVehi);
                 break;
             case 2:
+                FabricaConvoy fabCon = new FabricaConvoy(fase.getFase());
+                militar.setConvoys(fabCon);
                 break;
             case 3:
+                FabricaEscuadron fabEsc = new FabricaEscuadron(fase.getFase());
+                militar.setEscuadrones(fabEsc);
                 break;
             case 4:
+                FabricaRambo ram = new FabricaRambo(fase.getFase());
+                militar.setRambos(ram);
                 break;
             case 5:
                 break;

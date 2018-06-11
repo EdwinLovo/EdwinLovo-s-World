@@ -14,7 +14,7 @@ import Singletons.Fase;
  */
 public class Vehiculo implements Militar{
     int vida=500,pAta=100;
-
+/*
     public int getpAta() {
         return pAta;
     }
@@ -29,7 +29,7 @@ public class Vehiculo implements Militar{
 
     public void setVida(int vida) {
         this.vida = vida;
-    }
+    }*/
     
     @Override
     public void atacar() {
@@ -43,5 +43,15 @@ public class Vehiculo implements Militar{
 
     @Override
     public void crear(int r1, int r2, int r3) {
+    }
+    
+    @Override
+    public void setVida(int vida) {
+        this.vida=vida;
+    }
+
+    @Override
+    public int getVida() {
+        return vida;
     }
 }
