@@ -13,7 +13,7 @@ import Singletons.SingletonMilitar;
  *
  * @author EdwinLovo
  */
-public class GeneradorDiamante implements Militar{
+public class GeneradorDiamante{
     int faseAlmacenada,vida=500;
     SingletonMilitar militares= SingletonMilitar.getInstance();
     Fase fase = Fase.getInstance();
@@ -37,12 +37,12 @@ public class GeneradorDiamante implements Militar{
     public void setFaseAlmacenada(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
-    
+    /*
     @Override
     public void atacar() {
     }
 
-    @Override
+    @Override*/
     public int recolectar() {
         int cant;
         
@@ -50,8 +50,8 @@ public class GeneradorDiamante implements Militar{
         faseAlmacenada= fase.getFase();
         return cant;
     }
-
-    @Override
+/*
+    @Override*/
     public void crear(int r1, int r2, int r3) {
         if (r1>=200 && r2>=200){
             GeneradorDiamante fabDiamante = new GeneradorDiamante(fase.getFase());

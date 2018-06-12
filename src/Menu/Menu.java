@@ -201,6 +201,7 @@ public class Menu {
         militar.setRecurso1(500);
         militar.setRecurso2(500);
         militar.setRecurso3(500);
+        GeneradorDiamante diamantes = new GeneradorDiamante(fase.getFase());
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
         //CentroMando cm1,cm2;
@@ -254,8 +255,11 @@ public class Menu {
                 default:
                     break;
             }
+            System.out.println("\n------FASE "+fase.getFase()+" TERMINADA------\n");
             
-            System.out.println("\n------FASE TERMINADA------\n");
+            militar.setRecurso3(diamantes.recolectar());
+            fase.setFase(fase.getFase()+1);
+            
         }while(ed1!=0 && ed2!=0);
     }
     

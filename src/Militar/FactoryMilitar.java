@@ -6,13 +6,10 @@
 package Militar;
 
 import AbstractFactory.AbstractFactory;
-import EdificacionesMilitar.FabricaConvoy;
-import EdificacionesMilitar.FabricaEscuadron;
-import EdificacionesMilitar.FabricaRambo;
-import EdificacionesMilitar.FabricaVehiculo;
-import RecursoMilitar.GeneradorDiamante;
-import RecursoMilitar.RecolectorEfectivo;
-import RecursoMilitar.RecolectorOro;
+import PoderMilitar.Convoy;
+import PoderMilitar.Escuadron;
+import PoderMilitar.Rambo;
+import PoderMilitar.Vehiculo;
 import Revolucionario.Revolucionario;
 import Singletons.Fase;
 import Terrorista.Terrorista;
@@ -26,20 +23,20 @@ public class FactoryMilitar implements AbstractFactory{
     @Override
     public Militar getMilitar(String type) {
         switch (type){
-            case "efectivo":
+            /*case "efectivo":
                 return new RecolectorEfectivo(fase.getFase());
             case "oro":
                 return new RecolectorOro(fase.getFase());
             case "diamante":
-                return new GeneradorDiamante(fase.getFase());
-            /*case "convoy":
-                return new FabricaConvoy(fase.getFase());
+                return new GeneradorDiamante(fase.getFase());*/
+            case "convoy":
+                return new Convoy();
             case "vehiculo":
-                return new FabricaVehiculo(fase.getFase());
+                return new Vehiculo();
             case "escuadron":
-                return new FabricaEscuadron(fase.getFase());
+                return new Escuadron();
             case "rambo":
-                return new FabricaRambo(fase.getFase());*/
+                return new Rambo();
         }
         return null;
     }
