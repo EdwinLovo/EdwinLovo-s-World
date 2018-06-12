@@ -366,7 +366,9 @@ public class Menu {
         switch (opc) {
             case 1:
                 Militar rambo = factory1.getMilitar("rambo");
-                militar.getRambos()[0].setRambo(rambo);
+                militar.getRambos()[0].crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                //militar.getRambos()[0].setRambo(rambo);
+                System.out.println("Tropa RAMBO creada");
                 break;
             case 2:
                 Militar escuadron = factory1.getMilitar("escuadron");
