@@ -277,24 +277,59 @@ public class Menu {
         
         switch (opc) {
             case 1:
-                FabricaVehiculo fabVehi = new FabricaVehiculo(fase.getFase());
-                militar.setVehiculos(fabVehi);
-                System.out.println("fabve creado");
+                if (militar.getRecurso1()>=700 && militar.getRecurso2()>=600 && militar.getRecurso3()>=500){
+                    FabricaVehiculo fabVehi = new FabricaVehiculo(fase.getFase());
+                    militar.setVehiculos(fabVehi);
+                    militares.setRecurso1(-700);
+                    militares.setRecurso2(-600);
+                    militares.setRecurso3(-500);
+                    System.out.println("fabve creado");
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
                 break;
             case 2:
-                FabricaConvoy fabCon = new FabricaConvoy(fase.getFase());
-                militar.setConvoys(fabCon);
-                System.out.println("fabco creado");
+                if (militar.getRecurso1()>=900 && militar.getRecurso2()>=900 && militar.getRecurso3()>=800){
+                    FabricaConvoy fabCon = new FabricaConvoy(fase.getFase());
+                    militar.setConvoys(fabCon);
+                    System.out.println("fabco creado");
+                    militares.setRecurso1(-900);
+                    militares.setRecurso2(-900);
+                    militares.setRecurso3(-800);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
                 break;
             case 3:
-                FabricaEscuadron fabEsc = new FabricaEscuadron(fase.getFase());
-                militar.setEscuadrones(fabEsc);
-                System.out.println("fabes creado");
+                if (militar.getRecurso1()>=1000 && militar.getRecurso2()>=800 && militar.getRecurso3()>=700){
+                    FabricaEscuadron fabEsc = new FabricaEscuadron(fase.getFase());
+                    militar.setEscuadrones(fabEsc);
+                    System.out.println("fabes creado");
+                    militares.setRecurso1(-1000);
+                    militares.setRecurso2(-800);
+                    militares.setRecurso3(-700);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
                 break;
             case 4:
-                FabricaRambo ram = new FabricaRambo(fase.getFase());
-                militar.setRambos(ram);
-                System.out.println("fabRambo creado");
+                if (militar.getRecurso1()>=1700 && militar.getRecurso2()>=1400 && militar.getRecurso3()>=1200){
+                    FabricaRambo ram = new FabricaRambo(fase.getFase());
+                    militar.setRambos(ram);
+                    System.out.println("fabRambo creado");
+                    militares.setRecurso1(-1700);
+                    militares.setRecurso2(-1400);
+                    militares.setRecurso3(-1200);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
                 break;
             case 5:
                 break;
