@@ -90,6 +90,7 @@ public class Menu {
 
         switch (opc) {
             case 1:
+                menu.contruirFabMili();
                 System.out.println("construir");
                 break;
             case 2:
@@ -99,9 +100,11 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
+                menu.recogerRecMili();
                 System.out.println("recoger");
                 break;
             case 5:
+                menu.entrenarMili();
                 System.out.println("entrenar");
                 break;
             case 6:
@@ -167,7 +170,7 @@ public class Menu {
 
         switch (opc) {
             case 1:
-                menu.contruirFabMili();
+                
                 System.out.println("construir");
                 break;
             case 2:
@@ -177,11 +180,11 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
-                menu.recogerRecMili();
+                
                 System.out.println("recoger");
                 break;
             case 5:
-                menu.entrenarMili();
+                
                 System.out.println("entrenar");
                 break;
             case 6:
@@ -264,18 +267,22 @@ public class Menu {
             case 1:
                 FabricaVehiculo fabVehi = new FabricaVehiculo(fase.getFase());
                 militar.setVehiculos(fabVehi);
+                System.out.println("fabve creado");
                 break;
             case 2:
                 FabricaConvoy fabCon = new FabricaConvoy(fase.getFase());
                 militar.setConvoys(fabCon);
+                System.out.println("fabco creado");
                 break;
             case 3:
                 FabricaEscuadron fabEsc = new FabricaEscuadron(fase.getFase());
                 militar.setEscuadrones(fabEsc);
+                System.out.println("fabes creado");
                 break;
             case 4:
                 FabricaRambo ram = new FabricaRambo(fase.getFase());
                 militar.setRambos(ram);
+                System.out.println("fabRambo creado");
                 break;
             case 5:
                 break;
