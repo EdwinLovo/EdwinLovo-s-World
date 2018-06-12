@@ -46,7 +46,7 @@ public class GeneradorDiamante{
     public int recolectar() {
         int cant;
         
-        cant = 250*(fase.getFase()-faseAlmacenada);
+        cant = 500*(fase.getFase()-faseAlmacenada);
         faseAlmacenada= fase.getFase();
         return cant;
     }

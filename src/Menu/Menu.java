@@ -25,6 +25,7 @@ import java.util.Scanner;
  * @author EdwinLovo
  */
 public class Menu {
+    int est1=0,est2=0,est3=0;
     AbstractFactory factory1 = FactoryProducer.getFactory("militar");
     public static Menu menu = Menu.getInstance();
     SingletonMilitar militar = SingletonMilitar.getInstance();
@@ -82,7 +83,7 @@ public class Menu {
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
-        System.out.println("6. Crear vehiculos");
+        System.out.println("6. Mejorar Centro de Mando");
         System.out.println("7. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
@@ -109,7 +110,8 @@ public class Menu {
                 System.out.println("entrenar");
                 break;
             case 6:
-                System.out.println("crear");
+                menu.mejorarCM();
+                System.out.println("Mejora nivel hecha");
                 break;
             default:
                 System.out.println("");
@@ -197,10 +199,7 @@ public class Menu {
     }
     
     public void menuJugar(){
-        militar.setVida(500);
-        militar.setRecurso1(500);
-        militar.setRecurso2(500);
-        militar.setRecurso3(500);
+        
         GeneradorDiamante diamantes = new GeneradorDiamante(fase.getFase());
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
@@ -216,10 +215,7 @@ public class Menu {
         j2= menu.menuRaza();
         if(j1==2){
             SingletonMilitar militar= SingletonMilitar.getInstance();
-            militar.setVida(500);
-            militar.setRecurso1(500);
-            militar.setRecurso2(500);
-            militar.setRecurso3(500);
+            
         }
         //cm2 = new CentroMando(1,2,3,4,5,6,7);
         //System.out.println("Jugador 2: "+j2);
@@ -352,5 +348,18 @@ public class Menu {
             default:
                 break;
         }
+    }
+    
+    public void mejorarCM(){
+        if(est1==0){
+          militar.mejora1(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+        }
+        else if(est1==1){
+            militar.mejora2(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+        }
+        else if(est1==2){
+            militar.mejora3(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+        }
+        est1=est1+1;
     }
 }

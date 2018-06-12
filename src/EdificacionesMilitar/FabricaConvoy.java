@@ -66,6 +66,8 @@ public class FabricaConvoy {
             Convoy conv = new Convoy();
             convoys.put(ind, conv);
             ind+=1;
+            militares.setRecurso1(-200);
+            militares.setRecurso2(-200);
             System.out.println("Convoy creado");
         }
         else{

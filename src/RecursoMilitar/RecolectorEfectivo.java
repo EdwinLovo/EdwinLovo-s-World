@@ -46,7 +46,7 @@ public class RecolectorEfectivo implements Militar{
     public int recolectar() {
         int cant;
 
-        cant = 250 * (fase.getFase() - faseAlmacenada);
+        cant = 750 * (fase.getFase() - faseAlmacenada);
         faseAlmacenada = fase.getFase();
         return cant;
         

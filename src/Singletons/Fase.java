@@ -11,7 +11,7 @@ package Singletons;
  */
 public class Fase {
     private static Fase instance;
-    private static int fase;
+    private static int fase=1;
 
     public Fase() {
     }

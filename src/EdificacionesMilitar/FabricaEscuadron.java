@@ -66,6 +66,8 @@ public class FabricaEscuadron {
             Escuadron esc = new Escuadron();
             escuadrones.put(ind, esc);
             ind+=1;
+            militares.setRecurso1(-200);
+            militares.setRecurso2(-200);
             System.out.println("Escuadron creado");
         }
         else{

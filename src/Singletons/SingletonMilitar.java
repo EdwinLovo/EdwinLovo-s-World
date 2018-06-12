@@ -33,7 +33,7 @@ public class SingletonMilitar {
     
     public static SingletonMilitar getInstance(){
         if(instance==null){
-            instance= new SingletonMilitar(500,400,300,800,10000,6000,7000);
+            instance= new SingletonMilitar(500,500,500,800,5000,4000,3000);
         }
         else{
             System.out.println("Objeto ya existente");

@@ -66,9 +66,9 @@ public class FabricaRambo{
             Rambo ram = new Rambo();
             rambo[0]=ram;
             cr+=1;
-            militares.setRecurso1(r1-200);
-            militares.setRecurso2(r2-200);
-            militares.setRecurso3(r3-200);
+            militares.setRecurso1(-200);
+            militares.setRecurso2(-200);
+            militares.setRecurso3(-200);
             System.out.println("Rambo creado");
         }
         else{

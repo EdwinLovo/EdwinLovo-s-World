@@ -66,6 +66,8 @@ public class FabricaVehiculo{
             Vehiculo vehi = new Vehiculo();
             vehiculos.put(ind, vehi);
             ind+=1;
+            militares.setRecurso1(-200);
+            militares.setRecurso2(-200);
             System.out.println("Vehiculo creado");
         }
         else{

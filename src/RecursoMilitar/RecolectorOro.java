@@ -46,7 +46,7 @@ public class RecolectorOro implements Militar{
     public int recolectar() {
         int cant;
 
-        cant = 250 * (fase.getFase() - faseAlmacenada);
+        cant = 1000 * (fase.getFase() - faseAlmacenada);
         faseAlmacenada = fase.getFase();
         return cant;
     }
