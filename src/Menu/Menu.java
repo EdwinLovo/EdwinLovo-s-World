@@ -181,6 +181,7 @@ public class Menu {
                 System.out.println("recoger");
                 break;
             case 5:
+                menu.entrenarMili();
                 System.out.println("entrenar");
                 break;
             case 6:
@@ -294,5 +295,39 @@ public class Menu {
         r2 = oro.recolectar();
         militar.setRecurso1(r1);
         militar.setRecurso2(r2);
+    }
+    
+    public void entrenarMili(){
+        int opc;
+        System.out.println("\n---MENU ENTRENAR TROPAS O TRANSPORTE DE MILITAR---\n");
+        System.out.println("1. Entrenar Rambo");
+        System.out.println("2. Entrenar Escuadron");
+        System.out.println("3. Crear Convoy");
+        System.out.println("4. Crear Vehiculo de ataque");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc = leer.nextInt();
+        
+        switch (opc) {
+            case 1:
+                Militar rambo = factory1.getMilitar("rambo");
+                militar.getRambos()[0].setRambo(rambo);
+                break;
+            case 2:
+                Militar escuadron = factory1.getMilitar("escuadron");
+                militar.getEscuadrones().get(1).crear(opc, opc, opc);
+                break;
+            case 3:
+                Militar convoy = factory1.getMilitar("convoy");
+                militar.getConvoys().get(1).crear(opc, opc, opc);
+                break;
+            case 4:
+                Militar vehiculo = factory1.getMilitar("vehiculo");
+                militar.getVehiculos().get(1).crear(opc, opc, opc);
+                break;
+            default:
+                break;
+        }
     }
 }

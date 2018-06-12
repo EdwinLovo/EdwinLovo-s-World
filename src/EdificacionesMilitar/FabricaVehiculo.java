@@ -66,6 +66,7 @@ public class FabricaVehiculo{
             Vehiculo vehi = new Vehiculo();
             vehiculos.put(ind, vehi);
             ind+=1;
+            System.out.println("Vehiculo creado");
         }
         else{
             System.out.println("Recursos insuficientes");

@@ -20,7 +20,7 @@ public class FabricaEscuadron {
     int faseAlmacenada, vida =500,ind=1;
     Fase fase = Fase.getInstance();
     SingletonMilitar militares = SingletonMilitar.getInstance();
-    private Map<Integer,Escuadron> escuadrones = new HashMap<Integer,Escuadron>();
+    public Map<Integer,Escuadron> escuadrones = new HashMap<Integer,Escuadron>();
 
     public FabricaEscuadron(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
@@ -66,6 +66,7 @@ public class FabricaEscuadron {
             Escuadron esc = new Escuadron();
             escuadrones.put(ind, esc);
             ind+=1;
+            System.out.println("Escuadron creado");
         }
         else{
             System.out.println("Recursos insuficientes");
