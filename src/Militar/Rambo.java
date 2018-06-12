@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PoderMilitar;
+package Militar;
 
 import Militar.Militar;
 import Singletons.Fase;
@@ -12,7 +12,7 @@ import Singletons.Fase;
  *
  * @author EdwinLovo
  */
-public class Escuadron implements Militar{
+public class Rambo implements Militar{
     int vida=500,pAta=100;
 /*
     public int getpAta() {
@@ -29,8 +29,8 @@ public class Escuadron implements Militar{
 
     public void setVida(int vida) {
         this.vida = vida;
-    }*/
-    
+    }
+*/
     @Override
     public void atacar() {
         System.out.println("Atacar");

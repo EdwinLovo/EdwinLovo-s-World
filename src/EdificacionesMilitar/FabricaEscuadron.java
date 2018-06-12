@@ -6,7 +6,7 @@
 package EdificacionesMilitar;
 
 import Militar.Militar;
-import PoderMilitar.Escuadron;
+import Militar.Escuadron;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import java.util.HashMap;

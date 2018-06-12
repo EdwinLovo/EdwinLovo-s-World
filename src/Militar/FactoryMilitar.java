@@ -6,10 +6,6 @@
 package Militar;
 
 import AbstractFactory.AbstractFactory;
-import PoderMilitar.Convoy;
-import PoderMilitar.Escuadron;
-import PoderMilitar.Rambo;
-import PoderMilitar.Vehiculo;
 import Revolucionario.Revolucionario;
 import Singletons.Fase;
 import Terrorista.Terrorista;

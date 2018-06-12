@@ -9,9 +9,9 @@ import EdificacionesMilitar.FabricaConvoy;
 import EdificacionesMilitar.FabricaEscuadron;
 import EdificacionesMilitar.FabricaRambo;
 import EdificacionesMilitar.FabricaVehiculo;
-import RecursoMilitar.GeneradorDiamante;
-import RecursoMilitar.RecolectorEfectivo;
-import RecursoMilitar.RecolectorOro;
+import EdificacionesMilitar.GeneradorDiamante;
+import EdificacionesMilitar.RecolectorEfectivo;
+import EdificacionesMilitar.RecolectorOro;
 import java.util.HashMap;
 import java.util.Map;
 

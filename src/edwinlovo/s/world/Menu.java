@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Menu;
+package edwinlovo.s.world;
 
 import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
@@ -12,10 +12,10 @@ import EdificacionesMilitar.FabricaEscuadron;
 import EdificacionesMilitar.FabricaRambo;
 import EdificacionesMilitar.FabricaVehiculo;
 import Militar.Militar;
-import PoderMilitar.Convoy;
-import RecursoMilitar.GeneradorDiamante;
-import RecursoMilitar.RecolectorEfectivo;
-import RecursoMilitar.RecolectorOro;
+import Militar.Convoy;
+import EdificacionesMilitar.GeneradorDiamante;
+import EdificacionesMilitar.RecolectorEfectivo;
+import EdificacionesMilitar.RecolectorOro;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import java.util.Scanner;
