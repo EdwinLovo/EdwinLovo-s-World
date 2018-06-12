@@ -13,6 +13,9 @@ import EdificacionesMilitar.FabricaRambo;
 import EdificacionesMilitar.FabricaVehiculo;
 import Militar.Militar;
 import PoderMilitar.Convoy;
+import RecursoMilitar.GeneradorDiamante;
+import RecursoMilitar.RecolectorEfectivo;
+import RecursoMilitar.RecolectorOro;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import java.util.Scanner;
@@ -26,6 +29,9 @@ public class Menu {
     public static Menu menu = Menu.getInstance();
     SingletonMilitar militar = SingletonMilitar.getInstance();
     Fase fase = Fase.getInstance();
+    RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
+    RecolectorOro oro = new RecolectorOro(fase.getFase());
+    GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());
     
     public Menu() {
     }
@@ -161,6 +167,7 @@ public class Menu {
 
         switch (opc) {
             case 1:
+                menu.contruirFabMili();
                 System.out.println("construir");
                 break;
             case 2:
@@ -170,6 +177,7 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
+                menu.recogerRecMili();
                 System.out.println("recoger");
                 break;
             case 5:
@@ -278,5 +286,13 @@ public class Menu {
                 break;
         }
             
+    }
+    
+    public void recogerRecMili(){
+        int r1, r2;
+        r1 = efectivo.recolectar();
+        r2 = oro.recolectar();
+        militar.setRecurso1(r1);
+        militar.setRecurso2(r2);
     }
 }
