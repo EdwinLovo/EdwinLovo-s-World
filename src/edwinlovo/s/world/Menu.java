@@ -398,15 +398,22 @@ public class Menu {
         Iterator it = militar.getVehiculos().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Vehiculo "+key);
         }
+        System.out.println("Vehciulos: \n");
+        if(militar.getVehiculos().isEmpty()==true){
+            System.out.println("NO HAY \n");
+        }else{
+            menu.mostrarVehi(1);
+        }
+        
     }
     
     public void mostrarFabsEscuadron(){
         Iterator it = militar.getEscuadrones().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Escuadron "+key);
         }
     }
     
@@ -414,12 +421,35 @@ public class Menu {
         Iterator it = militar.getConvoys().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Convoy "+key);
         }
     }
     
     public void mostrarFabsRambo(){
-        System.out.println("Clave: 1 -> Valor: Rambo");
+        System.out.println("Clave: 1 -> Valor: Fabrica Rambo");
     }
-            
+    
+    public void mostrarVehi(int keyVehi){
+        Iterator it = militar.getVehiculos().get(keyVehi).getVehiculos().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void mostrarConvoy(int keyCon){
+        Iterator it = militar.getConvoys().get(keyCon).getConvoys().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void mostrarEscua(int keyEsc){
+        Iterator it = militar.getEscuadrones().get(keyEsc).getEscuadrones().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
 }
