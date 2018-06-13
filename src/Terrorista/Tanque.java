@@ -10,7 +10,7 @@ package Terrorista;
  * @author EdwinLovo
  */
 public class Tanque implements Terrorista{
-
+    int vida=500,pAta=100;
     @Override
     public void atacar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -18,12 +18,12 @@ public class Tanque implements Terrorista{
 
     @Override
     public void setVida(int vida) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.vida=vida;
     }
 
     @Override
     public int getVida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return vida;
     }
     
 }
