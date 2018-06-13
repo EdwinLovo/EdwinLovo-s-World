@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class SingletonTerrorista {
     int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
-    private static SingletonMilitar instance;
+    private static SingletonTerrorista instance;
     Fase fase = Fase.getInstance();
     private Map<Integer,FabricaBus> buses = new HashMap<Integer,FabricaBus>();
     private Map<Integer,FabricaSecta> sectas = new HashMap<Integer,FabricaSecta>();
@@ -28,9 +28,9 @@ public class SingletonTerrorista {
     private Map<Integer,RecolectorEfectivo> efectivos = new HashMap<Integer,RecolectorEfectivo>();*/
     private FabricaBinLaden[] bins = new FabricaBinLaden[1];
     
-    public static SingletonMilitar getInstance(){
+    public static SingletonTerrorista getInstance(){
         if(instance==null){
-            instance= new SingletonMilitar(500,500,500,800,5000,4000,3000);
+            instance= new SingletonTerrorista(500,500,500,800,5000,4000,3000);
         }
         return instance;
     }
