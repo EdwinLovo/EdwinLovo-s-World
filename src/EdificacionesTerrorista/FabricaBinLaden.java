@@ -11,23 +11,8 @@ import Terrorista.Terrorista;
  *
  * @author Edwinlovo
  */
-public class FabricaBinLaden implements Terrorista{
+public class FabricaBinLaden {
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
-        System.out.println("Crear");
-    }
-
-    @Override
-    public void generar() {
-    }
+    
     
 }

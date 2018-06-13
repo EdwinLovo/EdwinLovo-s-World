@@ -11,23 +11,8 @@ import Terrorista.Terrorista;
  *
  * @author EdwinLovo
  */
-public class RecolectorQuimicos implements Terrorista{
+public class RecolectorQuimicos{
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void generar() {
-    }
-
-    @Override
-    public void recolectar() {
-        System.out.println("Recolectado");
-    }
-
-    @Override
-    public void crear() {
-    }
+   
     
 }

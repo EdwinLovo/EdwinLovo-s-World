@@ -11,23 +11,8 @@ import Terrorista.Terrorista;
  *
  * @author EdwinLovo
  */
-public class GeneradorMonedas implements Terrorista{
+public class GeneradorMonedas {
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void generar() {
-    }
-
-    @Override
-    public void recolectar() {
-        System.out.println("Recolectado");
-    }
-
-    @Override
-    public void crear() {
-    }
+    
     
 }

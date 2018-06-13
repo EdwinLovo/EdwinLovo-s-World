@@ -11,21 +11,6 @@ import Terrorista.Terrorista;
  *
  * @author EdwinLovo
  */
-public class FabricaTanque implements Terrorista{
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
-        System.out.println("Crear");
-    }
-
-    @Override
-    public void generar() {
-    }
+public class FabricaTanque {
+    
 }

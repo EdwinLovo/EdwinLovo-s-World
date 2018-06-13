@@ -6,14 +6,7 @@
 package Terrorista;
 
 import AbstractFactory.AbstractFactory;
-import EdificacionesTerrorista.FabricaBinLaden;
-import EdificacionesTerrorista.FabricaBus;
-import EdificacionesTerrorista.FabricaSecta;
-import EdificacionesTerrorista.FabricaTanque;
 import Militar.Militar;
-import EdificacionesTerrorista.GeneradorMonedas;
-import EdificacionesTerrorista.RecolectorPetroleo;
-import EdificacionesTerrorista.RecolectorQuimicos;
 import Revolucionario.Revolucionario;
 
 /**
@@ -35,20 +28,20 @@ public class FactoryTerrorista implements AbstractFactory{
     @Override
     public Terrorista getTerrorista(String type) {
         switch (type){
-            case "petroleo":
+            /*case "petroleo":
                 return new RecolectorPetroleo();
             case "quimicos":
                 return new RecolectorQuimicos();
             case "monedas":
-                return new GeneradorMonedas();
+                return new GeneradorMonedas();*/
             case "tanque":
-                return new FabricaTanque();
+                return new Tanque();
             case "bus":
-                return new FabricaBus();
+                return new Bus();
             case "secta":
-                return new FabricaSecta();
+                return new Secta();
             case "binladen":
-                return new FabricaBinLaden();
+                return new BinLaden();
         }
         return null;
     }
