@@ -65,6 +65,7 @@ public class SingletonMilitar {
             this.recurso1 = recurso1+this.recurso1;
         }
         else{
+            this.recurso1=this.limite1;
             System.out.println("Almacen 1 lleno");
         }
     }
@@ -78,6 +79,7 @@ public class SingletonMilitar {
             this.recurso2 = recurso2+this.recurso2;
         }
         else{
+            this.recurso2=this.limite2;
             System.out.println("Almacen 2 lleno");
         }
     }
@@ -91,6 +93,7 @@ public class SingletonMilitar {
             this.recurso3 = recurso3+this.recurso3;
         }
         else{
+            this.recurso3=this.limite3;
             System.out.println("Almacen 3 lleno");
         }
     }

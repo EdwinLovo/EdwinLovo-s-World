@@ -45,7 +45,6 @@ public class Menu {
     }
     
     public int menuRaza(){
-        System.out.println("fin1");
         int opc;
         System.out.println("\n\n----------RAZAS----------");
         System.out.println("1. Militar");
@@ -59,7 +58,6 @@ public class Menu {
         switch(opc){
             case 1:
                 System.out.println("Crear militar");
-                System.out.println("fin2");
                 System.out.println(opc);
                 return opc;
             case 2:
@@ -77,7 +75,8 @@ public class Menu {
     public void menuMilitar(){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
-        System.out.println("Efectivo: "+militar.getRecurso1()+" Oro: "+militar.getRecurso2()+" Diamantes: "+militar.getRecurso3());
+        System.out.println("\nEfectivo Máximo: "+militar.getLimite1()+" Oro Máximo: "+militar.getLimite2()+" Diamantes Máximos: "+militar.getLimite3());
+        System.out.println("\nEfectivo: "+militar.getRecurso1()+" Oro: "+militar.getRecurso2()+" Diamantes: "+militar.getRecurso3());
         System.out.println("\n1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
@@ -333,10 +332,10 @@ public class Menu {
         int r1, r2;
         r1 = efectivo.recolectar();
         r2 = oro.recolectar();
-        militar.setRecurso1(r1);
-        militar.setRecurso2(r2);
         System.out.println("Efectivo recolectado: $"+r1);
         System.out.println("Oro recolectado: "+r2);
+        militar.setRecurso1(r1);
+        militar.setRecurso2(r2);
     }
     
     public void entrenarMili(){
