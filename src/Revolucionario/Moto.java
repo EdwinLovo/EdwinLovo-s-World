@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PoderRevolucionario;
+package Revolucionario;
 
 import Revolucionario.Revolucionario;
 
@@ -11,8 +11,7 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class Helicoptero implements Revolucionario{
-
+public class Moto implements Revolucionario{
     @Override
     public void atacar() {
     }
@@ -28,5 +27,4 @@ public class Helicoptero implements Revolucionario{
     @Override
     public void crear() {
     }
-    
 }

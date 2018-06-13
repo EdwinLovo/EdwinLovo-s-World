@@ -77,8 +77,8 @@ public class Menu {
     public void menuMilitar(){
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
-        
-        System.out.println("1. Construir edificio ");
+        System.out.println("Efectivo: "+militar.getRecurso1()+" Oro: "+militar.getRecurso2()+" Diamantes: "+militar.getRecurso3());
+        System.out.println("\n1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
@@ -93,7 +93,6 @@ public class Menu {
         switch (opc) {
             case 1:
                 menu.contruirFabMili();
-                System.out.println("construir");
                 break;
             case 2:
                 System.out.println("atacar");
@@ -103,15 +102,12 @@ public class Menu {
                 break;
             case 4:
                 menu.recogerRecMili();
-                System.out.println("recoger");
                 break;
             case 5:
                 menu.entrenarMili();
-                System.out.println("entrenar");
                 break;
             case 6:
                 menu.mejorarCM();
-                System.out.println("Mejora nivel hecha");
                 break;
             default:
                 System.out.println("");
@@ -223,7 +219,7 @@ public class Menu {
         
         do{
             System.out.println("\n\n------TURNO JUGADOR 1------");
-            System.out.println("Recurso 1: "+militar.getRecurso1()+" Recurso 2: "+militar.getRecurso2()+" Recurso 3: "+militar.getRecurso3());
+            
             switch (j1) {
                 case 1:
                     menu.menuMilitar();
@@ -267,9 +263,6 @@ public class Menu {
         System.out.println("2. Fabrica Convoy");
         System.out.println("3. Fabrica Escuadrones");
         System.out.println("4. Fabrica Rambo");
-        System.out.println("5. Recolector Efectivo");
-        System.out.println("6. Recolector Oro");
-        System.out.println("7. Generador Diamantes");
         
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -331,16 +324,9 @@ public class Menu {
                 }
                 
                 break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
             default:
                 break;
         }
-            
     }
     
     public void recogerRecMili(){
@@ -349,6 +335,8 @@ public class Menu {
         r2 = oro.recolectar();
         militar.setRecurso1(r1);
         militar.setRecurso2(r2);
+        System.out.println("Efectivo recolectado: $"+r1);
+        System.out.println("Oro recolectado: "+r2);
     }
     
     public void entrenarMili(){

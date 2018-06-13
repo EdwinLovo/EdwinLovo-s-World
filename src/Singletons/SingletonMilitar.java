@@ -35,9 +35,6 @@ public class SingletonMilitar {
         if(instance==null){
             instance= new SingletonMilitar(500,500,500,800,5000,4000,3000);
         }
-        else{
-            System.out.println("Objeto ya existente");
-        }
         return instance;
     }
 

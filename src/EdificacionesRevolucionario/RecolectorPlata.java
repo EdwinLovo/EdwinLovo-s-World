@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RecursoTerrorista;
+package EdificacionesRevolucionario;
 
-import Terrorista.Terrorista;
+import Revolucionario.Revolucionario;
 
 /**
  *
  * @author EdwinLovo
  */
-public class RecolectorPetroleo implements Terrorista{
+public class RecolectorPlata implements Revolucionario{
 
     @Override
     public void atacar() {
@@ -23,7 +23,6 @@ public class RecolectorPetroleo implements Terrorista{
 
     @Override
     public void recolectar() {
-        System.out.println("Recolectado");
     }
 
     @Override

@@ -11,9 +11,9 @@ import EdificacionesRevolucionario.FabricaCastro;
 import EdificacionesRevolucionario.FabricaHelicoptero;
 import EdificacionesRevolucionario.FabricaMoto;
 import Militar.Militar;
-import RecursoRevolucionario.GeneradorBitCoins;
-import RecursoRevolucionario.RecolectorMetal;
-import RecursoRevolucionario.RecolectorPlata;
+import EdificacionesRevolucionario.GeneradorBitCoins;
+import EdificacionesRevolucionario.RecolectorMetal;
+import EdificacionesRevolucionario.RecolectorPlata;
 import Terrorista.Terrorista;
 
 /**

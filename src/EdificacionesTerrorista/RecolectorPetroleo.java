@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RecursoTerrorista;
+package EdificacionesTerrorista;
 
 import Terrorista.Terrorista;
 
@@ -11,7 +11,7 @@ import Terrorista.Terrorista;
  *
  * @author EdwinLovo
  */
-public class GeneradorMonedas implements Terrorista{
+public class RecolectorPetroleo implements Terrorista{
 
     @Override
     public void atacar() {
@@ -29,5 +29,4 @@ public class GeneradorMonedas implements Terrorista{
     @Override
     public void crear() {
     }
-    
 }

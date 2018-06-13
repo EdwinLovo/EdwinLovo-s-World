@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PoderTerrorista;
+package Terrorista;
 
 /**
  *
  * @author Miguel
  */
-public class Tanque {
+public class Bus {
     
 }

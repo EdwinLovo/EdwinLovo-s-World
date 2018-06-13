@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RecursoRevolucionario;
+package EdificacionesRevolucionario;
 
 import Revolucionario.Revolucionario;
 
@@ -11,7 +11,7 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class RecolectorMetal implements Revolucionario{
+public class GeneradorBitCoins implements Revolucionario{
 
     @Override
     public void atacar() {
@@ -28,5 +28,7 @@ public class RecolectorMetal implements Revolucionario{
     @Override
     public void crear() {
     }
+
+    
     
 }

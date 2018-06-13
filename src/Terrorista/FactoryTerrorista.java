@@ -11,9 +11,9 @@ import EdificacionesTerrorista.FabricaBus;
 import EdificacionesTerrorista.FabricaSecta;
 import EdificacionesTerrorista.FabricaTanque;
 import Militar.Militar;
-import RecursoTerrorista.GeneradorMonedas;
-import RecursoTerrorista.RecolectorPetroleo;
-import RecursoTerrorista.RecolectorQuimicos;
+import EdificacionesTerrorista.GeneradorMonedas;
+import EdificacionesTerrorista.RecolectorPetroleo;
+import EdificacionesTerrorista.RecolectorQuimicos;
 import Revolucionario.Revolucionario;
 
 /**

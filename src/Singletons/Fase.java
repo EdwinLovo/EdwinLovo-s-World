@@ -20,9 +20,6 @@ public class Fase {
         if(instance==null){
             instance= new Fase();
         }
-        else{
-            System.out.println("Objeto ya existente");
-        }
         return instance;
     }
 
