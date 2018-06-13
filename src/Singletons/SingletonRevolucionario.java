@@ -5,13 +5,10 @@
  */
 package Singletons;
 
-import EdificacionesMilitar.FabricaConvoy;
-import EdificacionesMilitar.FabricaEscuadron;
-import EdificacionesMilitar.FabricaRambo;
-import EdificacionesMilitar.FabricaVehiculo;
-import EdificacionesMilitar.GeneradorDiamante;
-import EdificacionesMilitar.RecolectorEfectivo;
-import EdificacionesMilitar.RecolectorOro;
+import EdificacionesRevolucionario.FabricaBatallon;
+import EdificacionesRevolucionario.FabricaCastro;
+import EdificacionesRevolucionario.FabricaHelicoptero;
+import EdificacionesRevolucionario.FabricaMoto;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,17 +16,17 @@ import java.util.Map;
  *
  * @author EdwinLovo
  */
-public class SingletonMilitar {
+public class SingletonRevolucionario {
     int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
     private static SingletonMilitar instance;
     Fase fase = Fase.getInstance();
-    private Map<Integer,FabricaConvoy> convoys = new HashMap<Integer,FabricaConvoy>();
-    private Map<Integer,FabricaVehiculo> vehiculos = new HashMap<Integer,FabricaVehiculo>();
-    private Map<Integer,FabricaEscuadron> escuadrones = new HashMap<Integer,FabricaEscuadron>();
+    private Map<Integer,FabricaBatallon> batallones = new HashMap<Integer,FabricaBatallon>();
+    private Map<Integer,FabricaHelicoptero> helicopteros = new HashMap<Integer,FabricaHelicoptero>();
+    private Map<Integer,FabricaMoto> motos = new HashMap<Integer,FabricaMoto>();
     /*private Map<Integer,GeneradorDiamante> diamantes = new HashMap<Integer,GeneradorDiamante>();
     private Map<Integer,RecolectorOro> oros = new HashMap<Integer,RecolectorOro>();
     private Map<Integer,RecolectorEfectivo> efectivos = new HashMap<Integer,RecolectorEfectivo>();*/
-    private FabricaRambo[] rambos = new FabricaRambo[1];
+    private FabricaCastro[] castros = new FabricaCastro[1];
     
     public static SingletonMilitar getInstance(){
         if(instance==null){
@@ -38,7 +35,7 @@ public class SingletonMilitar {
         return instance;
     }
 
-    public SingletonMilitar(int recurso1, int recurso2, int recurso3, int vida, int limite1, int limite2, int limite3) {
+    public SingletonRevolucionario(int recurso1, int recurso2, int recurso3, int vida, int limite1, int limite2, int limite3) {
         this.recurso1 = recurso1;
         this.recurso2 = recurso2;
         this.recurso3 = recurso3;
@@ -129,31 +126,31 @@ public class SingletonMilitar {
     public void setLimite3(int limite3) {
         this.limite3 = limite3;
     }
-    
-    public Map<Integer, FabricaConvoy> getConvoys() {
-        return convoys;
-    }
 
-    public void setConvoys(FabricaConvoy val) {
-        this.convoys.put(c, val);
+    public Map<Integer, FabricaBatallon> getBatallones() {
+        return batallones;
+    }
+    
+    public void setBatallones(FabricaBatallon val) {
+        this.batallones.put(c, val);
         c=c+1;
     }
 
-    public Map<Integer, FabricaVehiculo> getVehiculos() {
-        return vehiculos;
+    public Map<Integer, FabricaHelicoptero> getHelicopteros() {
+        return helicopteros;
     }
 
-    public void setVehiculos(FabricaVehiculo val) {
-        this.vehiculos.put(v, val);
+    public void setHelicopteros(FabricaHelicoptero val) {
+        this.helicopteros.put(v, val);
         v=v+1;
     }
 
-    public Map<Integer, FabricaEscuadron> getEscuadrones() {
-        return escuadrones;
+    public Map<Integer, FabricaMoto> getMotos() {
+        return motos;
     }
 
-    public void setEscuadrones(FabricaEscuadron val) {
-        this.escuadrones.put(es, val);
+    public void setMotos(FabricaMoto val) {
+        this.motos.put(es, val);
         es=es+1;
     }
 /*
@@ -184,13 +181,14 @@ public class SingletonMilitar {
         ef=ef+1;
     }
 */
-    public FabricaRambo[] getRambos() {
-        return rambos;
+
+    public FabricaCastro[] getCastros() {
+        return castros;
     }
 
-    public void setRambos(FabricaRambo val) {
-        if (rambos[0]==null){
-            this.rambos[0]=val;
+    public void setCastros(FabricaCastro val) {
+        if (castros[0]==null){
+            this.castros[0]=val;
         }
         else{
             System.out.println("Soldado ya existente");
@@ -242,4 +240,3 @@ public class SingletonMilitar {
         }
     }
 }
-

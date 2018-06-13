@@ -13,7 +13,7 @@ import Singletons.SingletonMilitar;
  *
  * @author EdwinLovo
  */
-public class RecolectorOro implements Militar{
+public class RecolectorOro{
     int faseAlmacenada,vida=500;
     SingletonMilitar militares= SingletonMilitar.getInstance();
     Fase fase = Fase.getInstance();
@@ -37,12 +37,12 @@ public class RecolectorOro implements Militar{
     public void setFaseAlmacenada(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
-    
+    /*
     @Override
     public void atacar() {
     }
 
-    @Override
+    @Override*/
     public int recolectar() {
         int cant;
 
@@ -50,7 +50,7 @@ public class RecolectorOro implements Militar{
         faseAlmacenada = fase.getFase();
         return cant;
     }
-
+/*
     @Override
     public void crear(int r1, int r2, int r3) {
         if (r1>=200 && r2>=200){
@@ -61,5 +61,5 @@ public class RecolectorOro implements Militar{
             System.out.println("Recursos insuficientes");
         }
         
-    }
+    }*/
 }
