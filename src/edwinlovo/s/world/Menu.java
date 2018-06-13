@@ -18,6 +18,11 @@ import EdificacionesMilitar.RecolectorEfectivo;
 import EdificacionesMilitar.RecolectorOro;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
+import Singletons.SingletonRevolucionario;
+import Singletons.SingletonTerrorista;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -29,6 +34,8 @@ public class Menu {
     AbstractFactory factory1 = FactoryProducer.getFactory("militar");
     public static Menu menu = Menu.getInstance();
     SingletonMilitar militar = SingletonMilitar.getInstance();
+    SingletonRevolucionario revolucionario = SingletonRevolucionario.getInstance();
+    SingletonTerrorista terrorista = SingletonTerrorista.getInstance();
     Fase fase = Fase.getInstance();
     RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
     RecolectorOro oro = new RecolectorOro(fase.getFase());
@@ -250,7 +257,7 @@ public class Menu {
             
             militar.setRecurso3(diamantes.recolectar());
             fase.setFase(fase.getFase()+1);
-            
+            menu.mostrarFabsVehi();
         }while(ed1!=0 && ed2!=0);
     }
     
@@ -386,4 +393,33 @@ public class Menu {
         }
         est1=est1+1;
     }
+    
+    public void mostrarFabsVehi(){
+        Iterator it = militar.getVehiculos().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void mostrarFabsEscuadron(){
+        Iterator it = militar.getEscuadrones().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void mostrarFabsConvoy(){
+        Iterator it = militar.getConvoys().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void mostrarFabsRambo(){
+        System.out.println("Clave: 1 -> Valor: Rambo");
+    }
+            
 }
