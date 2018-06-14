@@ -5,27 +5,73 @@
  */
 package EdificacionesRevolucionario;
 
+import Revolucionario.Batallon;
 import Revolucionario.Revolucionario;
+import Singletons.Fase;
+import Singletons.SingletonRevolucionario;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author EdwinLovo
  */
-public class FabricaBatallon implements Revolucionario{
+public class FabricaBatallon{
+    int faseAlmacenada, vida=500,ind=1;
+    Fase fase = Fase.getInstance();
+    SingletonRevolucionario revolucionarios = SingletonRevolucionario.getInstance();
+    private Map<Integer,Batallon> batallones = new HashMap<Integer,Batallon>();
+
+    public FabricaBatallon(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+
+    public Map<Integer, Batallon> getBuses() {
+        return batallones;
+    }
+
+    public void setConvoys(Map<Integer, Batallon> batallones) {
+        this.batallones = batallones;
+    }
+    
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+    
+    public int getFaseAlmacenada() {
+        return faseAlmacenada;
+    }
+
+    public void setFaseAlmacenada(int faseAlmacenada) {
+        this.faseAlmacenada = faseAlmacenada;
+    }
+    /*
     @Override
     public void atacar() {
     }
 
     @Override
-    public void generar() {
+    public int recolectar() {
+        return 0;
     }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
+*/
+   
+    public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
+        if(r1>=200 && r2>=200){
+            Batallon conv = new Batallon();
+            batallones.put(ind, conv);
+            ind+=1;
+            revolucionarios.setRecurso1(-200);
+            revolucionarios.setRecurso2(-200);
+            System.out.println("Revolucionario creado");
+        }
+        else{
+            System.out.println("Recursos insuficientes");
+        }
     }
 }

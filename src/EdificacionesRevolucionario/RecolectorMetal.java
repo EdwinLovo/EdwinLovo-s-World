@@ -11,22 +11,6 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class RecolectorMetal implements Revolucionario{
+public class RecolectorMetal{
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void generar() {
-    }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
-    }
-    
 }

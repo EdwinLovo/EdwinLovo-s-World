@@ -11,21 +11,6 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class RecolectorPlata implements Revolucionario{
+public class RecolectorPlata{
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void generar() {
-    }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
-    }
 }

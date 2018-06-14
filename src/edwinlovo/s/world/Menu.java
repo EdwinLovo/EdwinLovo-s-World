@@ -398,14 +398,15 @@ public class Menu {
         Iterator it = militar.getVehiculos().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Fabrica Vehiculo "+key);
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Vehiculo "+key+"\n");
+            System.out.println("Vehiculos: Fabrica "+key+"\n");
+            if (militar.getVehiculos().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarVehi(key);
+            }
         }
-        System.out.println("Vehciulos: \n");
-        if(militar.getVehiculos().isEmpty()==true){
-            System.out.println("NO HAY \n");
-        }else{
-            menu.mostrarVehi(1);
-        }
+        
         
     }
     
@@ -413,7 +414,13 @@ public class Menu {
         Iterator it = militar.getEscuadrones().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Fabrica Escuadron "+key);
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Escuadron "+key+"\n");
+            System.out.println("Escuadrones: Fabrica "+key+"\n");
+            if (militar.getEscuadrones().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarEscua(key);
+            }
         }
     }
     
@@ -421,7 +428,13 @@ public class Menu {
         Iterator it = militar.getConvoys().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Fabrica Convoy "+key);
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Convoy "+key+"\n");
+            System.out.println("Convoys: Fabrica "+key+"\n");
+            if (militar.getConvoys().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarConvoy(key);
+            }
         }
     }
     
@@ -450,6 +463,180 @@ public class Menu {
         while(it.hasNext()){
             Integer key = (Integer) it.next();
             System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void mostrarFabsBatallon(){
+        Iterator it = revolucionario.getBatallones().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Batallon "+key+"\n");
+            System.out.println("Batallones: Fabrica "+key+"\n");
+            if (revolucionario.getBatallones().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarVehi(key);
+            }
+        }
+    }
+    
+    public void mostrarFabsHelicoptero(){
+        Iterator it = revolucionario.getHelicopteros().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Helicoptero "+key+"\n");
+            System.out.println("Helicopteros: Fabrica "+key+"\n");
+            if (revolucionario.getHelicopteros().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarVehi(key);
+            }
+        }
+    }
+    
+    public void mostrarFabsMoto(){
+        Iterator it = revolucionario.getMotos().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Moto "+key+"\n");
+            System.out.println("Helicopteros: Fabrica "+key+"\n");
+            if (revolucionario.getMotos().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarVehi(key);
+            }
+        }
+    }
+    
+    public void mostrarFabsCastro(){
+        System.out.println("Clave: 1 -> Valor: Fabrica Castro");
+    }
+    
+    public void mostrarBatallon(int keyBat){
+        //Iterator it = revolucionario.getBatallones().get(keyBat)
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+        }
+    }
+    
+    public void atacarFabMilitar(){
+        int opc1,opc2,key=0,life;
+        
+        System.out.println("Elija el tipo de fabrica a atacar: \n");
+        System.out.println("1.Fabrica de Vehiculo");
+        System.out.println("1.Fabrica de Convoy");
+        System.out.println("1.Fabrica de Escuadron");
+        System.out.println("1.Fabrica de Rambo");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc1 = leer.nextInt();
+        
+        switch (opc1) {
+            case 1:
+                menu.mostrarFabsVehi();
+                System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getVehiculos().get(opc2).getVida();
+                militar.getVehiculos().get(opc2).setVida(life-100);
+                if(militar.getVehiculos().get(opc2).getVida()<=0){
+                    militar.getVehiculos().remove(opc2);
+                }
+                break;
+            case 2:
+                menu.mostrarFabsConvoy();
+                System.out.print("\nIngrese la clave de la Fabrica de Convoy a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getConvoys().get(opc2).getVida();
+                militar.getConvoys().get(opc2).setVida(life-100);
+                if(militar.getConvoys().get(opc2).getVida()<=0){
+                    militar.getConvoys().remove(opc2);
+                }
+                break;
+            case 3:
+                menu.mostrarFabsEscuadron();
+                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getEscuadrones().get(opc2).getVida();
+                militar.getEscuadrones().get(opc2).setVida(life-100);
+                if(militar.getEscuadrones().get(opc2).getVida()<=0){
+                    militar.getEscuadrones().remove(opc2);
+                }
+                break;
+            case 4:
+                menu.mostrarFabsRambo();
+                System.out.print("\nIngrese la clave de la Fabrica de Rambo a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getRambos()[0].getVida();
+                militar.getRambos()[0].setVida(life-100);
+                if(militar.getRambos()[0].getVida()<=0){
+                    militar.getRambos()[0]=null;
+                }
+                break;
+            default:
+                System.out.print("\nEleccion Erronea ");
+                break;
+        }
+    }
+    
+    public void atacarFabRevolucionario(){
+        int opc1,opc2,key=0,life;
+        
+        System.out.println("Elija el tipo de fabrica a atacar: \n");
+        System.out.println("1.Fabrica de Batallon");
+        System.out.println("1.Fabrica de Helicoptero");
+        System.out.println("1.Fabrica de Moto");
+        System.out.println("1.Fabrica de Castro");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc1 = leer.nextInt();
+        
+        switch (opc1) {
+            case 1:
+                menu.mostrarFabsVehi();
+                System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getVehiculos().get(opc2).getVida();
+                militar.getVehiculos().get(opc2).setVida(life-100);
+                if(militar.getVehiculos().get(opc2).getVida()<=0){
+                    militar.getVehiculos().remove(opc2);
+                }
+                break;
+            case 2:
+                menu.mostrarFabsConvoy();
+                System.out.print("\nIngrese la clave de la Fabrica de Convoy a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getConvoys().get(opc2).getVida();
+                militar.getConvoys().get(opc2).setVida(life-100);
+                if(militar.getConvoys().get(opc2).getVida()<=0){
+                    militar.getConvoys().remove(opc2);
+                }
+                break;
+            case 3:
+                menu.mostrarFabsEscuadron();
+                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getEscuadrones().get(opc2).getVida();
+                militar.getEscuadrones().get(opc2).setVida(life-100);
+                if(militar.getEscuadrones().get(opc2).getVida()<=0){
+                    militar.getEscuadrones().remove(opc2);
+                }
+                break;
+            case 4:
+                menu.mostrarFabsRambo();
+                System.out.print("\nIngrese la clave de la Fabrica de Rambo a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getRambos()[0].getVida();
+                militar.getRambos()[0].setVida(life-100);
+                if(militar.getRambos()[0].getVida()<=0){
+                    militar.getRambos()[0]=null;
+                }
+                break;
+            default:
+                System.out.print("\nEleccion Erronea ");
+                break;
         }
     }
 }

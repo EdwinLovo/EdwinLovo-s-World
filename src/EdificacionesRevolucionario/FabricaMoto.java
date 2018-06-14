@@ -11,23 +11,7 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class FabricaMoto implements Revolucionario{
+public class FabricaMoto{
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void generar() {
-    }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
-        System.out.println("Crear");
-    }
     
 }

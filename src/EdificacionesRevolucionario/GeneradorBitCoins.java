@@ -11,24 +11,6 @@ import Revolucionario.Revolucionario;
  *
  * @author EdwinLovo
  */
-public class GeneradorBitCoins implements Revolucionario{
+public class GeneradorBitCoins{
 
-    @Override
-    public void atacar() {
-    }
-
-    @Override
-    public void generar() {
-    }
-
-    @Override
-    public void recolectar() {
-    }
-
-    @Override
-    public void crear() {
-    }
-
-    
-    
 }
