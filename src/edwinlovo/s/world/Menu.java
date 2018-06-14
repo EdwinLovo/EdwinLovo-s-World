@@ -171,6 +171,8 @@ public class Menu {
     public void menuRevolucionario(){
         int ed1 = 1, ed2 = 1, opc = 0;
         int oro, diamante, efectivo;
+        System.out.println("\nMetal Máximo: "+revolucionario.getLimite1()+" Plata Máximo: "+revolucionario.getLimite2()+" BitCoins Máximos: "+revolucionario.getLimite3());
+        System.out.println("\nMetal: "+revolucionario.getRecurso1()+" Plata: "+revolucionario.getRecurso2()+" BitCoins: "+revolucionario.getRecurso3());
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
@@ -240,6 +242,8 @@ public class Menu {
     public void menuTerrorista(){
         int ed1 = 1, ed2 = 1, opc = 0;
         int oro, diamante, efectivo;
+        System.out.println("\nPetroleo Máximo: "+terrorista.getLimite1()+" Quimicos Máximo: "+terrorista.getLimite2()+" Monedas Máximos: "+terrorista.getLimite3());
+        System.out.println("\nPetroleo: "+terrorista.getRecurso1()+" Quimicos: "+terrorista.getRecurso2()+" Monedas: "+terrorista.getRecurso3());
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
