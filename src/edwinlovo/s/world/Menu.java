@@ -20,6 +20,10 @@ import EdificacionesRevolucionario.FabricaBatallon;
 import EdificacionesRevolucionario.FabricaCastro;
 import EdificacionesRevolucionario.FabricaHelicoptero;
 import EdificacionesRevolucionario.FabricaMoto;
+import EdificacionesTerrorista.FabricaBinLaden;
+import EdificacionesTerrorista.FabricaBus;
+import EdificacionesTerrorista.FabricaSecta;
+import EdificacionesTerrorista.FabricaTanque;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import Singletons.SingletonRevolucionario;
@@ -413,7 +417,91 @@ public class Menu {
         }
     }
     
+    public void construirFabTerro(){
+        int opc;
+        SingletonTerrorista terrorista= SingletonTerrorista.getInstance();
+        System.out.println("\n---MENU CONTRUIR FABRICAS DE MILITAR---\n");
+        System.out.println("1. Fabrica Bus");
+        System.out.println("2. Fabrica Secta");
+        System.out.println("3. Fabrica Tanque");
+        System.out.println("4. Fabrica BinLaden");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc = leer.nextInt();
+        
+        switch (opc) {
+            case 1:
+                if (terrorista.getRecurso1()>=700 && terrorista.getRecurso2()>=600 && terrorista.getRecurso3()>=500){
+                    FabricaBus fabBus = new FabricaBus(fase.getFase());
+                    terrorista.setBuses(fabBus);
+                    terrorista.setRecurso1(-700);
+                    terrorista.setRecurso2(-600);
+                    terrorista.setRecurso3(-500);
+                    System.out.println("fabbus creado");
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                break;
+            case 2:
+                if (terrorista.getRecurso1()>=900 && terrorista.getRecurso2()>=900 && terrorista.getRecurso3()>=800){
+                    FabricaSecta fabSec = new FabricaSecta(fase.getFase());
+                    terrorista.setSectas(fabSec);
+                    System.out.println("fabse ecreado");
+                    terrorista.setRecurso1(-900);
+                    terrorista.setRecurso2(-900);
+                    terrorista.setRecurso3(-800);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
+                break;
+            case 3:
+                if (terrorista.getRecurso1()>=1000 && terrorista.getRecurso2()>=800 && terrorista.getRecurso3()>=700){
+                    FabricaTanque fabTan = new FabricaTanque(fase.getFase());
+                    terrorista.setTanques(fabTan);
+                    System.out.println("fabtan creado");
+                    terrorista.setRecurso1(-1000);
+                    terrorista.setRecurso2(-800);
+                    terrorista.setRecurso3(-700);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
+                break;
+            case 4:
+                if (terrorista.getRecurso1()>=1700 && terrorista.getRecurso2()>=1400 && terrorista.getRecurso3()>=1200){
+                    FabricaBinLaden bin = new FabricaBinLaden(fase.getFase());
+                    terrorista.setBins(bin);
+                    System.out.println("fabbin creado");
+                    terrorista.setRecurso1(-1700);
+                    terrorista.setRecurso2(-1400);
+                    terrorista.setRecurso3(-1200);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
+                break;
+            default:
+                break;
+        }
+    }
+    
     public void recogerRecMili(){
+        int r1, r2;
+        r1 = efectivo.recolectar();
+        r2 = oro.recolectar();
+        System.out.println("Efectivo recolectado: $"+r1);
+        System.out.println("Oro recolectado: "+r2);
+        militar.setRecurso1(r1);
+        militar.setRecurso2(r2);
+    }
+    
+    public void recogerRecRev(){
         int r1, r2;
         r1 = efectivo.recolectar();
         r2 = oro.recolectar();
