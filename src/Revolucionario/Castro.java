@@ -6,6 +6,7 @@
 package Revolucionario;
 
 import Revolucionario.Revolucionario;
+import edwinlovo.s.world.Menu;
 
 /**
  *
@@ -13,8 +14,22 @@ import Revolucionario.Revolucionario;
  */
 public class Castro implements Revolucionario{
     int vida=500,pAta=100;
+    Menu menu = Menu.getInstance();
     @Override
-    public void atacar() {
+    public void atacar(int j) {
+        switch (j) {
+            case 1:
+                menu.atacarFabMilitar(pAta);
+                break;
+            case 2:
+                menu.atacarFabRevolucionario(pAta);
+                break;
+            case 3:
+                menu.atacarFabTerrorista(pAta);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

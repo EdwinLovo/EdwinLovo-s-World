@@ -10,7 +10,7 @@ package Revolucionario;
  * @author EdwinLovo
  */
 public interface Revolucionario {
-    public void atacar();
+    public void atacar(int j);
     public void generar();
     public void recolectar();
     public void crear();

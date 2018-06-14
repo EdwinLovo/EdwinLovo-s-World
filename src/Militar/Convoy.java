@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Militar;
 
 import Militar.Militar;
@@ -18,19 +14,18 @@ import java.util.Scanner;
 public class Convoy implements Militar{
     int vida=500,pAta=100,opc;
     Menu menu = Menu.getInstance();
-    SingletonMilitar militar = SingletonMilitar.getInstance();
     
     @Override
     public void atacar(int j) {
         switch (j) {
             case 1:
-                menu.atacarFabMilitar();
+                menu.atacarFabMilitar(pAta);
                 break;
             case 2:
-                menu.atacarFabRevolucionario();
+                menu.atacarFabRevolucionario(pAta);
                 break;
             case 3:
-                menu.atacarFabTerrorista();
+                menu.atacarFabTerrorista(pAta);
                 break;
             default:
                 break;

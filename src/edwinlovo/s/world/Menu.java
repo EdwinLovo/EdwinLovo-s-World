@@ -975,7 +975,7 @@ public class Menu {
         }
     }
     
-    public void atacarFabMilitar(){
+    public void atacarFabMilitar(int pAta){
         int opc1,opc2,key=0,life;
         
         System.out.println("Elija el tipo de fabrica a atacar: \n");
@@ -994,7 +994,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
                 opc2 = leer.nextInt();
                 life= militar.getVehiculos().get(opc2).getVida();
-                militar.getVehiculos().get(opc2).setVida(life-100);
+                militar.getVehiculos().get(opc2).setVida(life-pAta);
                 if(militar.getVehiculos().get(opc2).getVida()<=0){
                     militar.getVehiculos().remove(opc2);
                 }
@@ -1004,7 +1004,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Convoy a atacar: ");
                 opc2 = leer.nextInt();
                 life= militar.getConvoys().get(opc2).getVida();
-                militar.getConvoys().get(opc2).setVida(life-100);
+                militar.getConvoys().get(opc2).setVida(life-pAta);
                 if(militar.getConvoys().get(opc2).getVida()<=0){
                     militar.getConvoys().remove(opc2);
                 }
@@ -1014,7 +1014,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
                 opc2 = leer.nextInt();
                 life= militar.getEscuadrones().get(opc2).getVida();
-                militar.getEscuadrones().get(opc2).setVida(life-100);
+                militar.getEscuadrones().get(opc2).setVida(life-pAta);
                 if(militar.getEscuadrones().get(opc2).getVida()<=0){
                     militar.getEscuadrones().remove(opc2);
                 }
@@ -1024,7 +1024,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Rambo a atacar: ");
                 opc2 = leer.nextInt();
                 life= militar.getRambos()[0].getVida();
-                militar.getRambos()[0].setVida(life-100);
+                militar.getRambos()[0].setVida(life-pAta);
                 if(militar.getRambos()[0].getVida()<=0){
                     militar.getRambos()[0]=null;
                 }
@@ -1035,7 +1035,7 @@ public class Menu {
         }
     }
     
-    public void atacarFabRevolucionario(){
+    public void atacarFabRevolucionario(int pAta){
         int opc1,opc2,key=0,life;
         
         System.out.println("Elija el tipo de fabrica a atacar: \n");
@@ -1054,7 +1054,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Batallon a atacar: ");
                 opc2 = leer.nextInt();
                 life=revolucionario.getBatallones().get(opc2).getVida();
-                revolucionario.getBatallones().get(opc2).setVida(life-200);
+                revolucionario.getBatallones().get(opc2).setVida(life-pAta);
                 if(revolucionario.getBatallones().get(opc2).getVida()<=0){
                     revolucionario.getBatallones().remove(opc2);
                 }
@@ -1064,7 +1064,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Helicoptero a atacar: ");
                 opc2 = leer.nextInt();
                 life=revolucionario.getHelicopteros().get(opc2).getVida();
-                revolucionario.getHelicopteros().get(opc2).setVida(life-200);
+                revolucionario.getHelicopteros().get(opc2).setVida(life-pAta);
                 if(revolucionario.getHelicopteros().get(opc2).getVida()<=0){
                     revolucionario.getHelicopteros().remove(opc2);
                 }
@@ -1074,7 +1074,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Moto a atacar: ");
                 opc2 = leer.nextInt();
                 life=revolucionario.getMotos().get(opc2).getVida();
-                revolucionario.getMotos().get(opc2).setVida(life-200);
+                revolucionario.getMotos().get(opc2).setVida(life-pAta);
                 if(revolucionario.getMotos().get(opc2).getVida()<=0){
                     revolucionario.getMotos().remove(opc2);
                 }
@@ -1084,7 +1084,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Castro a atacar: ");
                 opc2 = leer.nextInt();
                 life=revolucionario.getCastros()[0].getVida();
-                revolucionario.getCastros()[0].setVida(-200);
+                revolucionario.getCastros()[0].setVida(-pAta);
                 if(revolucionario.getCastros()[0].getVida()<=0){
                     revolucionario.getCastros();
                 }
@@ -1095,7 +1095,7 @@ public class Menu {
         }
     }
     
-    public void atacarFabTerrorista(){
+    public void atacarFabTerrorista(int pAta){
         int opc1,opc2,key=0,life;
         
         System.out.println("Elija el tipo de fabrica a atacar: \n");
@@ -1114,7 +1114,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Bus a atacar: ");
                 opc2 = leer.nextInt();
                 life= terrorista.getBuses().get(opc2).getVida();
-                terrorista.getBuses().get(opc2).setVida(life-200);
+                terrorista.getBuses().get(opc2).setVida(life-pAta);
                 if(terrorista.getBuses().get(opc2).getVida()<=0){
                     terrorista.getBuses().remove(opc2);
                 }
@@ -1124,7 +1124,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Secta a atacar: ");
                 opc2 = leer.nextInt();
                 life= terrorista.getSectas().get(opc2).getVida();
-                terrorista.getSectas().get(opc2).setVida(life-200);
+                terrorista.getSectas().get(opc2).setVida(life-pAta);
                 if(terrorista.getSectas().get(opc2).getVida()<=0){
                     terrorista.getSectas().remove(opc2);
                 }
@@ -1134,7 +1134,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de Tanque a atacar: ");
                 opc2 = leer.nextInt();
                 life= terrorista.getTanques().get(opc2).getVida();
-                terrorista.getTanques().get(opc2).setVida(life-200);
+                terrorista.getTanques().get(opc2).setVida(life-pAta);
                 if(terrorista.getTanques().get(opc2).getVida()<=0){
                     terrorista.getTanques().remove(opc2);
                 }
@@ -1144,7 +1144,7 @@ public class Menu {
                 System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
                 opc2 = leer.nextInt();
                 life=terrorista.getBins()[0].getVida();
-                terrorista.getBins()[0].setVida(life-200);
+                terrorista.getBins()[0].setVida(life-pAta);
                 if(terrorista.getBins()[0].getVida()<=0){
                     terrorista.getBins()[0]=null;
                     militar.getRambos()[0]=null;

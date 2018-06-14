@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Revolucionario;
 
 import Revolucionario.Revolucionario;
+import edwinlovo.s.world.Menu;
 
 /**
  *
@@ -13,10 +10,23 @@ import Revolucionario.Revolucionario;
  */
 public class Moto implements Revolucionario{
     int vida=500,pAta=100;
+    Menu menu = Menu.getInstance();
     @Override
-    public void atacar() {
+    public void atacar(int j) {
+        switch (j) {
+            case 1:
+                menu.atacarFabMilitar(pAta);
+                break;
+            case 2:
+                menu.atacarFabRevolucionario(pAta);
+                break;
+            case 3:
+                menu.atacarFabTerrorista(pAta);
+                break;
+            default:
+                break;
+        }
     }
-
     @Override
     public void generar() {
     }

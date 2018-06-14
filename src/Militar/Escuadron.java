@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Militar;
 
 import Militar.Militar;
 import Singletons.Fase;
+import edwinlovo.s.world.Menu;
 
 /**
  *
@@ -14,25 +11,23 @@ import Singletons.Fase;
  */
 public class Escuadron implements Militar{
     int vida=500,pAta=100;
-/*
-    public int getpAta() {
-        return pAta;
-    }
+    Menu menu = Menu.getInstance();
 
-    public void setpAta(int pAta) {
-        this.pAta = pAta;
-    }
-    
-    public int getVida() {
-        return vida;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
-    }*/
-    
     @Override
     public void atacar(int j) {
+        switch (j) {
+            case 1:
+                menu.atacarFabMilitar(pAta);
+                break;
+            case 2:
+                menu.atacarFabRevolucionario(pAta);
+                break;
+            case 3:
+                menu.atacarFabTerrorista(pAta);
+                break;
+            default:
+                break;
+        }
         System.out.println("Atacar");
     }
 
