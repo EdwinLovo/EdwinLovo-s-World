@@ -352,10 +352,15 @@ public class Menu {
                     break;
             }
             System.out.println("\n------FASE "+fase.getFase()+" TERMINADA------\n");
-            
-            militar.setRecurso3(genDiamante[0].recolectar());
-            revolucionario.setRecurso3(genBitCoins[0].recolectar());
-            terrorista.setRecurso3(genMonedas[0].recolectar());
+            if(genDiamante[0]!=null){
+                militar.setRecurso3(genDiamante[0].recolectar());
+            }
+            if(genBitCoins[0]!=null){
+                revolucionario.setRecurso3(genBitCoins[0].recolectar());
+            }
+            if(genMonedas[0]!=null){
+                terrorista.setRecurso3(genMonedas[0].recolectar());
+            }
             fase.setFase(fase.getFase()+1);
             menu.mostrarFabsVehi();
         }while(ed1!=0 && ed2!=0);
