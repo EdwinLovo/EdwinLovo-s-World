@@ -20,10 +20,16 @@ import EdificacionesRevolucionario.FabricaBatallon;
 import EdificacionesRevolucionario.FabricaCastro;
 import EdificacionesRevolucionario.FabricaHelicoptero;
 import EdificacionesRevolucionario.FabricaMoto;
+import EdificacionesRevolucionario.GeneradorBitCoins;
+import EdificacionesRevolucionario.RecolectorMetal;
+import EdificacionesRevolucionario.RecolectorPlata;
 import EdificacionesTerrorista.FabricaBinLaden;
 import EdificacionesTerrorista.FabricaBus;
 import EdificacionesTerrorista.FabricaSecta;
 import EdificacionesTerrorista.FabricaTanque;
+import EdificacionesTerrorista.GeneradorMonedas;
+import EdificacionesTerrorista.RecolectorPetroleo;
+import EdificacionesTerrorista.RecolectorQuimicos;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import Singletons.SingletonRevolucionario;
@@ -45,9 +51,19 @@ public class Menu {
     SingletonRevolucionario revolucionario = SingletonRevolucionario.getInstance();
     SingletonTerrorista terrorista = SingletonTerrorista.getInstance();
     Fase fase = Fase.getInstance();
-    RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
+    /*RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
     RecolectorOro oro = new RecolectorOro(fase.getFase());
-    GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());
+    GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());*/
+    
+    RecolectorEfectivo recEfectivo[] = new RecolectorEfectivo[1];
+    RecolectorOro recOro[] = new RecolectorOro[1];
+    GeneradorDiamante genDiamante[] = new GeneradorDiamante[1];
+    RecolectorMetal recMetal[] = new RecolectorMetal[1];
+    RecolectorPlata recPlata[] = new RecolectorPlata[1];
+    GeneradorBitCoins genBitCoins[] = new GeneradorBitCoins[1];
+    RecolectorQuimicos recQuimicos[] = new RecolectorQuimicos[1];
+    RecolectorPetroleo recPetroleo[] = new RecolectorPetroleo[1];
+    GeneradorMonedas genMonedas[] = new GeneradorMonedas[1];
     
     public Menu() {
     }
@@ -98,7 +114,10 @@ public class Menu {
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
         System.out.println("6. Mejorar Centro de Mando");
-        System.out.println("7. Terminar turno");
+        System.out.println("7. Construir recolector de Oro");
+        System.out.println("8. Construir recolector de Efectivo");
+        System.out.println("9. Construir generador de Diamante");
+        System.out.println("10. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -123,6 +142,30 @@ public class Menu {
             case 6:
                 menu.mejorarCM();
                 break;
+            case 7:
+                if(recOro[0]==null){
+                    recOro[0]= new RecolectorOro(fase.getFase());
+                }
+                else{
+                    System.out.println("Recolector ya existente");
+                }
+                break;
+            case 8:
+                if(recEfectivo[0]==null){
+                    recEfectivo[0]= new RecolectorEfectivo(fase.getFase());
+                }
+                else{
+                    System.out.println("Recolector ya existente");
+                }
+                break;
+            case 9:
+                if(genDiamante[0]==null){
+                    genDiamante[0]= new GeneradorDiamante(fase.getFase());
+                }
+                else{
+                    System.out.println("Generador ya existente");
+                }
+                break;
             default:
                 System.out.println("");
         }
@@ -136,8 +179,11 @@ public class Menu {
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
-        System.out.println("6. Crear vehiculos");
-        System.out.println("7. Terminar turno");
+        System.out.println("6. Mejorar Centro de Mando");
+        System.out.println("7. Construir recolector de Metal");
+        System.out.println("8. Construir recolector de Plata");
+        System.out.println("9. Construir generador de BitCoins");
+        System.out.println("10. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -145,6 +191,7 @@ public class Menu {
 
         switch (opc) {
             case 1:
+                menu.construirFabRev();
                 System.out.println("construir");
                 break;
             case 2:
@@ -154,28 +201,57 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
+                menu.recogerRecRev();
                 System.out.println("recoger");
                 break;
             case 5:
+                
                 System.out.println("entrenar");
                 break;
             case 6:
-                System.out.println("crear");
+                System.out.println("mejorar");
                 break;
+            case 7:
+                if(recMetal[0]==null){
+                    recMetal[0]= new RecolectorMetal(fase.getFase());
+                }
+                else{
+                    System.out.println("Recolector ya existente");
+                }
+                break;
+            case 8:
+                if(recPlata[0]==null){
+                    recPlata[0]= new RecolectorPlata(fase.getFase());
+                }
+                else{
+                    System.out.println("Recolector ya existente");
+                }
+                break;
+            case 9:
+                if(genBitCoins[0]==null){
+                    genBitCoins[0]= new GeneradorBitCoins(fase.getFase());
+                }
+                else{
+                    System.out.println("Generador ya existente");
+                }
             default:
                 System.out.println("");
         }
     }
     
     public void menuTerrorista(){
-        int ed1=1, ed2=1,opc=0;
-        int oro,diamante,efectivo;
+        int ed1 = 1, ed2 = 1, opc = 0;
+        int oro, diamante, efectivo;
         System.out.println("1. Construir edificio ");
         System.out.println("2. Atacar");
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
         System.out.println("6. Crear vehiculos");
+        System.out.println("7. Construir recolector de Petroleo");
+        System.out.println("8. Construir recolector de Quimicos");
+        System.out.println("9. Construir generador de Monedas");
+        System.out.println("10. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -183,7 +259,6 @@ public class Menu {
 
         switch (opc) {
             case 1:
-                
                 System.out.println("construir");
                 break;
             case 2:
@@ -193,16 +268,37 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
-                
                 System.out.println("recoger");
                 break;
             case 5:
-                
                 System.out.println("entrenar");
                 break;
             case 6:
                 System.out.println("crear");
                 break;
+            case 7:
+                if(recPetroleo[0]==null){
+                    recPetroleo[0]= new RecolectorPetroleo(fase.getFase());
+                }
+                else{
+                    System.out.println("Recolector ya existente");
+                }
+                break;
+            case 8:
+                if(recQuimicos[0]==null){
+                    recQuimicos[0]= new RecolectorQuimicos(fase.getFase());
+                }
+                else{
+                    System.out.println("Recolector ya existente");
+                }
+                break;
+            case 9:
+                if(genMonedas[0]==null){
+                    genMonedas[0]= new GeneradorMonedas(fase.getFase());
+                }
+                else{
+                    System.out.println("Generador ya existente");
+                }
             default:
                 System.out.println("");
         }
@@ -263,7 +359,7 @@ public class Menu {
             }
             System.out.println("\n------FASE "+fase.getFase()+" TERMINADA------\n");
             
-            militar.setRecurso3(diamantes.recolectar());
+            militar.setRecurso3(genDiamante[0].recolectar());
             fase.setFase(fase.getFase()+1);
             menu.mostrarFabsVehi();
         }while(ed1!=0 && ed2!=0);
@@ -493,8 +589,8 @@ public class Menu {
     
     public void recogerRecMili(){
         int r1, r2;
-        r1 = efectivo.recolectar();
-        r2 = oro.recolectar();
+        r1 = recEfectivo[0].recolectar();
+        r2 = recOro[0].recolectar();
         System.out.println("Efectivo recolectado: $"+r1);
         System.out.println("Oro recolectado: "+r2);
         militar.setRecurso1(r1);
@@ -503,12 +599,22 @@ public class Menu {
     
     public void recogerRecRev(){
         int r1, r2;
-        r1 = efectivo.recolectar();
-        r2 = oro.recolectar();
-        System.out.println("Efectivo recolectado: $"+r1);
-        System.out.println("Oro recolectado: "+r2);
-        militar.setRecurso1(r1);
-        militar.setRecurso2(r2);
+        r1 = recMetal[0].recolectar();
+        r2 = recPlata[0].recolectar();
+        System.out.println("Metal recolectado: $"+r1);
+        System.out.println("Plata recolectado: "+r2);
+        revolucionario.setRecurso1(r1);
+        revolucionario.setRecurso2(r2);
+    }
+    
+    public void recogerRecTerro(){
+        int r1, r2;
+        r1 = recPetroleo[0].recolectar();
+        r2 = recQuimicos[0].recolectar();
+        System.out.println("Petroleo recolectado: $"+r1);
+        System.out.println("Quimicos recolectado: "+r2);
+        terrorista.setRecurso1(r1);
+        terrorista.setRecurso2(r2);
     }
     
     public void entrenarMili(){
