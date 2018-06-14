@@ -19,12 +19,6 @@ public class FactoryMilitar implements AbstractFactory{
     @Override
     public Militar getMilitar(String type) {
         switch (type){
-            /*case "efectivo":
-                return new RecolectorEfectivo(fase.getFase());
-            case "oro":
-                return new RecolectorOro(fase.getFase());
-            case "diamante":
-                return new GeneradorDiamante(fase.getFase());*/
             case "convoy":
                 return new Convoy();
             case "vehiculo":

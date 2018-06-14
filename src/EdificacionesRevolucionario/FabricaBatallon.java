@@ -26,11 +26,11 @@ public class FabricaBatallon{
         this.faseAlmacenada = faseAlmacenada;
     }
 
-    public Map<Integer, Batallon> getBuses() {
+    public Map<Integer, Batallon> getBatallones() {
         return batallones;
     }
 
-    public void setConvoys(Map<Integer, Batallon> batallones) {
+    public void setBatallones(Map<Integer, Batallon> batallones) {
         this.batallones = batallones;
     }
     
@@ -68,7 +68,7 @@ public class FabricaBatallon{
             ind+=1;
             revolucionarios.setRecurso1(-200);
             revolucionarios.setRecurso2(-200);
-            System.out.println("Revolucionario creado");
+            System.out.println("Batallon creado");
         }
         else{
             System.out.println("Recursos insuficientes");

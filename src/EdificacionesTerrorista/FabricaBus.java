@@ -31,7 +31,7 @@ public class FabricaBus {
         return buses;
     }
 
-    public void setConvoys(Map<Integer, Bus> buses) {
+    public void setBuses(Map<Integer, Bus> buses) {
         this.buses = buses;
     }
     
@@ -50,17 +50,7 @@ public class FabricaBus {
     public void setFaseAlmacenada(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
-    /*
-    @Override
-    public void atacar() {
-    }
 
-    @Override
-    public int recolectar() {
-        return 0;
-    }
-*/
-   
     public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
         if(r1>=200 && r2>=200){

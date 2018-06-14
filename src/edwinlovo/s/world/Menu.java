@@ -475,7 +475,7 @@ public class Menu {
             if (revolucionario.getBatallones().isEmpty() == true) {
                 System.out.println("NO HAY \n");
             } else {
-                menu.mostrarVehi(key);
+                menu.mostrarBatallon(key);
             }
         }
     }
@@ -489,7 +489,7 @@ public class Menu {
             if (revolucionario.getHelicopteros().isEmpty() == true) {
                 System.out.println("NO HAY \n");
             } else {
-                menu.mostrarVehi(key);
+                menu.mostrarHelicoptero(key);
             }
         }
     }
@@ -503,7 +503,7 @@ public class Menu {
             if (revolucionario.getMotos().isEmpty() == true) {
                 System.out.println("NO HAY \n");
             } else {
-                menu.mostrarVehi(key);
+                menu.mostrarMoto(key);
             }
         }
     }
@@ -513,10 +513,26 @@ public class Menu {
     }
     
     public void mostrarBatallon(int keyBat){
-        //Iterator it = revolucionario.getBatallones().get(keyBat)
+        Iterator it = revolucionario.getBatallones().get(keyBat).getBatallones().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("Clave: "+key+" -> Valor: Batallon "+key);
+        }
+    }
+    
+    public void mostrarHelicoptero(int keyHeli){
+        Iterator it = revolucionario.getHelicopteros().get(keyHeli).getHelicopteros().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Helicoptero "+key);
+        }
+    }
+    
+    public void mostrarMoto(int keyMoto){
+        Iterator it = revolucionario.getMotos().get(keyMoto).getMotos().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Moto "+key);
         }
     }
     

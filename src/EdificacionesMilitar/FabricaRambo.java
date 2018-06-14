@@ -49,17 +49,7 @@ public class FabricaRambo{
     public void setFaseAlmacenada(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
-    /*
-    @Override
-    public void atacar() {
-    }
 
-    @Override
-    public int recolectar() {
-        return 0;
-    }
-
-    @Override*/
     public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
         if(r1>=200 && r2>=200 && cr<1){

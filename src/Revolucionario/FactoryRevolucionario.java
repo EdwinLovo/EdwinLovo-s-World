@@ -30,20 +30,14 @@ public class FactoryRevolucionario implements AbstractFactory{
     @Override
     public Revolucionario getRevolucionario(String type) {
         switch (type){
-            case "bitcoins":
-                return new GeneradorBitCoins();
-            case "metal":
-                return new RecolectorMetal();
-            case "plata":
-                return new RecolectorPlata();
-            case "aeropuerto":
-                return new FabricaHelicoptero();
+            case "helicoptero":
+                return new Helicoptero();
             case "moto":
-                return new FabricaMoto();
+                return new Moto();
             case "batallon":
-                return new FabricaBatallon();
+                return new Batallon();
             case "castro":
-                return new FabricaCastro();
+                return new Castro();
         }
         return null;
     }

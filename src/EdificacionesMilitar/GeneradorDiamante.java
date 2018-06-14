@@ -37,12 +37,7 @@ public class GeneradorDiamante{
     public void setFaseAlmacenada(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
-    /*
-    @Override
-    public void atacar() {
-    }
 
-    @Override*/
     public int recolectar() {
         int cant;
         
@@ -50,16 +45,5 @@ public class GeneradorDiamante{
         faseAlmacenada= fase.getFase();
         return cant;
     }
-/*
-    @Override
-    public void crear(int r1, int r2, int r3) {
-        if (r1>=200 && r2>=200){
-            GeneradorDiamante fabDiamante = new GeneradorDiamante(fase.getFase());
-            militares.setDiamantes(fabDiamante);
-        }
-        else{
-            System.out.println("Recursos insuficientes");
-        }
-    }*/
 
 }
