@@ -49,8 +49,8 @@ public class Menu {
     SingletonTerrorista terrorista = SingletonTerrorista.getInstance();
     Fase fase = Fase.getInstance();
     /*RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
-    RecolectorOro oro = new RecolectorOro(fase.getFase());
-    GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());*/
+    RecolectorOro oro = new RecolectorOro(fase.getFase());*/
+    GeneradorDiamante diamante;
     int j1, j2=0;
     RecolectorEfectivo recEfectivo[] = new RecolectorEfectivo[1];
     RecolectorOro recOro[] = new RecolectorOro[1];
@@ -156,8 +156,8 @@ public class Menu {
                 }
                 break;
             case 9:
-                if(genDiamante[0]==null){
-                    genDiamante[0]= new GeneradorDiamante(fase.getFase());
+                if(this.diamante==null){
+                    this.diamante= new GeneradorDiamante(fase.getFase());
                 }
                 else{
                     System.out.println("Generador ya existente");
@@ -352,8 +352,9 @@ public class Menu {
                     break;
             }
             System.out.println("\n------FASE "+fase.getFase()+" TERMINADA------\n");
-            if(genDiamante[0]!=null){
-                militar.setRecurso3(genDiamante[0].recolectar());
+            System.out.println("diam: "+genDiamante[0]);
+            if(this.diamante!=null){
+                militar.setRecurso3(this.diamante.recolectar());
             }
             if(genBitCoins[0]!=null){
                 revolucionario.setRecurso3(genBitCoins[0].recolectar());
@@ -408,13 +409,13 @@ public class Menu {
                 
                 break;
             case 3:
-                if (militar.getRecurso1()>=1000 && militar.getRecurso2()>=800 && militar.getRecurso3()>=700){
+                if (militar.getRecurso1()>=1000 && militar.getRecurso2()>=800 && militar.getRecurso3()>=500){
                     FabricaEscuadron fabEsc = new FabricaEscuadron(fase.getFase());
                     militar.setEscuadrones(fabEsc);
                     System.out.println("fabes creado");
                     militares.setRecurso1(-1000);
                     militares.setRecurso2(-800);
-                    militares.setRecurso3(-700);
+                    militares.setRecurso3(-500);
                 }
                 else{
                     System.out.println("\nRecursos insuficientes");
@@ -443,7 +444,7 @@ public class Menu {
     public void construirFabRev(){
         int opc;
         SingletonRevolucionario revolucionario= SingletonRevolucionario.getInstance();
-        System.out.println("\n---MENU CONTRUIR FABRICAS DE MILITAR---\n");
+        System.out.println("\n---MENU CONTRUIR FABRICAS DE REVOLUCIONARIO---\n");
         System.out.println("1. Fabrica Batallon");
         System.out.println("2. Fabrica Helicoptero");
         System.out.println("3. Fabrica Moto");
@@ -517,7 +518,7 @@ public class Menu {
     public void construirFabTerro(){
         int opc;
         SingletonTerrorista terrorista= SingletonTerrorista.getInstance();
-        System.out.println("\n---MENU CONTRUIR FABRICAS DE MILITAR---\n");
+        System.out.println("\n---MENU CONTRUIR FABRICAS DE TERRORISTA---\n");
         System.out.println("1. Fabrica Bus");
         System.out.println("2. Fabrica Secta");
         System.out.println("3. Fabrica Tanque");
@@ -619,7 +620,7 @@ public class Menu {
     }
     
     public void entrenarMili(){
-        int opc;
+        int opc,opc3;
         System.out.println("\n---MENU ENTRENAR TROPAS O TRANSPORTE DE MILITAR---\n");
         System.out.println("1. Entrenar Rambo");
         System.out.println("2. Entrenar Escuadron");
@@ -632,16 +633,31 @@ public class Menu {
         
         switch (opc) {
             case 1:
+                
                 Militar rambo = factory1.getMilitar("rambo");
                 militar.getRambos()[0].crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                 //militar.getRambos()[0].setRambo(rambo);
                 System.out.println("Tropa RAMBO creada");
                 break;
             case 2:
-                Militar escuadron = factory1.getMilitar("escuadron");
-                militar.getEscuadrones().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                if(militar.getEscuadrones().isEmpty()!=true){
+                    menu.mostrarFabsEscuadron();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+militar.getEscuadrones().size());
+                    if(opc3>0 && opc3<=militar.getEscuadrones().size()){
+                        Militar escuadron = factory1.getMilitar("escuadron");
+                        militar.getEscuadrones().get(opc3).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de escuadrones ");
+                }
                 break;
             case 3:
+                
                 Militar convoy = factory1.getMilitar("convoy");
                 militar.getConvoys().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                 break;
