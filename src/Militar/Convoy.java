@@ -16,13 +16,26 @@ import java.util.Scanner;
  * @author EdwinLovo
  */
 public class Convoy implements Militar{
-    int vida=500,pAta=100;
+    int vida=500,pAta=100,opc;
     Menu menu = Menu.getInstance();
     SingletonMilitar militar = SingletonMilitar.getInstance();
     
     @Override
-    public void atacar() {
-        menu.atacarFabMilitar(); 
+    public void atacar(int j) {
+        switch (j) {
+            case 1:
+                menu.atacarFabMilitar();
+                break;
+            case 2:
+                menu.atacarFabRevolucionario();
+                break;
+            case 3:
+                menu.atacarFabTerrorista();
+                break;
+            default:
+                break;
+        }
+        System.out.println(""); 
         
         System.out.println("Atacar");
     }

@@ -12,7 +12,7 @@ import Singletons.Fase;
  * @author EdwinLovo
  */
 public interface Militar {
-    public void atacar();
+    public void atacar(int j);
     public int recolectar();
     public int getVida();
     public void setVida(int vida);

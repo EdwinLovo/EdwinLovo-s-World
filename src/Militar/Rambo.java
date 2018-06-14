@@ -32,7 +32,7 @@ public class Rambo implements Militar{
     }
 */
     @Override
-    public void atacar() {
+    public void atacar(int j) {
         System.out.println("Atacar");
     }
 

@@ -51,7 +51,7 @@ public class Menu {
     /*RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
     RecolectorOro oro = new RecolectorOro(fase.getFase());
     GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());*/
-    
+    int j1, j2=0;
     RecolectorEfectivo recEfectivo[] = new RecolectorEfectivo[1];
     RecolectorOro recOro[] = new RecolectorOro[1];
     GeneradorDiamante genDiamante[] = new GeneradorDiamante[1];
@@ -316,7 +316,7 @@ public class Menu {
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
         //CentroMando cm1,cm2;
-        int j1, j2=0;
+        
         j1=menu.menuRaza();
         j2= menu.menuRaza();
         
@@ -1040,9 +1040,9 @@ public class Menu {
         
         System.out.println("Elija el tipo de fabrica a atacar: \n");
         System.out.println("1.Fabrica de Batallon");
-        System.out.println("1.Fabrica de Helicoptero");
-        System.out.println("1.Fabrica de Moto");
-        System.out.println("1.Fabrica de Castro");
+        System.out.println("2.Fabrica de Helicoptero");
+        System.out.println("3.Fabrica de Moto");
+        System.out.println("4.Fabrica de Castro");
         
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -1050,42 +1050,103 @@ public class Menu {
         
         switch (opc1) {
             case 1:
-                menu.mostrarFabsVehi();
-                System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
+                menu.mostrarFabsBatallon();
+                System.out.print("\nIngrese la clave de la Fabrica de Batallon a atacar: ");
                 opc2 = leer.nextInt();
-                life= militar.getVehiculos().get(opc2).getVida();
-                militar.getVehiculos().get(opc2).setVida(life-100);
-                if(militar.getVehiculos().get(opc2).getVida()<=0){
-                    militar.getVehiculos().remove(opc2);
+                life=revolucionario.getBatallones().get(opc2).getVida();
+                revolucionario.getBatallones().get(opc2).setVida(life-200);
+                if(revolucionario.getBatallones().get(opc2).getVida()<=0){
+                    revolucionario.getBatallones().remove(opc2);
                 }
                 break;
             case 2:
-                menu.mostrarFabsConvoy();
-                System.out.print("\nIngrese la clave de la Fabrica de Convoy a atacar: ");
+                menu.mostrarFabsHelicoptero();
+                System.out.print("\nIngrese la clave de la Fabrica de Helicoptero a atacar: ");
                 opc2 = leer.nextInt();
-                life= militar.getConvoys().get(opc2).getVida();
-                militar.getConvoys().get(opc2).setVida(life-100);
-                if(militar.getConvoys().get(opc2).getVida()<=0){
-                    militar.getConvoys().remove(opc2);
+                life=revolucionario.getHelicopteros().get(opc2).getVida();
+                revolucionario.getHelicopteros().get(opc2).setVida(life-200);
+                if(revolucionario.getHelicopteros().get(opc2).getVida()<=0){
+                    revolucionario.getHelicopteros().remove(opc2);
                 }
                 break;
             case 3:
-                menu.mostrarFabsEscuadron();
-                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
+                menu.mostrarFabsMoto();
+                System.out.print("\nIngrese la clave de la Fabrica de Moto a atacar: ");
                 opc2 = leer.nextInt();
-                life= militar.getEscuadrones().get(opc2).getVida();
-                militar.getEscuadrones().get(opc2).setVida(life-100);
-                if(militar.getEscuadrones().get(opc2).getVida()<=0){
-                    militar.getEscuadrones().remove(opc2);
+                life=revolucionario.getMotos().get(opc2).getVida();
+                revolucionario.getMotos().get(opc2).setVida(life-200);
+                if(revolucionario.getMotos().get(opc2).getVida()<=0){
+                    revolucionario.getMotos().remove(opc2);
                 }
                 break;
             case 4:
-                menu.mostrarFabsRambo();
-                System.out.print("\nIngrese la clave de la Fabrica de Rambo a atacar: ");
+                menu.mostrarFabsCastro();
+                System.out.print("\nIngrese la clave de la Fabrica de Castro a atacar: ");
                 opc2 = leer.nextInt();
-                life= militar.getRambos()[0].getVida();
-                militar.getRambos()[0].setVida(life-100);
-                if(militar.getRambos()[0].getVida()<=0){
+                life=revolucionario.getCastros()[0].getVida();
+                revolucionario.getCastros()[0].setVida(-200);
+                if(revolucionario.getCastros()[0].getVida()<=0){
+                    revolucionario.getCastros();
+                }
+                break;
+            default:
+                System.out.print("\nEleccion Erronea ");
+                break;
+        }
+    }
+    
+    public void atacarFabTerrorista(){
+        int opc1,opc2,key=0,life;
+        
+        System.out.println("Elija el tipo de fabrica a atacar: \n");
+        System.out.println("1.Fabrica de Bus");
+        System.out.println("1.Fabrica de Secta");
+        System.out.println("1.Fabrica de Tanque");
+        System.out.println("1.Fabrica de BinLaden");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc1 = leer.nextInt();
+        
+        switch (opc1) {
+            case 1:
+                menu.mostrarFabsBus();
+                System.out.print("\nIngrese la clave de la Fabrica de Bus a atacar: ");
+                opc2 = leer.nextInt();
+                life= terrorista.getBuses().get(opc2).getVida();
+                terrorista.getBuses().get(opc2).setVida(life-200);
+                if(terrorista.getBuses().get(opc2).getVida()<=0){
+                    terrorista.getBuses().remove(opc2);
+                }
+                break;
+            case 2:
+                menu.mostrarFabsSecta();
+                System.out.print("\nIngrese la clave de la Fabrica de Secta a atacar: ");
+                opc2 = leer.nextInt();
+                life= terrorista.getSectas().get(opc2).getVida();
+                terrorista.getSectas().get(opc2).setVida(life-200);
+                if(terrorista.getSectas().get(opc2).getVida()<=0){
+                    terrorista.getSectas().remove(opc2);
+                }
+                break;
+            case 3:
+                menu.mostrarFabsTanque();
+                System.out.print("\nIngrese la clave de la Fabrica de Tanque a atacar: ");
+                opc2 = leer.nextInt();
+                life= terrorista.getTanques().get(opc2).getVida();
+                terrorista.getTanques().get(opc2).setVida(life-200);
+                if(terrorista.getTanques().get(opc2).getVida()<=0){
+                    terrorista.getTanques().remove(opc2);
+                }
+                break;
+            case 4:
+                menu.mostrarFabsBinLaden();
+                System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
+                opc2 = leer.nextInt();
+                life=terrorista.getBins()[0].getVida();
+                terrorista.getBins()[0].setVida(life-200);
+                if(terrorista.getBins()[0].getVida()<=0){
+                    terrorista.getBins()[0]=null;
                     militar.getRambos()[0]=null;
                 }
                 break;
@@ -1094,4 +1155,35 @@ public class Menu {
                 break;
         }
     }
+    /*
+    public void showFabMi(){
+        System.out.println("FABRICAS DISPONIBLES A ATACAR");
+        System.out.println("1. Fabrica de Escuadron");
+        System.out.println("2. Fabrica de Convoy");
+        System.out.println("3. Fabrica de Vehiculo");
+        System.out.println("4. Fabrica de Rambo");
+        System.out.println("5. Recolector de Efectivo");
+        System.out.println("6. Recolector de Oro");
+        System.out.println("7. Generador de Diamante");
+    }
+    public void showFabRe(){
+        System.out.println("FABRICAS DISPONIBLES A ATACAR");
+        System.out.println("1. Fabrica de Batallon");
+        System.out.println("2. Fabrica de Helicoptero");
+        System.out.println("3. Fabrica de Moto");
+        System.out.println("4. Fabrica de Castro");
+        System.out.println("5. Recolector de Metal");
+        System.out.println("6. Recolector de Plata");
+        System.out.println("7. Generador de BitCoins");
+    }
+    public void showFabTe(){
+        System.out.println("FABRICAS DISPONIBLES A ATACAR");
+        System.out.println("1. Fabrica de Bus");
+        System.out.println("2. Fabrica de Secta");
+        System.out.println("3. Fabrica de Tanque");
+        System.out.println("4. Fabrica de BinLaden");
+        System.out.println("5. Recolector de Petroleo");
+        System.out.println("6. Recolector de Quimicos");
+        System.out.println("7. Generador de Monedas");
+    }*/
 }
