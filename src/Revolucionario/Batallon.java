@@ -12,6 +12,7 @@ import Revolucionario.Revolucionario;
  * @author EdwinLovo
  */
 public class Batallon implements Revolucionario{
+    int vida=500,pAta=100;
     @Override
     public void atacar() {
     }
