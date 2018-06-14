@@ -16,6 +16,10 @@ import Militar.Convoy;
 import EdificacionesMilitar.GeneradorDiamante;
 import EdificacionesMilitar.RecolectorEfectivo;
 import EdificacionesMilitar.RecolectorOro;
+import EdificacionesRevolucionario.FabricaBatallon;
+import EdificacionesRevolucionario.FabricaCastro;
+import EdificacionesRevolucionario.FabricaHelicoptero;
+import EdificacionesRevolucionario.FabricaMoto;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import Singletons.SingletonRevolucionario;
@@ -335,6 +339,80 @@ public class Menu {
         }
     }
     
+    public void construirFabRev(){
+        int opc;
+        SingletonRevolucionario revolucionario= SingletonRevolucionario.getInstance();
+        System.out.println("\n---MENU CONTRUIR FABRICAS DE MILITAR---\n");
+        System.out.println("1. Fabrica Batallon");
+        System.out.println("2. Fabrica Helicoptero");
+        System.out.println("3. Fabrica Moto");
+        System.out.println("4. Fabrica Fidel Castro");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc = leer.nextInt();
+        
+        switch (opc) {
+            case 1:
+                if (revolucionario.getRecurso1()>=700 && revolucionario.getRecurso2()>=600 && revolucionario.getRecurso3()>=500){
+                    FabricaBatallon fabBat = new FabricaBatallon(fase.getFase());
+                    revolucionario.setBatallones(fabBat);
+                    revolucionario.setRecurso1(-700);
+                    revolucionario.setRecurso2(-600);
+                    revolucionario.setRecurso3(-500);
+                    System.out.println("fabba creado");
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                break;
+            case 2:
+                if (revolucionario.getRecurso1()>=900 && revolucionario.getRecurso2()>=900 && revolucionario.getRecurso3()>=800){
+                    FabricaHelicoptero fabHel = new FabricaHelicoptero(fase.getFase());
+                    revolucionario.setHelicopteros(fabHel);
+                    System.out.println("fabhecreado");
+                    revolucionario.setRecurso1(-900);
+                    revolucionario.setRecurso2(-900);
+                    revolucionario.setRecurso3(-800);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
+                break;
+            case 3:
+                if (revolucionario.getRecurso1()>=1000 && revolucionario.getRecurso2()>=800 && revolucionario.getRecurso3()>=700){
+                    FabricaMoto fabMot = new FabricaMoto(fase.getFase());
+                    revolucionario.setMotos(fabMot);
+                    System.out.println("fabmot creado");
+                    revolucionario.setRecurso1(-1000);
+                    revolucionario.setRecurso2(-800);
+                    revolucionario.setRecurso3(-700);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
+                break;
+            case 4:
+                if (revolucionario.getRecurso1()>=1700 && revolucionario.getRecurso2()>=1400 && revolucionario.getRecurso3()>=1200){
+                    FabricaCastro cas = new FabricaCastro(fase.getFase());
+                    revolucionario.setCastros(cas);
+                    System.out.println("fabcas creado");
+                    revolucionario.setRecurso1(-1700);
+                    revolucionario.setRecurso2(-1400);
+                    revolucionario.setRecurso3(-1200);
+                }
+                else{
+                    System.out.println("\nRecursos insuficientes");
+                }
+                
+                break;
+            default:
+                break;
+        }
+    }
+    
     public void recogerRecMili(){
         int r1, r2;
         r1 = efectivo.recolectar();
@@ -533,6 +611,76 @@ public class Menu {
         while(it.hasNext()){
             Integer key = (Integer) it.next();
             System.out.println("Clave: "+key+" -> Valor: Moto "+key);
+        }
+    }
+    
+    public void mostrarFabsBus(){
+        Iterator it = terrorista.getBuses().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Bus "+key+"\n");
+            System.out.println("Bus: Fabrica "+key+"\n");
+            if (terrorista.getBuses().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarBus(key);
+            }
+        }
+    }
+    
+    public void mostrarFabsSecta(){
+        Iterator it = terrorista.getSectas().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Secta "+key+"\n");
+            System.out.println("Secta: Fabrica "+key+"\n");
+            if (terrorista.getSectas().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarSecta(key);
+            }
+        }
+    }
+    
+    public void mostrarFabsTanque(){
+        Iterator it = terrorista.getTanques().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Fabrica Tanque "+key+"\n");
+            System.out.println("Tanque: Fabrica "+key+"\n");
+            if (terrorista.getTanques().isEmpty() == true) {
+                System.out.println("NO HAY \n");
+            } else {
+                menu.mostrarTanque(key);
+            }
+        }
+    }
+    
+    public void mostrarFabsBinLaden(){
+        System.out.println("Clave: 1 -> Valor: Fabrica BinLaden");
+    }
+    
+    public void mostrarBus(int keyBus){
+        Iterator it = terrorista.getBuses().get(keyBus).getBuses().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Bus "+key);
+        }
+    }
+    
+    public void mostrarTanque(int keyTan){
+        Iterator it = terrorista.getTanques().get(keyTan).getTanques().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Tanque "+key);
+        }
+    }
+    
+    public void mostrarSecta(int keySec){
+        Iterator it = terrorista.getSectas().get(keySec).getSectas().keySet().iterator();
+        while(it.hasNext()){
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: "+key+" -> Valor: Secta "+key);
         }
     }
     
