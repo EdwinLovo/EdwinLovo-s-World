@@ -55,19 +55,44 @@ public class Convoy implements Militar{
                 menu.mostrarFabsVehi();
                 System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
                 opc2 = leer.nextInt();
-                life= militar.getVehiculos().get(key).getVida();
-                militar.getVehiculos().get(key).setVida(life-100);
-                if(militar.getVehiculos().get(key).getVida()==0){
-                    militar.getVehiculos().remove(key);
+                life= militar.getVehiculos().get(opc2).getVida();
+                militar.getVehiculos().get(opc2).setVida(life-100);
+                if(militar.getVehiculos().get(opc2).getVida()<=0){
+                    militar.getVehiculos().remove(opc2);
                 }
                 break;
             case 2:
+                menu.mostrarFabsConvoy();
+                System.out.print("\nIngrese la clave de la Fabrica de Convoy a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getConvoys().get(opc2).getVida();
+                militar.getConvoys().get(opc2).setVida(life-100);
+                if(militar.getConvoys().get(opc2).getVida()<=0){
+                    militar.getConvoys().remove(opc2);
+                }
                 break;
             case 3:
+                menu.mostrarFabsEscuadron();
+                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getEscuadrones().get(opc2).getVida();
+                militar.getEscuadrones().get(opc2).setVida(life-100);
+                if(militar.getEscuadrones().get(opc2).getVida()<=0){
+                    militar.getEscuadrones().remove(opc2);
+                }
                 break;
             case 4:
+                menu.mostrarFabsRambo();
+                System.out.print("\nIngrese la clave de la Fabrica de Rambo a atacar: ");
+                opc2 = leer.nextInt();
+                life= militar.getRambos()[0].getVida();
+                militar.getRambos()[0].setVida(life-100);
+                if(militar.getRambos()[0].getVida()<=0){
+                    militar.getRambos()[0]=null;
+                }
                 break;
             default:
+                System.out.print("\nEleccion Erronea ");
                 break;
         }
         
