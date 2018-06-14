@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package edwinlovo.s.world;
 
 import AbstractFactory.AbstractFactory;
@@ -12,7 +8,6 @@ import EdificacionesMilitar.FabricaEscuadron;
 import EdificacionesMilitar.FabricaRambo;
 import EdificacionesMilitar.FabricaVehiculo;
 import Militar.Militar;
-import Militar.Convoy;
 import EdificacionesMilitar.GeneradorDiamante;
 import EdificacionesMilitar.RecolectorEfectivo;
 import EdificacionesMilitar.RecolectorOro;
@@ -30,10 +25,12 @@ import EdificacionesTerrorista.FabricaTanque;
 import EdificacionesTerrorista.GeneradorMonedas;
 import EdificacionesTerrorista.RecolectorPetroleo;
 import EdificacionesTerrorista.RecolectorQuimicos;
+import Revolucionario.Revolucionario;
 import Singletons.Fase;
 import Singletons.SingletonMilitar;
 import Singletons.SingletonRevolucionario;
 import Singletons.SingletonTerrorista;
+import Terrorista.Terrorista;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
@@ -205,10 +202,11 @@ public class Menu {
                 System.out.println("recoger");
                 break;
             case 5:
-                
+                menu.entrenarRevo();
                 System.out.println("entrenar");
                 break;
             case 6:
+                menu.mejorarCMREV();
                 System.out.println("mejorar");
                 break;
             case 7:
@@ -247,7 +245,7 @@ public class Menu {
         System.out.println("3. Defender");
         System.out.println("4. Recoger recursos");
         System.out.println("5. Entrenar tropas");
-        System.out.println("6. Crear vehiculos");
+        System.out.println("6. Mejorar Centro de Mando");
         System.out.println("7. Construir recolector de Petroleo");
         System.out.println("8. Construir recolector de Quimicos");
         System.out.println("9. Construir generador de Monedas");
@@ -259,6 +257,7 @@ public class Menu {
 
         switch (opc) {
             case 1:
+                menu.construirFabTerro();
                 System.out.println("construir");
                 break;
             case 2:
@@ -268,13 +267,16 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
+                menu.recogerRecTerro();
                 System.out.println("recoger");
                 break;
             case 5:
+                menu.entrenarTerro();
                 System.out.println("entrenar");
                 break;
             case 6:
-                System.out.println("crear");
+                menu.mejorarCMTERR();
+                System.out.println("mejorar");
                 break;
             case 7:
                 if(recPetroleo[0]==null){
@@ -312,20 +314,8 @@ public class Menu {
         //CentroMando cm1,cm2;
         int j1, j2=0;
         j1=menu.menuRaza();
-        if(j1==1){
-            SingletonMilitar militar= SingletonMilitar.getInstance();
-            
-        }
-        //cm1 = new CentroMando(2,3,4,5,6,7,8);
-        //System.out.println("Jugador 1: "+j1);
         j2= menu.menuRaza();
-        if(j1==2){
-            SingletonMilitar militar= SingletonMilitar.getInstance();
-            
-        }
-        //cm2 = new CentroMando(1,2,3,4,5,6,7);
-        //System.out.println("Jugador 2: "+j2);
-        //System.out.println("FIN");
+        
         
         do{
             System.out.println("\n\n------TURNO JUGADOR 1------");
@@ -360,6 +350,8 @@ public class Menu {
             System.out.println("\n------FASE "+fase.getFase()+" TERMINADA------\n");
             
             militar.setRecurso3(genDiamante[0].recolectar());
+            revolucionario.setRecurso3(genBitCoins[0].recolectar());
+            terrorista.setRecurso3(genMonedas[0].recolectar());
             fase.setFase(fase.getFase()+1);
             menu.mostrarFabsVehi();
         }while(ed1!=0 && ed2!=0);
@@ -653,6 +645,76 @@ public class Menu {
         }
     }
     
+    public void entrenarRevo(){
+        int opc;
+        System.out.println("\n---MENU ENTRENAR TROPAS O TRANSPORTE DE REVOLUCIONARIO---\n");
+        System.out.println("1. Entrenar Fidel Castro");
+        System.out.println("2. Entrenar Batallon");
+        System.out.println("3. Crear Helicoptero");
+        System.out.println("4. Crear Moto");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc = leer.nextInt();
+        
+        switch (opc) {
+            case 1:
+                Revolucionario castro = factory1.getRevolucionario("castro");
+                revolucionario.getCastros()[0].crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                System.out.println("Tropa castro creada");
+                break;
+            case 2:
+                Revolucionario batallon = factory1.getRevolucionario("batallon");
+                revolucionario.getBatallones().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                break;
+            case 3:
+                Revolucionario helicoptero = factory1.getRevolucionario("helicoptero");
+                revolucionario.getHelicopteros().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                break;
+            case 4:
+                Revolucionario moto = factory1.getRevolucionario("moto");
+                revolucionario.getMotos().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                break;
+            default:
+                break;
+        }
+    }
+    
+    public void entrenarTerro(){
+        int opc;
+        System.out.println("\n---MENU ENTRENAR TROPAS O TRANSPORTE DE TERRORISTA---\n");
+        System.out.println("1. Entrenar BinLaden");
+        System.out.println("2. Entrenar Bus");
+        System.out.println("3. Crear Secta");
+        System.out.println("4. Crear Tanque");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc = leer.nextInt();
+        
+        switch (opc) {
+            case 1:
+                Terrorista bin = factory1.getTerrorista("binladen");
+                terrorista.getBins()[0].crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                System.out.println("Tropa binladen creada");
+                break;
+            case 2:
+                Revolucionario bus = factory1.getRevolucionario("bus");
+                terrorista.getBuses().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                break;
+            case 3:
+                Revolucionario secta = factory1.getRevolucionario("secta");
+                terrorista.getSectas().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                break;
+            case 4:
+                Revolucionario tanque = factory1.getRevolucionario("tanque");
+                terrorista.getTanques().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                break;
+            default:
+                break;
+        }
+    }
+    
     public void mejorarCM(){
         if(est1==0){
           militar.mejora1(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
@@ -664,6 +726,32 @@ public class Menu {
             militar.mejora3(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
         }
         est1=est1+1;
+    }
+    
+    public void mejorarCMREV(){
+        if(est2==0){
+            revolucionario.mejora1(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+        }
+        else if(est2==1){
+            revolucionario.mejora2(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+        }
+        else if(est2==2){
+            revolucionario.mejora3(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+        }
+        est2=est2+1;
+    }
+    
+    public void mejorarCMTERR(){
+        if(est3==0){
+            terrorista.mejora1(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+        }
+        else if(est3==1){
+            terrorista.mejora2(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+        }
+        else if(est3==2){
+            terrorista.mejora2(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+        }
+        est3=est3+1;
     }
     
     public void mostrarFabsVehi(){

@@ -10,10 +10,7 @@ import Revolucionario.Revolucionario;
 import Singletons.Fase;
 import Singletons.SingletonRevolucionario;
 
-/**
- *
- * @author EdwinLovo
- */
+
 public class RecolectorPlata{
     int faseAlmacenada,vida=500;
     SingletonRevolucionario revolucionarios= SingletonRevolucionario.getInstance();
