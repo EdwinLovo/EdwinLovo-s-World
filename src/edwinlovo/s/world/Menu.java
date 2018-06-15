@@ -674,7 +674,7 @@ public class Menu {
                     System.out.println("Size: "+militar.getConvoys().size());
                     if(opc3>0 && opc3<=militar.getConvoys().size()){
                         Militar convoy = factory1.getMilitar("convoy");
-                        militar.getConvoys().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                        militar.getConvoys().get(opc3).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                     }
                     else{
                         System.out.print("\nClave erronea ");
@@ -691,7 +691,7 @@ public class Menu {
                     System.out.println("Size: "+militar.getVehiculos().size());
                     if(opc3>0 && opc3<=militar.getVehiculos().size()){
                         Militar vehiculo = factory1.getMilitar("vehiculo");
-                        militar.getVehiculos().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                        militar.getVehiculos().get(opc3).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
                     }
                     else{
                         System.out.print("\nClave erronea ");
@@ -732,7 +732,7 @@ public class Menu {
                     System.out.println("Size: "+revolucionario.getBatallones().size());
                     if(opc3>0 && opc3<=revolucionario.getBatallones().size()){
                         Revolucionario batallon = factory1.getRevolucionario("batallon");
-                        revolucionario.getBatallones().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                        revolucionario.getBatallones().get(opc3).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
                     }
                     else{
                         System.out.print("\nClave erronea ");
@@ -749,7 +749,7 @@ public class Menu {
                     System.out.println("Size: "+revolucionario.getHelicopteros().size());
                     if(opc3>0 && opc3<=revolucionario.getHelicopteros().size()){
                         Revolucionario helicoptero = factory1.getRevolucionario("helicoptero");
-                        revolucionario.getHelicopteros().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                        revolucionario.getHelicopteros().get(opc3).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
                     }
                     else{
                         System.out.print("\nClave erronea ");
@@ -766,7 +766,7 @@ public class Menu {
                     System.out.println("Size: "+revolucionario.getMotos().size());
                     if(opc3>0 && opc3<=revolucionario.getMotos().size()){
                         Revolucionario moto = factory1.getRevolucionario("moto");
-                        revolucionario.getMotos().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                        revolucionario.getMotos().get(opc3).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
                     }
                     else{
                         System.out.print("\nClave erronea ");
@@ -781,7 +781,7 @@ public class Menu {
     }
     
     public void entrenarTerro(){
-        int opc;
+        int opc,opc3;
         System.out.println("\n---MENU ENTRENAR TROPAS O TRANSPORTE DE TERRORISTA---\n");
         System.out.println("1. Entrenar BinLaden");
         System.out.println("2. Entrenar Bus");
@@ -799,16 +799,56 @@ public class Menu {
                 System.out.println("Tropa binladen creada");
                 break;
             case 2:
-                Revolucionario bus = factory1.getRevolucionario("bus");
-                terrorista.getBuses().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                if(terrorista.getBuses().isEmpty()!=true){
+                    menu.mostrarFabsBus();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+terrorista.getBuses().size());
+                    if(opc3>0 && opc3<=terrorista.getBuses().size()){
+                        Terrorista bus = factory1.getTerrorista("bus");
+                        terrorista.getBuses().get(opc3).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Buses ");
+                }
+                
                 break;
             case 3:
-                Revolucionario secta = factory1.getRevolucionario("secta");
-                terrorista.getSectas().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                if(terrorista.getSectas().isEmpty()!=true){
+                    menu.mostrarFabsSecta();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+terrorista.getSectas().size());
+                    if(opc3>0 && opc3<=terrorista.getSectas().size()){
+                        Terrorista secta = factory1.getTerrorista("secta");
+                        terrorista.getSectas().get(opc3).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Sectas ");
+                }
                 break;
             case 4:
-                Revolucionario tanque = factory1.getRevolucionario("tanque");
-                terrorista.getTanques().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                if(terrorista.getTanques().isEmpty()!=true){
+                    menu.mostrarFabsTanque();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+terrorista.getTanques().size());
+                    if(opc3>0 && opc3<=terrorista.getTanques().size()){
+                        Terrorista tanque = factory1.getTerrorista("tanque");
+                        terrorista.getTanques().get(opc3).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Tanques ");
+                }
                 break;
             default:
                 break;

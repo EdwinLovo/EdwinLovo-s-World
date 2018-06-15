@@ -20,7 +20,7 @@ import java.util.Map;
  * @author EdwinLovo
  */
 public class SingletonMilitar {
-    int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
+    private static int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
     private static SingletonMilitar instance;
     Fase fase = Fase.getInstance();
     private Map<Integer,FabricaConvoy> convoys = new HashMap<Integer,FabricaConvoy>();

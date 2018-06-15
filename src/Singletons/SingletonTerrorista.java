@@ -17,7 +17,7 @@ import java.util.Map;
  * @author EdwinLovo
  */
 public class SingletonTerrorista {
-    int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
+    private static int c=1,v=1,es=1,d=1,o=1,ef=1,recurso1,recurso2,recurso3,vida,limite1,limite2,limite3;
     private static SingletonTerrorista instance;
     Fase fase = Fase.getInstance();
     private Map<Integer,FabricaBus> buses = new HashMap<Integer,FabricaBus>();
