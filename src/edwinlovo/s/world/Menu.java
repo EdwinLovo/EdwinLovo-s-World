@@ -905,6 +905,7 @@ public class Menu {
             } else {
                 menu.mostrarVehi(key);
             }
+            System.out.println("------------------------------------");
         }
         
         
@@ -921,6 +922,7 @@ public class Menu {
             } else {
                 menu.mostrarEscua(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -935,6 +937,7 @@ public class Menu {
             } else {
                 menu.mostrarConvoy(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -946,7 +949,7 @@ public class Menu {
         Iterator it = militar.getVehiculos().get(keyVehi).getVehiculos().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Vehiculo "+key);
         }
     }
     
@@ -954,7 +957,7 @@ public class Menu {
         Iterator it = militar.getConvoys().get(keyCon).getConvoys().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Vehiculo "+key);
         }
     }
     
@@ -962,7 +965,7 @@ public class Menu {
         Iterator it = militar.getEscuadrones().get(keyEsc).getEscuadrones().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Vehiculo "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Vehiculo "+key);
         }
     }
     
@@ -977,6 +980,7 @@ public class Menu {
             } else {
                 menu.mostrarBatallon(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -991,6 +995,7 @@ public class Menu {
             } else {
                 menu.mostrarHelicoptero(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -1005,6 +1010,7 @@ public class Menu {
             } else {
                 menu.mostrarMoto(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -1016,7 +1022,7 @@ public class Menu {
         Iterator it = revolucionario.getBatallones().get(keyBat).getBatallones().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Batallon "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Batallon "+key);
         }
     }
     
@@ -1024,7 +1030,7 @@ public class Menu {
         Iterator it = revolucionario.getHelicopteros().get(keyHeli).getHelicopteros().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Helicoptero "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Helicoptero "+key);
         }
     }
     
@@ -1032,7 +1038,7 @@ public class Menu {
         Iterator it = revolucionario.getMotos().get(keyMoto).getMotos().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Moto "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Moto "+key);
         }
     }
     
@@ -1047,6 +1053,7 @@ public class Menu {
             } else {
                 menu.mostrarBus(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -1061,6 +1068,7 @@ public class Menu {
             } else {
                 menu.mostrarSecta(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -1075,6 +1083,7 @@ public class Menu {
             } else {
                 menu.mostrarTanque(key);
             }
+            System.out.println("------------------------------------");
         }
     }
     
@@ -1086,7 +1095,7 @@ public class Menu {
         Iterator it = terrorista.getBuses().get(keyBus).getBuses().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Bus "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Bus "+key);
         }
     }
     
@@ -1094,7 +1103,7 @@ public class Menu {
         Iterator it = terrorista.getTanques().get(keyTan).getTanques().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Tanque "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Tanque "+key);
         }
     }
     
@@ -1102,7 +1111,7 @@ public class Menu {
         Iterator it = terrorista.getSectas().get(keySec).getSectas().keySet().iterator();
         while(it.hasNext()){
             Integer key = (Integer) it.next();
-            System.out.println("Clave: "+key+" -> Valor: Secta "+key);
+            System.out.println("    Clave: "+key+" -> Valor: Secta "+key);
         }
     }
     
