@@ -572,7 +572,7 @@ public class Menu {
     }
     
     public void menuJugar(){
-        
+        System.out.println("NO SE PUEDE REPETIR RAZA\n");
         GeneradorDiamante diamantes = new GeneradorDiamante(fase.getFase());
         int ed1=1, ed2=1,opc=0;
         int oro,diamante,efectivo;
