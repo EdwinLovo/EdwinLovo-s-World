@@ -168,7 +168,46 @@ public class Menu {
                 }
                 break;
             case 3:
-                System.out.println("defender");
+                System.out.println("Escoja tropa con que defendera");
+                System.out.println("1. Convoy");
+                System.out.println("2. Escuadron");
+                System.out.println("3. Vehiculo");
+                System.out.println("4. Rambo");
+                System.out.print("\nIngrese su opcion: ");
+                opc2 = leer.nextInt();
+                if (opc2 > 0 && opc2 < 5) {
+                    if (opc2 == 1) {
+                        Iterator it = militar.getConvoys().get(1).getConvoys().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=militar.getConvoys().get(key).getConvoys().get(key).getAtaque();
+                            militar.getConvoys().get(key).getConvoys().get(key).defender(f);
+                            return;
+                        }
+
+                    } else if (opc2 == 2) {
+                        Iterator it = militar.getEscuadrones().get(1).getEscuadrones().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=militar.getEscuadrones().get(key).getEscuadrones().get(key).getAtaque();
+                            militar.getEscuadrones().get(key).getEscuadrones().get(key).defender(f);
+                            return;
+                        }
+                    } else if (opc2 == 3) {
+                        Iterator it = militar.getVehiculos().get(1).getVehiculos().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=militar.getVehiculos().get(key).getVehiculos().get(key).getAtaque();
+                            militar.getVehiculos().get(key).getVehiculos().get(key).defender(f);
+                            return;
+                        }
+                    } else if (opc2 == 4) {
+
+                    }
+                }
+                else{
+                    System.out.println("Error");
+                }
                 break;
             case 4:
                 if (recOro[0]==null || recEfectivo[0]==null){
@@ -279,6 +318,46 @@ public class Menu {
                 }
                 break;
             case 3:
+                System.out.println("Escoja tropa con que defendera");
+                System.out.println("1. Batallon");
+                System.out.println("2. Helicoptero");
+                System.out.println("3. Moto");
+                System.out.println("4. Castro");
+                System.out.print("\nIngrese su opcion: ");
+                opc2 = leer.nextInt();
+                if (opc2 > 0 && opc2 < 5) {
+                    if (opc2 == 1) {
+                        Iterator it = revolucionario.getBatallones().get(1).getBatallones().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=revolucionario.getBatallones().get(key).getBatallones().get(key).getAtaque();
+                            revolucionario.getBatallones().get(key).getBatallones().get(key).defender(f);
+                            return;
+                        }
+
+                    } else if (opc2 == 2) {
+                        Iterator it = revolucionario.getHelicopteros().get(1).getHelicopteros().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=revolucionario.getHelicopteros().get(key).getHelicopteros().get(key).getAtaque();
+                            revolucionario.getHelicopteros().get(key).getHelicopteros().get(key).defender(f);
+                            return;
+                        }
+                    } else if (opc2 == 3) {
+                        Iterator it = revolucionario.getMotos().get(1).getMotos().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=revolucionario.getMotos().get(key).getMotos().get(key).getAtaque();
+                            revolucionario.getMotos().get(key).getMotos().get(key).defender(f);
+                            return;
+                        }
+                    } else if (opc2 == 4) {
+
+                    }
+                }
+                else{
+                    System.out.println("Error");
+                }
                 System.out.println("defender");
                 break;
             case 4:
@@ -392,6 +471,46 @@ public class Menu {
                 }
                 break;
             case 3:
+                System.out.println("Escoja tropa con que defendera");
+                System.out.println("1. Tanque");
+                System.out.println("2. Bus");
+                System.out.println("3. Secta");
+                System.out.println("4. BinLaden");
+                System.out.print("\nIngrese su opcion: ");
+                opc2 = leer.nextInt();
+                if (opc2 > 0 && opc2 < 5) {
+                    if (opc2 == 1) {
+                        Iterator it = terrorista.getTanques().get(1).getTanques().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=terrorista.getTanques().get(key).getTanques().get(key).getAtaque();
+                            terrorista.getTanques().get(key).getTanques().get(key).defender(f);
+                            return;
+                        }
+
+                    } else if (opc2 == 2) {
+                        Iterator it = terrorista.getBuses().get(1).getBuses().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=terrorista.getBuses().get(key).getBuses().get(key).getAtaque();
+                            terrorista.getBuses().get(key).getBuses().get(key).defender(f);
+                            return;
+                        }
+                    } else if (opc2 == 3) {
+                        Iterator it = terrorista.getSectas().get(1).getSectas().keySet().iterator();
+                        while (it.hasNext()) {
+                            Integer key = (Integer) it.next();
+                            f=terrorista.getSectas().get(key).getSectas().get(key).getAtaque();
+                            terrorista.getSectas().get(key).getSectas().get(key).defender(f);
+                            return;
+                        }
+                    } else if (opc2 == 4) {
+
+                    }
+                }
+                else{
+                    System.out.println("Error");
+                }
                 System.out.println("defender");
                 break;
             case 4:
