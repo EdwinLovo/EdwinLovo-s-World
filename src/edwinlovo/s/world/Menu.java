@@ -1420,12 +1420,13 @@ public class Menu {
                 break;
             case 4:
                 menu.mostrarFabsRambo();
+                menu.mostrarFabsEscuadron();
                 System.out.print("\nIngrese la clave de la Fabrica de Rambo a atacar: ");
                 opc2 = leer.nextInt();
-                life= militar.getRambos()[0].getVida();
-                militar.getRambos()[0].setVida(life-pAta);
-                if(militar.getRambos()[0].getVida()<=0){
-                    militar.getRambos()[0]=null;
+                life= militar.getRambos().get(1).getVida();
+                militar.getRambos().get(1).setVida(life-pAta);
+                if(militar.getRambos().get(1).getVida()<=0){
+                    militar.getRambos().remove(1);
                 }
                 break;
             default:
@@ -1482,10 +1483,10 @@ public class Menu {
                 menu.mostrarFabsCastro();
                 System.out.print("\nIngrese la clave de la Fabrica de Castro a atacar: ");
                 opc2 = leer.nextInt();
-                life=revolucionario.getCastros()[0].getVida();
-                revolucionario.getCastros()[0].setVida(-pAta);
-                if(revolucionario.getCastros()[0].getVida()<=0){
-                    revolucionario.getCastros();
+                life=revolucionario.getCastros().get(1).getVida();
+                revolucionario.getCastros().get(1).setVida(life-pAta);
+                if(revolucionario.getCastros().get(1).getVida()<=0){
+                    revolucionario.getCastros().remove(1);
                 }
                 break;
             default:
@@ -1542,11 +1543,10 @@ public class Menu {
                 menu.mostrarFabsBinLaden();
                 System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
                 opc2 = leer.nextInt();
-                life=terrorista.getBins()[0].getVida();
-                terrorista.getBins()[0].setVida(life-pAta);
-                if(terrorista.getBins()[0].getVida()<=0){
-                    terrorista.getBins()[0]=null;
-                    militar.getRambos()[0]=null;
+                life= terrorista.getBins().get(1).getVida();
+                terrorista.getBins().get(1).setVida(life-pAta);
+                if(terrorista.getBins().get(1).getVida()<=0){
+                    terrorista.getBins().remove(1);
                 }
                 break;
             default:
@@ -1640,13 +1640,20 @@ public class Menu {
                 break;
             case 4:
                 menu.mostrarFabsBinLaden();
-                System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
-                opc2 = leer.nextInt();
-                life=terrorista.getBins()[0].getVida();
-                terrorista.getBins()[0].setVida(life-pAta);
-                if(terrorista.getBins()[0].getVida()<=0){
-                    terrorista.getBins()[0]=null;
-                    militar.getRambos()[0]=null;
+                System.out.print("\nSe atacara a la Fabrica 1 ");
+                if (terrorista.getBins().isEmpty() == false) {
+                    menu.mostrarTanque(1);
+                    System.out.print("\nSe atacara a BinLaden 1 ");
+                    opc3 = 1;
+                    if (opc3 > 0 && opc3 <= terrorista.getBins().size()) {
+                        life = terrorista.getBins().get(1).getBin().get(1).getVida();
+                        terrorista.getBins().get(1).getBin().get(1).setVida(life - pAta);
+                        if (terrorista.getBins().get(1).getBin().get(1).getVida() <= 0) {
+                            terrorista.getBins().get(1).getBin().remove(1);
+                        }
+                    }
+                } else {
+                    System.out.println("\nNo hay tropas creadas");
                 }
                 break;
             default:
@@ -1739,14 +1746,21 @@ public class Menu {
                 }
                 break;
             case 4:
-                menu.mostrarFabsBinLaden();
-                System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
-                opc2 = leer.nextInt();
-                life=terrorista.getBins()[0].getVida();
-                terrorista.getBins()[0].setVida(life-pAta);
-                if(terrorista.getBins()[0].getVida()<=0){
-                    terrorista.getBins()[0]=null;
-                    militar.getRambos()[0]=null;
+                menu.mostrarFabsRambo();
+                System.out.print("\nSe atacara a la Fabrica 1 ");
+                if (militar.getRambos().isEmpty() == false) {
+                    menu.mostrarTanque(1);
+                    System.out.print("\nSe atacara a Rambo 1 ");
+                    opc3 = 1;
+                    if (opc3 > 0 && opc3 <= militar.getRambos().size()) {
+                        life = militar.getRambos().get(1).getRambo().get(1).getVida();
+                        militar.getRambos().get(1).getRambo().get(1).setVida(life - pAta);
+                        if (militar.getRambos().get(1).getRambo().get(1).getVida() <= 0) {
+                            militar.getRambos().get(1).getRambo().remove(1);
+                        }
+                    }
+                } else {
+                    System.out.println("\nNo hay tropas creadas");
                 }
                 break;
             default:
@@ -1839,14 +1853,21 @@ public class Menu {
                 }
                 break;
             case 4:
-                menu.mostrarFabsBinLaden();
-                System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
-                opc2 = leer.nextInt();
-                life=terrorista.getBins()[0].getVida();
-                terrorista.getBins()[0].setVida(life-pAta);
-                if(terrorista.getBins()[0].getVida()<=0){
-                    terrorista.getBins()[0]=null;
-                    militar.getRambos()[0]=null;
+                menu.mostrarFabsCastro();
+                System.out.print("\nSe atacara a la Fabrica 1 ");
+                if (revolucionario.getCastros().isEmpty() == false) {
+                    menu.mostrarTanque(1);
+                    System.out.print("\nSe atacara a Castro 1 ");
+                    opc3 = 1;
+                    if (opc3 > 0 && opc3 <= revolucionario.getCastros().size()) {
+                        life = revolucionario.getCastros().get(1).getCastro().get(1).getVida();
+                        revolucionario.getCastros().get(1).getCastro().get(1).setVida(life - pAta);
+                        if (revolucionario.getCastros().get(1).getCastro().get(1).getVida() <= 0) {
+                            revolucionario.getCastros().get(1).getCastro().remove(1);
+                        }
+                    }
+                } else {
+                    System.out.println("\nNo hay tropas creadas");
                 }
                 break;
             default:
