@@ -52,7 +52,7 @@ public class Menu {
     RecolectorOro oro = new RecolectorOro(fase.getFase());*/
     GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());
     int j1, j2=0;
-    private static int d=0,m=0,b=0;
+    private static int d=0,m=0,b=0,ed1,ed2,ed3;
     RecolectorEfectivo recEfectivo[] = new RecolectorEfectivo[1];
     RecolectorOro recOro[] = new RecolectorOro[1];
     GeneradorDiamante genDiamante[] = new GeneradorDiamante[1];
@@ -581,13 +581,49 @@ public class Menu {
         j1=menu.menuRaza();
         j2= menu.menuRaza();
         
-        
         do{
+            this.ed1= militar.getConvoys().size()+militar.getEscuadrones().size()+militar.getVehiculos().size()+militar.getRambos().size();
+            this.ed2=revolucionario.getBatallones().size()+revolucionario.getCastros().size()+revolucionario.getHelicopteros().size()+revolucionario.getMotos().size();
+            this.ed3=terrorista.getBins().size()+terrorista.getBuses().size()+terrorista.getSectas().size()+terrorista.getTanques().size();
+            if(j1==1){
+                if(this.ed1==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 2------");
+                    }
+            }
+            else if(j1==2){
+                if(this.ed2==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 2------");
+                    }
+            }
+            else if(j1==3){
+                if(this.ed3==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 2------");
+                    }
+            }
+            
+            if(j2==1){
+                if(this.ed1==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 1------");
+                    }
+            }
+            else if(j2==2){
+                if(this.ed2==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 1------");
+                    }
+            }
+            else if(j2==3){
+                if(this.ed3==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 1------");
+                    }
+            }
             System.out.println("\n\n------TURNO JUGADOR 1------");
             
             switch (j1) {
                 case 1:
                     menu.menuMilitar();
+                    if(this.ed2==0 || this.ed3==0){
+                        System.out.println("\n\n------GANASTE JUGADOR 1------");
+                    }
                     break;
                 case 2:
                     menu.menuRevolucionario();
