@@ -58,4 +58,9 @@ public class Castro implements Revolucionario{
                 break;
         }
     }
+    
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
 }

@@ -10,4 +10,5 @@ public interface Terrorista {
     public void defender(int j);
     public void setVida(int vida);
     public int getVida();
+    public int getAtaque();
 }

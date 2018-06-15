@@ -57,4 +57,9 @@ public class Vehiculo implements Militar{
                 break;
         }
     }
+    
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
 }

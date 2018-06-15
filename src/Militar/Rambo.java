@@ -57,4 +57,9 @@ public class Rambo implements Militar{
                 break;
         }
     }
+    
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
 }

@@ -30,7 +30,12 @@ public class Escuadron implements Militar{
         }
         System.out.println("Atacar");
     }
-
+    
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
+    
     @Override
     public void setVida(int vida) {
         this.vida=vida;

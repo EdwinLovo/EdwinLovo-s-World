@@ -55,4 +55,8 @@ public class Batallon implements Revolucionario{
         }
     }
 
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
 }

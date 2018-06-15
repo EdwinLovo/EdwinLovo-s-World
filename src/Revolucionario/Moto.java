@@ -54,4 +54,8 @@ public class Moto implements Revolucionario{
                 break;
         }
     }
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
 }

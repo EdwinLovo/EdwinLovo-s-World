@@ -53,5 +53,9 @@ public class Secta implements Terrorista{
                 break;
         }
     }
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
     
 }

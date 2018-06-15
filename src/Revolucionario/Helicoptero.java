@@ -55,4 +55,8 @@ public class Helicoptero implements Revolucionario{
                 break;
         }
     }
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
 }

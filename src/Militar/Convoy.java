@@ -59,4 +59,9 @@ public class Convoy implements Militar{
         }
     }
 
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
+
 }

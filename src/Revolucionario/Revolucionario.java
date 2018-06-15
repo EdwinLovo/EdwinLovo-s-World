@@ -13,5 +13,6 @@ public interface Revolucionario {
     public void atacar(int j);
     public void defender(int j);
     public int getVida();
+    public int getAtaque();
     public void setVida(int vida);
 }

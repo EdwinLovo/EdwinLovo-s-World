@@ -53,5 +53,9 @@ public class Bus implements Terrorista{
                 break;
         }
     }
+    @Override
+    public int getAtaque() {
+        return pAta;
+    }
     
 }
