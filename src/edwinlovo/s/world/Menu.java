@@ -667,13 +667,38 @@ public class Menu {
                 }
                 break;
             case 3:
-                
-                Militar convoy = factory1.getMilitar("convoy");
-                militar.getConvoys().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                if(militar.getConvoys().isEmpty()!=true){
+                    menu.mostrarFabsConvoy();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+militar.getConvoys().size());
+                    if(opc3>0 && opc3<=militar.getConvoys().size()){
+                        Militar convoy = factory1.getMilitar("convoy");
+                        militar.getConvoys().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Convoys ");
+                }
                 break;
             case 4:
-                Militar vehiculo = factory1.getMilitar("vehiculo");
-                militar.getVehiculos().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                if(militar.getVehiculos().isEmpty()!=true){
+                    menu.mostrarFabsVehi();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+militar.getVehiculos().size());
+                    if(opc3>0 && opc3<=militar.getVehiculos().size()){
+                        Militar vehiculo = factory1.getMilitar("vehiculo");
+                        militar.getVehiculos().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Vehiculos ");
+                }
                 break;
             default:
                 break;
@@ -681,7 +706,7 @@ public class Menu {
     }
     
     public void entrenarRevo(){
-        int opc;
+        int opc,opc3;
         System.out.println("\n---MENU ENTRENAR TROPAS O TRANSPORTE DE REVOLUCIONARIO---\n");
         System.out.println("1. Entrenar Fidel Castro");
         System.out.println("2. Entrenar Batallon");
@@ -694,21 +719,61 @@ public class Menu {
         
         switch (opc) {
             case 1:
+                
                 Revolucionario castro = factory1.getRevolucionario("castro");
                 revolucionario.getCastros()[0].crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
                 System.out.println("Tropa castro creada");
                 break;
             case 2:
-                Revolucionario batallon = factory1.getRevolucionario("batallon");
-                revolucionario.getBatallones().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                if(revolucionario.getBatallones().isEmpty()!=true){
+                    menu.mostrarFabsBatallon();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+revolucionario.getBatallones().size());
+                    if(opc3>0 && opc3<=revolucionario.getBatallones().size()){
+                        Revolucionario batallon = factory1.getRevolucionario("batallon");
+                        revolucionario.getBatallones().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Batallones ");
+                }
                 break;
             case 3:
-                Revolucionario helicoptero = factory1.getRevolucionario("helicoptero");
-                revolucionario.getHelicopteros().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                if(revolucionario.getHelicopteros().isEmpty()!=true){
+                    menu.mostrarFabsHelicoptero();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+revolucionario.getHelicopteros().size());
+                    if(opc3>0 && opc3<=revolucionario.getHelicopteros().size()){
+                        Revolucionario helicoptero = factory1.getRevolucionario("helicoptero");
+                        revolucionario.getHelicopteros().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Helicopteros ");
+                }
                 break;
             case 4:
-                Revolucionario moto = factory1.getRevolucionario("moto");
-                revolucionario.getMotos().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                if(revolucionario.getMotos().isEmpty()!=true){
+                    menu.mostrarFabsMoto();
+                    System.out.print("\nIngrese la clave de la Fabrica donde se creara la tropa: ");
+                    opc3 = leer.nextInt();
+                    System.out.println("Size: "+revolucionario.getMotos().size());
+                    if(opc3>0 && opc3<=revolucionario.getMotos().size()){
+                        Revolucionario moto = factory1.getRevolucionario("moto");
+                        revolucionario.getMotos().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                    }
+                    else{
+                        System.out.print("\nClave erronea ");
+                    }
+                }else{
+                    System.out.print("\nNo existen fabricas de Motos ");
+                }
                 break;
             default:
                 break;
