@@ -50,8 +50,9 @@ public class Menu {
     Fase fase = Fase.getInstance();
     /*RecolectorEfectivo efectivo = new RecolectorEfectivo(fase.getFase());
     RecolectorOro oro = new RecolectorOro(fase.getFase());*/
-    GeneradorDiamante diamante;
+    GeneradorDiamante diamante = new GeneradorDiamante(fase.getFase());
     int j1, j2=0;
+    private static int d=0,m=0,b=0;
     RecolectorEfectivo recEfectivo[] = new RecolectorEfectivo[1];
     RecolectorOro recOro[] = new RecolectorOro[1];
     GeneradorDiamante genDiamante[] = new GeneradorDiamante[1];
@@ -131,7 +132,11 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
-                menu.recogerRecMili();
+                if (recOro[0]==null || recEfectivo[0]==null){
+                    System.out.println("Recolectores inexistentes");
+                }else{
+                    menu.recogerRecMili();
+                }
                 break;
             case 5:
                 menu.entrenarMili();
@@ -156,8 +161,8 @@ public class Menu {
                 }
                 break;
             case 9:
-                if(this.diamante==null){
-                    this.diamante= new GeneradorDiamante(fase.getFase());
+                if(this.d==0){
+                    this.d=40;
                 }
                 else{
                     System.out.println("Generador ya existente");
@@ -200,8 +205,11 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
-                menu.recogerRecRev();
-                System.out.println("recoger");
+                if (recMetal[0]==null || recPlata[0]==null){
+                    System.out.println("Recolectores inexistentes");
+                }else{
+                    menu.recogerRecRev();
+                }
                 break;
             case 5:
                 menu.entrenarRevo();
@@ -228,8 +236,8 @@ public class Menu {
                 }
                 break;
             case 9:
-                if(genBitCoins[0]==null){
-                    genBitCoins[0]= new GeneradorBitCoins(fase.getFase());
+                if(this.b==0){
+                    this.b=40;
                 }
                 else{
                     System.out.println("Generador ya existente");
@@ -271,8 +279,11 @@ public class Menu {
                 System.out.println("defender");
                 break;
             case 4:
-                menu.recogerRecTerro();
-                System.out.println("recoger");
+                if (recPetroleo[0]==null || recQuimicos[0]==null){
+                    System.out.println("Recolectores inexistentes");
+                }else{
+                    menu.recogerRecTerro();
+                }
                 break;
             case 5:
                 menu.entrenarTerro();
@@ -299,8 +310,8 @@ public class Menu {
                 }
                 break;
             case 9:
-                if(genMonedas[0]==null){
-                    genMonedas[0]= new GeneradorMonedas(fase.getFase());
+                if(this.m==0){
+                    this.m=40;
                 }
                 else{
                     System.out.println("Generador ya existente");
@@ -352,15 +363,14 @@ public class Menu {
                     break;
             }
             System.out.println("\n------FASE "+fase.getFase()+" TERMINADA------\n");
-            System.out.println("diam: "+genDiamante[0]);
-            if(this.diamante!=null){
-                militar.setRecurso3(this.diamante.recolectar());
+            if(this.d!=0){
+                militar.setRecurso3(500);
             }
-            if(genBitCoins[0]!=null){
-                revolucionario.setRecurso3(genBitCoins[0].recolectar());
+            if(this.m!=0){
+                terrorista.setRecurso3(500);
             }
-            if(genMonedas[0]!=null){
-                terrorista.setRecurso3(genMonedas[0].recolectar());
+            if(this.b!=0){
+                revolucionario.setRecurso3(500);
             }
             fase.setFase(fase.getFase()+1);
             menu.mostrarFabsVehi();
