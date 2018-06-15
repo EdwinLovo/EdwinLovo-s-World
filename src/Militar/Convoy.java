@@ -36,15 +36,6 @@ public class Convoy implements Militar{
     }
 
     @Override
-    public int recolectar() {
-        return 0;
-    }
-
-    @Override
-    public void crear(int r1, int r2, int r3) {
-    }
-
-    @Override
     public void setVida(int vida) {
         this.vida=vida;
     }
@@ -52,6 +43,11 @@ public class Convoy implements Militar{
     @Override
     public int getVida() {
         return vida;
+    }
+
+    @Override
+    public void defender(int j) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

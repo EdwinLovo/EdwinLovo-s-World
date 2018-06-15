@@ -1434,19 +1434,19 @@ public class Menu {
                 }
                 break;
             case 2:
-                menu.mostrarFabsSecta();
-                System.out.print("\nIngrese la clave de la Fabrica de Secta a atacar: ");
+                menu.mostrarFabsVehi();
+                System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
                 opc2 = leer.nextInt();
-                if (opc2>0 && opc2<=terrorista.getSectas().size()) {
-                    if (terrorista.getSectas().isEmpty() == false) {
-                        menu.mostrarSecta(opc2);
-                        System.out.print("\nIngrese la clave de la Secta que desea atacar: ");
+                if (opc2>0 && opc2<=militar.getVehiculos().size()) {
+                    if (militar.getVehiculos().isEmpty() == false) {
+                        menu.mostrarVehi(opc2);
+                        System.out.print("\nIngrese la clave del Vehiculo que desea atacar: ");
                         opc3 = leer.nextInt();
-                        if (opc3 > 0 && opc3 <= terrorista.getSectas().size()) {
-                            life = terrorista.getSectas().get(opc2).getSectas().get(opc3).getVida();
-                            terrorista.getSectas().get(opc2).getSectas().get(opc3).setVida(life - pAta);
-                            if (terrorista.getSectas().get(opc2).getSectas().get(opc3).getVida() <= 0) {
-                                terrorista.getSectas().get(opc2).getSectas().remove(opc3);
+                        if (opc3 > 0 && opc3 <= militar.getVehiculos().size()) {
+                            life = militar.getVehiculos().get(opc2).getVehiculos().get(opc3).getVida();
+                            militar.getVehiculos().get(opc2).getVehiculos().get(opc3).setVida(life - pAta);
+                            if (militar.getVehiculos().get(opc2).getVehiculos().get(opc3).getVida() <= 0) {
+                                militar.getVehiculos().get(opc2).getVehiculos().remove(opc3);
                             }
                         }
                     } else {
@@ -1457,19 +1457,119 @@ public class Menu {
                 }
                 break;
             case 3:
-                menu.mostrarFabsTanque();
-                System.out.print("\nIngrese la clave de la Fabrica de Tanque a atacar: ");
+                menu.mostrarFabsEscuadron();
+                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
                 opc2 = leer.nextInt();
-                if (opc2>0 && opc2<=terrorista.getTanques().size()) {
-                    if (terrorista.getTanques().isEmpty() == false) {
-                        menu.mostrarTanque(opc2);
-                        System.out.print("\nIngrese la clave del Tanque que desea atacar: ");
+                if (opc2>0 && opc2<=militar.getEscuadrones().size()) {
+                    if (militar.getEscuadrones().isEmpty() == false) {
+                        menu.mostrarEscua(opc2);
+                        System.out.print("\nIngrese la clave del Convoy que desea atacar: ");
                         opc3 = leer.nextInt();
-                        if (opc3 > 0 && opc3 <= terrorista.getTanques().size()) {
-                            life = terrorista.getTanques().get(opc2).getTanques().get(opc3).getVida();
-                            terrorista.getTanques().get(opc2).getTanques().get(opc3).setVida(life - pAta);
-                            if (terrorista.getTanques().get(opc2).getTanques().get(opc3).getVida() <= 0) {
-                                terrorista.getTanques().get(opc2).getTanques().remove(opc3);
+                        if (opc3 > 0 && opc3 <= militar.getEscuadrones().size()) {
+                            life = militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).getVida();
+                            militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).setVida(life - pAta);
+                            if (militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).getVida() <= 0) {
+                                militar.getEscuadrones().get(opc2).getEscuadrones().remove(opc3);
+                            }
+                        }
+                    } else {
+                        System.out.println("\nNo hay tropas creadas");
+                    }
+                }else{
+                    System.out.println("\nClave erronea");
+                }
+                break;
+            case 4:
+                menu.mostrarFabsBinLaden();
+                System.out.print("\nIngrese la clave de la Fabrica de BinLaden a atacar: ");
+                opc2 = leer.nextInt();
+                life=terrorista.getBins()[0].getVida();
+                terrorista.getBins()[0].setVida(life-pAta);
+                if(terrorista.getBins()[0].getVida()<=0){
+                    terrorista.getBins()[0]=null;
+                    militar.getRambos()[0]=null;
+                }
+                break;
+            default:
+                System.out.print("\nEleccion Erronea ");
+                break;
+        }
+    }
+    
+    public void atacarTropasRevo(int pAta){
+        int opc1,opc2,opc3,key=0,life;
+        
+        System.out.println("Elija el tipo de fabrica al que pertenece la tropa a atacar \n");
+        System.out.println("1.Fabrica de Batallon");
+        System.out.println("2.Fabrica de Helicoptero");
+        System.out.println("3.Fabrica de Moto");
+        System.out.println("4.Fabrica de Castro");
+        
+        Scanner leer = new Scanner(System.in);
+        System.out.print("\nIngrese su opcion: ");
+        opc1 = leer.nextInt();
+        
+        switch (opc1) {
+            case 1:
+                menu.mostrarFabsBatallon();
+                System.out.print("\nIngrese la clave de la Fabrica de Batallon a atacar: ");
+                opc2 = leer.nextInt();
+                if (opc2>0 && opc2<=revolucionario.getBatallones().size()) {
+                    if (revolucionario.getBatallones().isEmpty() == false) {
+                        menu.mostrarBatallon(opc2);
+                        System.out.print("\nIngrese la clave del Convoy que desea atacar: ");
+                        opc3 = leer.nextInt();
+                        if (opc3 > 0 && opc3 <= revolucionario.getBatallones().size()) {
+                            life = revolucionario.getBatallones().get(opc2).getBatallones().get(opc3).getVida();
+                            revolucionario.getBatallones().get(opc2).getBatallones().get(opc3).setVida(life - pAta);
+                            if (revolucionario.getBatallones().get(opc2).getBatallones().get(opc3).getVida() <= 0) {
+                                revolucionario.getBatallones().get(opc2).getBatallones().remove(opc3);
+                            }
+                        }
+                    } else {
+                        System.out.println("\nNo hay tropas creadas");
+                    }
+                }else{
+                    System.out.println("\nClave erronea");
+                }
+                break;
+            case 2:
+                menu.mostrarFabsVehi();
+                System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
+                opc2 = leer.nextInt();
+                if (opc2>0 && opc2<=militar.getVehiculos().size()) {
+                    if (militar.getVehiculos().isEmpty() == false) {
+                        menu.mostrarVehi(opc2);
+                        System.out.print("\nIngrese la clave del Vehiculo que desea atacar: ");
+                        opc3 = leer.nextInt();
+                        if (opc3 > 0 && opc3 <= militar.getVehiculos().size()) {
+                            life = militar.getVehiculos().get(opc2).getVehiculos().get(opc3).getVida();
+                            militar.getVehiculos().get(opc2).getVehiculos().get(opc3).setVida(life - pAta);
+                            if (militar.getVehiculos().get(opc2).getVehiculos().get(opc3).getVida() <= 0) {
+                                militar.getVehiculos().get(opc2).getVehiculos().remove(opc3);
+                            }
+                        }
+                    } else {
+                        System.out.println("\nNo hay tropas creadas");
+                    }
+                }else{
+                    System.out.println("\nClave erronea");
+                }
+                break;
+            case 3:
+                menu.mostrarFabsEscuadron();
+                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
+                opc2 = leer.nextInt();
+                if (opc2>0 && opc2<=militar.getEscuadrones().size()) {
+                    if (militar.getEscuadrones().isEmpty() == false) {
+                        menu.mostrarEscua(opc2);
+                        System.out.print("\nIngrese la clave del Convoy que desea atacar: ");
+                        opc3 = leer.nextInt();
+                        if (opc3 > 0 && opc3 <= militar.getEscuadrones().size()) {
+                            life = militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).getVida();
+                            militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).setVida(life - pAta);
+                            if (militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).getVida() <= 0) {
+                                militar.getEscuadrones().get(opc2).getEscuadrones().remove(opc3);
                             }
                         }
                     } else {

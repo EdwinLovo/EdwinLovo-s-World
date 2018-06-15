@@ -27,15 +27,19 @@ public class Moto implements Revolucionario{
                 break;
         }
     }
+    
     @Override
-    public void generar() {
+    public void setVida(int vida) {
+        this.vida=vida;
     }
 
     @Override
-    public void recolectar() {
+    public int getVida() {
+        return vida;
     }
 
     @Override
-    public void crear() {
+    public void defender(int j) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

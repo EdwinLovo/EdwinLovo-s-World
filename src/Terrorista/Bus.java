@@ -36,5 +36,10 @@ public class Bus implements Terrorista{
     public int getVida() {
         return vida;
     }
+
+    @Override
+    public void defender(int j) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

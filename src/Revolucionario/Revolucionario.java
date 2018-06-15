@@ -11,7 +11,7 @@ package Revolucionario;
  */
 public interface Revolucionario {
     public void atacar(int j);
-    public void generar();
-    public void recolectar();
-    public void crear();
+    public void defender(int j);
+    public int getVida();
+    public void setVida(int vida);
 }
