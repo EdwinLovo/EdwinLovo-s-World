@@ -30,9 +30,6 @@ public class Convoy implements Militar{
             default:
                 break;
         }
-        System.out.println(""); 
-        
-        System.out.println("Atacar");
     }
 
     @Override
@@ -47,7 +44,19 @@ public class Convoy implements Militar{
 
     @Override
     public void defender(int j) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        switch (j) {
+            case 1:
+                menu.atacarTropasMili(pAta);
+                break;
+            case 2:
+                menu.atacarFabRevolucionario(pAta);
+                break;
+            case 3:
+                menu.atacarFabTerrorista(pAta);
+                break;
+            default:
+                break;
+        }
     }
 
 }

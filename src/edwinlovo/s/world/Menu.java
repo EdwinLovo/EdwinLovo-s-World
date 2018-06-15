@@ -1517,7 +1517,7 @@ public class Menu {
                 if (opc2>0 && opc2<=revolucionario.getBatallones().size()) {
                     if (revolucionario.getBatallones().isEmpty() == false) {
                         menu.mostrarBatallon(opc2);
-                        System.out.print("\nIngrese la clave del Convoy que desea atacar: ");
+                        System.out.print("\nIngrese la clave del Batallon que desea atacar: ");
                         opc3 = leer.nextInt();
                         if (opc3 > 0 && opc3 <= revolucionario.getBatallones().size()) {
                             life = revolucionario.getBatallones().get(opc2).getBatallones().get(opc3).getVida();
@@ -1534,19 +1534,19 @@ public class Menu {
                 }
                 break;
             case 2:
-                menu.mostrarFabsVehi();
-                System.out.print("\nIngrese la clave de la Fabrica de Vehiculo a atacar: ");
+                menu.mostrarFabsHelicoptero();
+                System.out.print("\nIngrese la clave de la Fabrica de Helicoptero a atacar: ");
                 opc2 = leer.nextInt();
-                if (opc2>0 && opc2<=militar.getVehiculos().size()) {
-                    if (militar.getVehiculos().isEmpty() == false) {
-                        menu.mostrarVehi(opc2);
-                        System.out.print("\nIngrese la clave del Vehiculo que desea atacar: ");
+                if (opc2>0 && opc2<=revolucionario.getHelicopteros().size()) {
+                    if (revolucionario.getBatallones().isEmpty() == false) {
+                        menu.mostrarHelicoptero(opc2);
+                        System.out.print("\nIngrese la clave del Helicoptero que desea atacar: ");
                         opc3 = leer.nextInt();
-                        if (opc3 > 0 && opc3 <= militar.getVehiculos().size()) {
-                            life = militar.getVehiculos().get(opc2).getVehiculos().get(opc3).getVida();
-                            militar.getVehiculos().get(opc2).getVehiculos().get(opc3).setVida(life - pAta);
-                            if (militar.getVehiculos().get(opc2).getVehiculos().get(opc3).getVida() <= 0) {
-                                militar.getVehiculos().get(opc2).getVehiculos().remove(opc3);
+                        if (opc3 > 0 && opc3 <= revolucionario.getHelicopteros().size()) {
+                            life = revolucionario.getHelicopteros().get(opc2).getHelicopteros().get(opc3).getVida();
+                            revolucionario.getHelicopteros().get(opc2).getHelicopteros().get(opc3).setVida(life - pAta);
+                            if (revolucionario.getHelicopteros().get(opc2).getHelicopteros().get(opc3).getVida() <= 0) {
+                                revolucionario.getHelicopteros().get(opc2).getHelicopteros().remove(opc3);
                             }
                         }
                     } else {
@@ -1557,19 +1557,19 @@ public class Menu {
                 }
                 break;
             case 3:
-                menu.mostrarFabsEscuadron();
-                System.out.print("\nIngrese la clave de la Fabrica de Escuadron a atacar: ");
+                menu.mostrarFabsMoto();
+                System.out.print("\nIngrese la clave de la Fabrica de Moto a atacar: ");
                 opc2 = leer.nextInt();
-                if (opc2>0 && opc2<=militar.getEscuadrones().size()) {
-                    if (militar.getEscuadrones().isEmpty() == false) {
-                        menu.mostrarEscua(opc2);
-                        System.out.print("\nIngrese la clave del Convoy que desea atacar: ");
+                if (opc2>0 && opc2<=revolucionario.getMotos().size()) {
+                    if (revolucionario.getMotos().isEmpty() == false) {
+                        menu.mostrarMoto(opc2);
+                        System.out.print("\nIngrese la clave de Moto que desea atacar: ");
                         opc3 = leer.nextInt();
-                        if (opc3 > 0 && opc3 <= militar.getEscuadrones().size()) {
-                            life = militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).getVida();
-                            militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).setVida(life - pAta);
-                            if (militar.getEscuadrones().get(opc2).getEscuadrones().get(opc3).getVida() <= 0) {
-                                militar.getEscuadrones().get(opc2).getEscuadrones().remove(opc3);
+                        if (opc3 > 0 && opc3 <= revolucionario.getMotos().size()) {
+                            life = revolucionario.getMotos().get(opc2).getMotos().get(opc3).getVida();
+                            revolucionario.getMotos().get(opc2).getMotos().get(opc3).setVida(life - pAta);
+                            if (revolucionario.getMotos().get(opc2).getMotos().get(opc3).getVida() <= 0) {
+                                revolucionario.getMotos().get(opc2).getMotos().remove(opc3);
                             }
                         }
                     } else {
