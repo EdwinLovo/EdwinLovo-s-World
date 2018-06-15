@@ -1,10 +1,13 @@
 
 package EdificacionesRevolucionario;
 
+import Militar.Rambo;
 import Revolucionario.Castro;
 import Revolucionario.Revolucionario;
 import Singletons.Fase;
 import Singletons.SingletonRevolucionario;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -14,18 +17,18 @@ public class FabricaCastro{
     int faseAlmacenada, vida=500,cr=0;
     Fase fase = Fase.getInstance();
     SingletonRevolucionario revolucionarios = SingletonRevolucionario.getInstance();
-    private Revolucionario[] castro = new Revolucionario[1];
-
+    private Map<Integer,Castro> castro = new HashMap<Integer,Castro>();
+    
     public FabricaCastro(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
 
-    public Revolucionario[] getRevolucionario() {
+    public Map<Integer, Castro> getCastro() {
         return castro;
     }
 
-    public void setCastro(Revolucionario castro) {
-        this.castro[0] = castro;
+    public void setCastro(Map<Integer, Castro> castro) {
+        this.castro = castro;
     }
     
     public int getVida() {
@@ -48,8 +51,7 @@ public class FabricaCastro{
         System.out.println("Crear");
         if(r1>=200 && r2>=200 && cr<1){
             Castro ram = new Castro();
-            castro[0]=ram;
-            cr+=1;
+            castro.put(1, ram);
             revolucionarios.setRecurso1(-200);
             revolucionarios.setRecurso2(-200);
             revolucionarios.setRecurso3(-200);

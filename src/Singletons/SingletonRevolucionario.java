@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Singletons;
 
 import EdificacionesRevolucionario.FabricaBatallon;
@@ -23,10 +19,7 @@ public class SingletonRevolucionario {
     private Map<Integer,FabricaBatallon> batallones = new HashMap<Integer,FabricaBatallon>();
     private Map<Integer,FabricaHelicoptero> helicopteros = new HashMap<Integer,FabricaHelicoptero>();
     private Map<Integer,FabricaMoto> motos = new HashMap<Integer,FabricaMoto>();
-    /*private Map<Integer,GeneradorDiamante> diamantes = new HashMap<Integer,GeneradorDiamante>();
-    private Map<Integer,RecolectorOro> oros = new HashMap<Integer,RecolectorOro>();
-    private Map<Integer,RecolectorEfectivo> efectivos = new HashMap<Integer,RecolectorEfectivo>();*/
-    private FabricaCastro[] castros = new FabricaCastro[1];
+    private Map<Integer,FabricaCastro> castros = new HashMap<Integer,FabricaCastro>();
     
     public static SingletonRevolucionario getInstance(){
         if(instance==null){
@@ -153,42 +146,14 @@ public class SingletonRevolucionario {
         this.motos.put(es, val);
         es=es+1;
     }
-/*
-    public Map<Integer, GeneradorDiamante> getDiamantes() {
-        return diamantes;
-    }
 
-    public void setDiamantes(GeneradorDiamante val) {
-        this.diamantes.put(d, val);
-        d=d+1;
-    }
-
-    public Map<Integer, RecolectorOro> getOros() {
-        return oros;
-    }
-
-    public void setOros(RecolectorOro val) {
-        this.oros.put(o, val);
-        o=o+1;
-    }
-
-    public Map<Integer, RecolectorEfectivo> getEfectivos() {
-        return efectivos;
-    }
-
-    public void setEfectivos(RecolectorEfectivo val) {
-        this.efectivos.put(ef, val);
-        ef=ef+1;
-    }
-*/
-
-    public FabricaCastro[] getCastros() {
+    public Map<Integer,FabricaCastro>  getCastros() {
         return castros;
     }
 
-    public void setCastros(FabricaCastro val) {
-        if (castros[0]==null){
-            this.castros[0]=val;
+    public void setCastros(FabricaCastro  val) {
+        if (castros.isEmpty()==true){
+            this.castros.put(1, val);
         }
         else{
             System.out.println("Soldado ya existente");

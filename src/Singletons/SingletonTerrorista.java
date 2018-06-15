@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Singletons;
 
 import EdificacionesTerrorista.FabricaBinLaden;
@@ -23,10 +19,7 @@ public class SingletonTerrorista {
     private Map<Integer,FabricaBus> buses = new HashMap<Integer,FabricaBus>();
     private Map<Integer,FabricaSecta> sectas = new HashMap<Integer,FabricaSecta>();
     private Map<Integer,FabricaTanque> tanques = new HashMap<Integer,FabricaTanque>();
-    /*private Map<Integer,GeneradorDiamante> diamantes = new HashMap<Integer,GeneradorDiamante>();
-    private Map<Integer,RecolectorOro> oros = new HashMap<Integer,RecolectorOro>();
-    private Map<Integer,RecolectorEfectivo> efectivos = new HashMap<Integer,RecolectorEfectivo>();*/
-    private FabricaBinLaden[] bins = new FabricaBinLaden[1];
+    private Map<Integer,FabricaBinLaden> bins = new HashMap<Integer,FabricaBinLaden>();
     
     public static SingletonTerrorista getInstance(){
         if(instance==null){
@@ -153,43 +146,15 @@ public class SingletonTerrorista {
         this.tanques.put(es, val);
         es=es+1;
     }
-/*
-    public Map<Integer, GeneradorDiamante> getDiamantes() {
-        return diamantes;
-    }
 
-    public void setDiamantes(GeneradorDiamante val) {
-        this.diamantes.put(d, val);
-        d=d+1;
-    }
-
-    public Map<Integer, RecolectorOro> getOros() {
-        return oros;
-    }
-
-    public void setOros(RecolectorOro val) {
-        this.oros.put(o, val);
-        o=o+1;
-    }
-
-    public Map<Integer, RecolectorEfectivo> getEfectivos() {
-        return efectivos;
-    }
-
-    public void setEfectivos(RecolectorEfectivo val) {
-        this.efectivos.put(ef, val);
-        ef=ef+1;
-    }
-*/
-
-    public FabricaBinLaden[] getBins() {
+    public Map<Integer,FabricaBinLaden> getBins() {
         return bins;
     }
 
 
     public void setBins(FabricaBinLaden val) {
-        if (bins[0]==null){
-            this.bins[0]=val;
+        if (bins.isEmpty()==true){
+            this.bins.put(1, val);
         }
         else{
             System.out.println("Soldado ya existente");

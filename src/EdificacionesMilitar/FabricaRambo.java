@@ -16,18 +16,18 @@ public class FabricaRambo{
     int faseAlmacenada, vida=500,cr=0;
     Fase fase = Fase.getInstance();
     SingletonMilitar militares = SingletonMilitar.getInstance();
-    private Militar[] rambo = new Militar[1];
+    private Map<Integer,Rambo> rambo = new HashMap<Integer,Rambo>();
 
     public FabricaRambo(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
 
-    public Militar[] getRambo() {
+    public Map<Integer, Rambo> getRambo() {
         return rambo;
     }
 
-    public void setRambo(Militar rambo) {
-        this.rambo[0] = rambo;
+    public void setRambo(Map<Integer, Rambo> rambo) {
+        this.rambo = rambo;
     }
     
     public int getVida() {
@@ -47,18 +47,15 @@ public class FabricaRambo{
     }
 
     public void crear(int r1, int r2, int r3) {
-        System.out.println("Crear");
-        if(r1>=200 && r2>=200 && cr<1){
-            Rambo ram = new Rambo();
-            rambo[0]=ram;
-            cr+=1;
+        if(r1>=200 && r2>=200 ){
+            Rambo conv = new Rambo();
+            rambo.put(1, conv);
             militares.setRecurso1(-200);
             militares.setRecurso2(-200);
-            militares.setRecurso3(-200);
             System.out.println("Rambo creado");
         }
         else{
-            System.out.println("Recursos insuficientes");
+            System.out.println("Recursos insuficientes ");
         }
     }
     

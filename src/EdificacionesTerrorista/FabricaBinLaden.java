@@ -9,6 +9,8 @@ import Singletons.Fase;
 import Singletons.SingletonTerrorista;
 import Terrorista.BinLaden;
 import Terrorista.Terrorista;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -19,18 +21,18 @@ public class FabricaBinLaden {
     int faseAlmacenada, vida=500,cr=0;
     Fase fase = Fase.getInstance();
     SingletonTerrorista terroristas = SingletonTerrorista.getInstance();
-    private Terrorista[] bin = new Terrorista[1];
+    private Map<Integer,BinLaden> bin = new HashMap<Integer,BinLaden>();
 
     public FabricaBinLaden(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
 
-    public Terrorista[] getBin() {
+    public Map<Integer,BinLaden> getBin() {
         return bin;
     }
 
-    public void setRambo(Terrorista bin) {
-        this.bin[0] = bin;
+    public void setRambo(Map<Integer,BinLaden> bin) {
+        this.bin = bin;
     }
     
     public int getVida() {
@@ -48,27 +50,17 @@ public class FabricaBinLaden {
     public void setFaseAlmacenada(int faseAlmacenada) {
         this.faseAlmacenada = faseAlmacenada;
     }
-    /*
-    @Override
-    public void atacar() {
-    }
 
-    @Override
-    public int recolectar() {
-        return 0;
-    }
-
-    @Override*/
     public void crear(int r1, int r2, int r3) {
         System.out.println("Crear");
         if(r1>=200 && r2>=200 && cr<1){
             BinLaden ram = new BinLaden();
-            bin[0]=ram;
+            bin.put(1, ram);
             cr+=1;
             terroristas.setRecurso1(-200);
             terroristas.setRecurso2(-200);
             terroristas.setRecurso3(-200);
-            System.out.println("Rambo creado");
+            System.out.println("BinLaden creado");
         }
         else{
             System.out.println("Recursos insuficientes");

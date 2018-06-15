@@ -26,10 +26,9 @@ public class SingletonMilitar {
     private Map<Integer,FabricaConvoy> convoys = new HashMap<Integer,FabricaConvoy>();
     private Map<Integer,FabricaVehiculo> vehiculos = new HashMap<Integer,FabricaVehiculo>();
     private Map<Integer,FabricaEscuadron> escuadrones = new HashMap<Integer,FabricaEscuadron>();
-    /*private Map<Integer,GeneradorDiamante> diamantes = new HashMap<Integer,GeneradorDiamante>();
-    private Map<Integer,RecolectorOro> oros = new HashMap<Integer,RecolectorOro>();
-    private Map<Integer,RecolectorEfectivo> efectivos = new HashMap<Integer,RecolectorEfectivo>();*/
-    private FabricaRambo[] rambos = new FabricaRambo[1];
+    private Map<Integer,FabricaRambo> rambos = new HashMap<Integer,FabricaRambo>();
+    
+    //private FabricaRambo[] rambos = new FabricaRambo[1];
     
     public static SingletonMilitar getInstance(){
         if(instance==null){
@@ -156,41 +155,14 @@ public class SingletonMilitar {
         this.escuadrones.put(es, val);
         es=es+1;
     }
-/*
-    public Map<Integer, GeneradorDiamante> getDiamantes() {
-        return diamantes;
-    }
 
-    public void setDiamantes(GeneradorDiamante val) {
-        this.diamantes.put(d, val);
-        d=d+1;
-    }
-
-    public Map<Integer, RecolectorOro> getOros() {
-        return oros;
-    }
-
-    public void setOros(RecolectorOro val) {
-        this.oros.put(o, val);
-        o=o+1;
-    }
-
-    public Map<Integer, RecolectorEfectivo> getEfectivos() {
-        return efectivos;
-    }
-
-    public void setEfectivos(RecolectorEfectivo val) {
-        this.efectivos.put(ef, val);
-        ef=ef+1;
-    }
-*/
-    public FabricaRambo[] getRambos() {
+    public Map<Integer, FabricaRambo> getRambos() {
         return rambos;
     }
 
     public void setRambos(FabricaRambo val) {
-        if (rambos[0]==null){
-            this.rambos[0]=val;
+        if (rambos.isEmpty()==true){
+            this.rambos.put(1, val);
         }
         else{
             System.out.println("Soldado ya existente");
