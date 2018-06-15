@@ -115,7 +115,8 @@ public class Menu {
         System.out.println("7. Construir recolector de Oro");
         System.out.println("8. Construir recolector de Efectivo");
         System.out.println("9. Construir generador de Diamante");
-        System.out.println("10. Terminar turno");
+        System.out.println("10. Rendirme");
+        System.out.println("12. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -246,6 +247,10 @@ public class Menu {
                     System.out.println("Generador ya existente");
                 }
                 break;
+            case 10:
+                System.out.println("\n---PERDISTE---");
+                System.exit(0);
+                break;
             default:
                 System.out.println("");
         }
@@ -265,7 +270,8 @@ public class Menu {
         System.out.println("7. Construir recolector de Metal");
         System.out.println("8. Construir recolector de Plata");
         System.out.println("9. Construir generador de BitCoins");
-        System.out.println("10. Terminar turno");
+        System.out.println("10. Rendirme");
+        System.out.println("11. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -398,6 +404,10 @@ public class Menu {
                 else{
                     System.out.println("Generador ya existente");
                 }
+            case 10:
+                System.out.println("\n---PERDISTE---");
+                System.exit(0);
+                break;
             default:
                 System.out.println("");
         }
@@ -417,7 +427,8 @@ public class Menu {
         System.out.println("7. Construir recolector de Petroleo");
         System.out.println("8. Construir recolector de Quimicos");
         System.out.println("9. Construir generador de Monedas");
-        System.out.println("10. Terminar turno");
+        System.out.println("10. Rendirme");
+        System.out.println("11. Terminar turno");
 
         Scanner leer = new Scanner(System.in);
         System.out.print("\nIngrese su opcion: ");
@@ -551,6 +562,10 @@ public class Menu {
                 else{
                     System.out.println("Generador ya existente");
                 }
+            case 10:
+                System.out.println("\n---PERDISTE---");
+                System.exit(0);
+                break;
             default:
                 System.out.println("");
         }
