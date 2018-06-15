@@ -28,12 +28,6 @@ public class FactoryTerrorista implements AbstractFactory{
     @Override
     public Terrorista getTerrorista(String type) {
         switch (type){
-            /*case "petroleo":
-                return new RecolectorPetroleo();
-            case "quimicos":
-                return new RecolectorQuimicos();
-            case "monedas":
-                return new GeneradorMonedas();*/
             case "tanque":
                 return new Tanque();
             case "bus":

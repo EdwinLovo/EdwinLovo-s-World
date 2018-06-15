@@ -893,11 +893,13 @@ public class Menu {
         
         switch (opc) {
             case 1:
-                
-                Militar rambo = factory1.getMilitar("rambo");
-                militar.getRambos()[0].crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
-                //militar.getRambos()[0].setRambo(rambo);
-                System.out.println("Tropa RAMBO creada");
+                if (militar.getRambos().isEmpty() != true) {
+                    Militar rambo = factory1.getMilitar("rambo");
+                    militar.getRambos().get(1).crear(militar.getRecurso1(), militar.getRecurso2(), militar.getRecurso3());
+                }
+                else{
+                        System.out.print("\nClave erronea ");
+                }
                 break;
             case 2:
                 if(militar.getEscuadrones().isEmpty()!=true){
@@ -969,10 +971,13 @@ public class Menu {
         
         switch (opc) {
             case 1:
-                
-                Revolucionario castro = factory1.getRevolucionario("castro");
-                revolucionario.getCastros()[0].crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
-                System.out.println("Tropa castro creada");
+                if (revolucionario.getCastros().isEmpty() != true) {
+                    Revolucionario castro = factory1.getRevolucionario("castro");
+                    revolucionario.getCastros().get(1).crear(revolucionario.getRecurso1(), revolucionario.getRecurso2(), revolucionario.getRecurso3());
+                }
+                else{
+                        System.out.print("\nClave erronea ");
+                }
                 break;
             case 2:
                 if(revolucionario.getBatallones().isEmpty()!=true){
@@ -1044,9 +1049,13 @@ public class Menu {
         
         switch (opc) {
             case 1:
-                Terrorista bin = factory1.getTerrorista("binladen");
-                terrorista.getBins()[0].crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
-                System.out.println("Tropa binladen creada");
+                if (terrorista.getBins().isEmpty() != true) {
+                    Terrorista binladen = factory1.getTerrorista("binladen");
+                    terrorista.getBins().get(1).crear(terrorista.getRecurso1(), terrorista.getRecurso2(), terrorista.getRecurso3());
+                }
+                else{
+                        System.out.print("\nClave erronea ");
+                }
                 break;
             case 2:
                 if(terrorista.getBuses().isEmpty()!=true){
